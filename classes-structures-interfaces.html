@@ -141,9 +141,9 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Passer au mode sombre"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Passer au mode sombre" for="__palette_1" hidden>
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
@@ -151,9 +151,9 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Passer au mode clair"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Passer au mode clair" for="__palette_0" hidden>
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
@@ -3752,7 +3752,7 @@
 <p>Constraints can be placed on generic parameters:</p>
 <p><img src="images/1000000000000490000000EFC7871D69.png" style="width:17.604cm;height:3.602cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000490000000EFC7871D69.png" /></p>
 <p>Consider the following new generic <em>Swap</em> method:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
 <span class="odt-code-line"><span style="color:#0000ff">namespace </span>Chap2 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class </span><span style="color:#2b91af">Generic3 </span>{</span>
 <span class="odt-code-line">        <span style="color:#0000ff">public static void </span>Swap&lt;T&gt;(<span style="color:#0000ff">ref </span>T value1, <span style="color:#0000ff">ref </span>T value2) <span style="color:#0000ff">where </span>T : <span style="color:#0000ff">class </span>{</span>
@@ -3798,7 +3798,7 @@
 <p>The compiler reports an error on line 8 because the type <em><code>int</code></em> is not a class or an interface; it is a struct:</p>
 <p><img src="images/10000000000002D600000037BBA1C3CF.png" style="width:17.604cm;height:1.334cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002D600000037BBA1C3CF.png" /></p>
 <p>Consider the following new generic method <em>Exchange</em>:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
 <span class="odt-code-line"><span style="color:#0000ff">namespace </span>Chap2 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class </span><span style="color:#2b91af">Generic4 </span>{</span>
 <span class="odt-code-line">        <span style="color:#0000ff">public static void </span>Swap&lt;T&gt;(<span style="color:#0000ff">ref </span>T element1, <span style="color:#0000ff">ref </span>T element2) <span style="color:#0000ff">where </span>T : <span style="color:#2b91af">Interface1 </span>{</span>
@@ -4259,7 +4259,7 @@
 
 <p>The <em>HardwiredImpot</em> class hard-codes the data needed to calculate the tax in lines 7–9. Its constructor (lines 11–18) uses this data to initialize the protected field <em>taxBrackets</em> of the parent class <em>AbstractImpot</em>.</p>
 <p>A test program might look like this:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
 <span class="odt-code-line"><span style="color:#0000ff">using </span>System;</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#0000ff">namespace </span>Chap2 {</span>
@@ -4425,9 +4425,9 @@
           https://tahe.developpez.com
         </a>
         <br>
-        This tutorial, written by <strong>Serge Tahé</strong>, is made available to the public under the terms of the
-        <em>Creative Commons Attribution – Non-Commercial –
-        ShareAlike 3.0 Unported Licence</em>.
+        This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the
+<em>Creative Commons Attribution – Non-Commercial –
+ShareAlike 3.0 Unported</em>.
       </div>
 
     </div>
