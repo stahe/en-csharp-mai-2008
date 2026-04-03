@@ -686,7 +686,18 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="11.1.4. How Internet Protocols Work">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1115-addressing-issues-on-the-internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1.5. Addressing Issues on the Internet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11.1.5. Addressing Issues on the Internet">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -694,6 +705,17 @@
     <span class="md-ellipsis">
       
         11.1.5.1. IP Address Classes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11152-internet-address-physical-address-conversion-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1.5.2. Internet Address &lt;--&gt; Physical Address Conversion Protocols
       
     </span>
   </a>
@@ -784,6 +806,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#1118-the-application-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1.8. The Application Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#1119-conclusion" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -838,6 +871,17 @@
     <span class="md-ellipsis">
       
         11.3.2. Characteristics of the TCP Protocol
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1133-the-client-server-relationship" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3.3. The client-server relationship
       
     </span>
   </a>
@@ -977,6 +1021,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#1153-the-tcplistener-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5.3. The TcpListener class
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1037,6 +1092,45 @@
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#1165-a-web-client-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.6.5. A Web Client C
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1166-a-web-client-that-handles-redirects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.6.6. A web client that handles redirects
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#117-net-classes-specialized-for-a-particular-internet-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.7. .NET classes specialized for a particular Internet protocol
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11.7. .NET classes specialized for a particular Internet protocol">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#1171-the-webclient-class" class="md-nav__link">
@@ -1198,6 +1292,17 @@
     <span class="md-ellipsis">
       
         11.8.2. The graphical interface of the asynchronous TCP client
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1183-asynchronous-connection-to-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.8.3. Asynchronous connection to the server
       
     </span>
   </a>
@@ -1705,13 +1810,10 @@
   <li>It also calculates a checksum for the TCP segment. If it is found to be correct, the TCP layer sends an acknowledgment to the source machine; otherwise, the TCP segment is rejected.
   </li>
   <li>All that remains for the TCP layer to do is to transmit the data portion of the segment to the application intended to receive it in the layer above.
-<a id="refheading10402931168783983"></a>
-
-### 11.1.5. <span style="color: #4f81bd">Addressing Issues on the Internet</span>
-
   </li>
 </ul>
-
+<p><a id="refheading10402931168783983"></a></p>
+<h3 id="1115-addressing-issues-on-the-internet">11.1.5. <span style="color: #4f81bd">Addressing Issues on the Internet</span></h3>
 <p>A network <em>node</em> can be a computer, a smart printer, a file server—anything, in fact, that can communicate using TCP/IP protocols. Each node has a <strong>physical address</strong> with a format that depends on the type of network. On an Ethernet network, the physical address is encoded over 6 bytes. An X.25 network address is a 14-digit number.</p>
 <p>A node’s <strong>Internet address</strong> is a <strong>logical</strong> address: it is independent of the hardware and network used. It is a 4-byte address that identifies both a local network and a node on that network. The Internet address is usually represented as four numbers—the values of the four bytes—separated by a dot. Thus, ; the address of the machine Lagaffe at the Faculty of Sciences in Angers is 193.49.144.1, and that of the machine Liny is 193.49.144.9. We can deduce that the Internet address of the local network is 193.49.144.0. There can be up to 254 nodes on this network.</p>
 <p>Because Internet addresses or IP addresses are independent of the network, a machine on network A can communicate with a machine on network B without concerning itself with the type of network it is on: it simply needs to know its IP address. The IP protocol of each network handles the IP address &lt;--&gt; physical address conversion in both directions.</p>
@@ -1758,11 +1860,9 @@
   <li>When the node address in an IP address consists entirely of 1s, it is a broadcast address: this address refers to <b>all nodes on the network</b>.
   </li>
   <li>In a Class C network, which theoretically allows for 2⁸ = 256 nodes, if we remove the two prohibited addresses, we are left with only 254 authorized addresses.
-#### 11.1.5.2. <span style="color: #4f81bd">Internet Address &lt;--&gt; Physical Address Conversion Protocols</span>
-
   </li>
 </ul>
-
+<h4 id="11152-internet-address-physical-address-conversion-protocols">11.1.5.2. <span style="color: #4f81bd">Internet Address &lt;--&gt; Physical Address Conversion Protocols</span></h4>
 <p>We have seen that when data is transmitted from one machine to another, it is encapsulated into packets as it passes through the IP layer. These packets have the following form:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000669000000B310010D2B.png" style="display:inline-block; margin:4px;width:13.019cm;height:1.42cm;" class="odt-zoomable" data-zoom-src="images/1000000000000669000000B310010D2B.png" /></td></tr></table>
 
@@ -1844,13 +1944,10 @@
   <li>If, after a certain amount of time, the TCP protocol that sent a segment does not receive an acknowledgment, it retransmits the segment in question, thereby ensuring the quality of the information delivery service.
   </li>
   <li>The virtual circuit established between the two communicating processes is <i>full-duplex</i>: this means that information can flow in both directions. Thus, the destination process can send acknowledgments even while the source process continues to send information. This allows, for example, the source TCP protocol to send multiple segments without waiting for an acknowledgment. If, after a certain amount of time, it realizes it has not received an acknowledgment for a specific segment No. <i>n</i>, it will resume sending segments from that point.
-<a id="refheading10402991168783983"></a>
-
-### 11.1.8. <span style="color: #4f81bd">The Application Layer</span>
-
   </li>
 </ul>
-
+<p><a id="refheading10402991168783983"></a></p>
+<h3 id="1118-the-application-layer">11.1.8. <span style="color: #4f81bd">The Application Layer</span></h3>
 <p>Above the UDP and TCP protocols, there are various standard protocols:</p>
 <p><strong><mark style="background-color: #fff5ce">TELNET</mark></strong></p>
 <div class="highlight"><pre><span></span><code>This protocol allows a user on machine A on the network to connect to machine B (often called the host machine). TELNET emulates a so-called universal terminal on machine A. The user therefore behaves as if they had a terminal connected to machine B. Telnet relies on the TCP protocol.
@@ -2102,13 +2199,10 @@ An application can therefore refer to a machine by its name. Ultimately, however
   <li>If, after a certain amount of time, the TCP protocol that sent a segment does not receive an acknowledgment, it retransmits the segment in question, thereby ensuring the quality of the information delivery service.
   </li>
   <li>The virtual circuit established between the two communicating processes is <i>full-duplex</i>: this means that information can flow in both directions. Thus, the destination process can send acknowledgments even while the source process continues to send information. This allows, for example, the source TCP protocol to send multiple segments without waiting for an acknowledgment. If, after a certain amount of time, it realizes it has not received an acknowledgment for a specific segment No. <i>n</i>, it will resume sending segments from that point.
-<a id="refheading10403111168783983"></a>
-
-### 11.3.3. <span style="color: #4f81bd">The client-server relationship</span>
-
   </li>
 </ul>
-
+<p><a id="refheading10403111168783983"></a></p>
+<h3 id="1133-the-client-server-relationship">11.3.3. <span style="color: #4f81bd">The client-server relationship</span></h3>
 <p>Communication over the Internet is often asymmetric: machine A initiates a connection to request a service from machine B, specifying that it wants to open a connection with service SB1 on machine B. Machine B accepts or refuses. If it accepts, machine A can send its requests to service SB1. These requests must comply with the communication protocol understood by service SB1. A request-response dialogue is thus established between machine A, known as the <strong>client</strong> machine, and machine B, known as the <strong>server</strong> machine. One of the two partners will close the connection.</p>
 <p><a id="refheading10403131168783983"></a></p>
 <h3 id="1134-client-architecture">11.3.4. <span style="color: #4f81bd">Client Architecture</span></h3>
@@ -2653,13 +2747,10 @@ An application can therefore refer to a machine by its name. Ultimately, however
   <li>line 26: the client sends its request to the server
   </li>
   <li>line 28: the client waits for the server&#x27;s response. This is a blocking operation, similar to reading from the keyboard. The wait ends when a string terminated by &quot;\n&quot; arrives or when the stream ends. The latter occurs if the server closes the connection it opened with the client.
-<a id="refheading10403351168783983"></a>
-
-### 11.5.3. <span style="color: #4f81bd">The TcpListener class</span>
-
   </li>
 </ul>
-
+<p><a id="refheading10403351168783983"></a></p>
+<h3 id="1153-the-tcplistener-class">11.5.3. <span style="color: #4f81bd">The TcpListener class</span></h3>
 <p>The <strong>TcpListener</strong> class is the appropriate class in most cases for creating a TCP service. Among its C constructors, M methods, and P properties, it includes the following:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>TcpListener(int port)
@@ -3679,14 +3770,11 @@ An application can therefore refer to a machine by its name. Ultimately, however
   <li>line 69: end of the listening service. This instruction will never be executed here since the server is stopped by Ctrl-C.
   </li>
   <li>line 78: the <i>Receive</i> method, which continuously displays on the console the lines of text sent by the client. This is similar to what was seen for the generic TCP client.
-<a id="refheading10403471168783983"></a>
-<a id="program-clientweb"></a>
-
-### 11.6.5. <span style="color: #4f81bd">A Web Client C</span>
-
   </li>
 </ul>
-
+<p><a id="refheading10403471168783983"></a>
+<a id="program-clientweb"></a></p>
+<h3 id="1165-a-web-client-c">11.6.5. <span style="color: #4f81bd">A Web Client C</span></h3>
 <p>In the previous example, we saw some of the HTTP headers sent by a browser:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-77-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-77-2"> 2</a></span>
@@ -3847,16 +3935,13 @@ An application can therefore refer to a machine by its name. Ultimately, however
       <li><b>uri.</b>pathAndQuery = <i>HTMLPagePath?param1=val1&amp;param2=val2;...</i>, 
       </li>
       <li><b>uri.</b><i>Scheme=http</i>.
-<a id="refheading10403491168783983"></a>
-<a id="program-clientwebavecredirection"></a>
-
-### 11.6.6. <span style="color: #4f81bd">A web client that handles redirects</span>
-
       </li>
     </ul>
   </li>
 </ul>
-
+<p><a id="refheading10403491168783983"></a>
+<a id="program-clientwebavecredirection"></a></p>
+<h3 id="1166-a-web-client-that-handles-redirects">11.6.6. <span style="color: #4f81bd">A web client that handles redirects</span></h3>
 <p>The previous web client does not handle any redirections of the URL it requested. Here is an example:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-80-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-80-2"> 2</a></span>
@@ -4265,13 +4350,10 @@ An application can therefore refer to a machine by its name. Ultimately, however
   <li>Lines 105–106: The requested URI has been fully processed and displayed. If there is no redirection to perform or if the number of allowed redirections has been exceeded, the program exits.
   </li>
   <li>lines 108-122: if there is a redirect, the new URI to request is calculated. There is a bit of work to do depending on whether the found redirect address was absolute (line 111) or relative (line 114).
-<a id="refheading10403511168783983"></a>
-
-## 11.7. <span style="color: #4f81bd">.NET classes specialized for a particular Internet protocol</span>
-
   </li>
 </ul>
-
+<p><a id="refheading10403511168783983"></a></p>
+<h2 id="117-net-classes-specialized-for-a-particular-internet-protocol">11.7. <span style="color: #4f81bd">.NET classes specialized for a particular Internet protocol</span></h2>
 <p>In the previous web client examples, the HTTP protocol was handled using a TCP client. We therefore had to manage the specific communication protocol used ourselves. We could have built an SMTP or POP client in a similar way. The .NET framework offers specialized classes for the HTTP and SMTP protocols. These classes understand the communication protocol between the client and the server and spare the developer from having to manage them. We will now introduce them.</p>
 <p><a id="refheading10403531168783983"></a></p>
 <h3 id="1171-the-webclient-class">11.7.1. <span style="color: #4f81bd">The WebClient Class</span></h3>
@@ -5545,13 +5627,10 @@ An application can therefore refer to a machine by its name. Ultimately, however
   <li>in [2], this server-side closure was detected. The client then closed the connection on its end.
   </li>
   <li>in [3], the [Disconnect] button has reverted to a [Connect] button
-<a id="refheading10403671168783983"></a>
-
-### 11.8.3. <span style="color: #4f81bd">Asynchronous connection to the server</span>
-
   </li>
 </ul>
-
+<p><a id="refheading10403671168783983"></a></p>
+<h3 id="1183-asynchronous-connection-to-the-server">11.8.3. <span style="color: #4f81bd">Asynchronous connection to the server</span></h3>
 <p>Clicking the [Connect] button triggers the execution of the following method:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line">        <span style="color:#0000ff">private void </span>buttonConnexion_Click(<span style="color:#0000ff">object </span>sender, <span style="color:#2b91af">EventArgs </span>e) {</span>

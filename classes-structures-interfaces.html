@@ -577,6 +577,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#4112-temporary-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1.12. Temporary objects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#4113-methods-for-reading-and-writing-private-attributes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -660,6 +671,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#423-redefining-a-method-or-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.3. Redefining a method or property
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#424-polymorphism" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -703,6 +725,17 @@
     <span class="md-ellipsis">
       
         4.3.1. Introduction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#432-an-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.2. An example
       
     </span>
   </a>
@@ -1591,13 +1624,10 @@
   <li><i>sb2 </i>and <i>sbf2 </i>are the same reference to the same object. sbf2’s value is modified within the method and now points to a new object—line 3. Since <i>sbf2 </i>and <i>sb2 </i>are one and the same entity, <i>sb2’s</i> value has also been modified, and <i>sb2 </i>points to the same object as <i>sbf2</i>—lines 3 and 4.
   </li>
   <li>Before the method call, <i>sb3 </i>had no value. After the method, <i>sb3 </i>receives the value of <i>sbf3</i>. We therefore have two references to the same object—lines 3 and 4
-<a id="refheading10399911168783983"></a>
-
-### 4.1.12. <span style="color: #4f81bd">Temporary objects</span>
-
   </li>
 </ul>
-
+<p><a id="refheading10399911168783983"></a></p>
+<h3 id="4112-temporary-objects">4.1.12. <span style="color: #4f81bd">Temporary objects</span></h3>
 <p>In an expression, you can explicitly call an object’s constructor: the object is created, but you do not have access to it (to modify it, for example). This temporary object is created for the purpose of evaluating the expression and then discarded. The memory space it occupied will be automatically reclaimed later by a program called a &quot;garbage collector,&quot; whose role is to reclaim memory space occupied by objects that are no longer referenced by program data.</p>
 <p>Consider the following new test program:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
@@ -2240,13 +2270,10 @@
   <li>a <i>Person</i> object (line 1) was constructed before the <i>Teacher</i> object (line 2)
   </li>
   <li>the identity obtained is that of the <i>Person</i> object
-<a id="refheading10400071168783983"></a>
-
-### 4.2.3. <span style="color: #4f81bd">Redefining a method or property</span>
-
   </li>
 </ul>
-
+<p><a id="refheading10400071168783983"></a></p>
+<h3 id="423-redefining-a-method-or-property">4.2.3. <span style="color: #4f81bd">Redefining a method or property</span></h3>
 <p>In the previous example, we had the identity of the <em>Person</em> part of the teacher, but some information specific to the <em>Teacher</em> class (the section) is missing. We therefore need to write a property that allows us to identify the teacher:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span style="color:#0000ff">using </span>System;</span>
@@ -2538,13 +2565,10 @@
   <li>the == and != operators must be redefined together
   </li>
   <li>the operators &amp;&amp;, ||, [], (), +=, -=, ... cannot be redefined
-<a id="refheading10400171168783983"></a>
-
-### 4.3.2. <span style="color: #4f81bd">An example</span>
-
   </li>
 </ul>
-
+<p><a id="refheading10400171168783983"></a></p>
+<h3 id="432-an-example">4.3.2. <span style="color: #4f81bd">An example</span></h3>
 <p>We create a <em>PersonList</em> class derived from the <em>ArrayList</em> class. This class implements a dynamic list and is presented in the following chapter. From this class, we use only the following elements:</p>
 <ul>
   <li>the method L.<i>Add(Object o), </i>which allows us to add an object <i>o </i>to the list <i>L</i>. Here, the object <i>o </i>will be a <i>Person</i> object.

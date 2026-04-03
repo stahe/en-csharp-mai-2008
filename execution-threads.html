@@ -722,6 +722,45 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#106-concurrent-access-to-multiple-shared-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.6. Concurrent access to multiple shared resources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.6. Concurrent access to multiple shared resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1061-an-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.6.1. An example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1062-the-monitor-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.6.2. The Monitor class
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#107-thread-pools" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1876,17 +1915,12 @@
 
 <ul>
   <li>Line 17: The thread counter is incremented atomically.
-<a id="refheading10402571168783983"></a>
-
-## 10.6. <span style="color: #4f81bd">Concurrent access to multiple shared resources</span>
-
-<a id="refheading10402591168783983"></a>
-
-### 10.6.1. <span style="color: #4f81bd">An example</span>
-
   </li>
 </ul>
-
+<p><a id="refheading10402571168783983"></a></p>
+<h2 id="106-concurrent-access-to-multiple-shared-resources">10.6. <span style="color: #4f81bd">Concurrent access to multiple shared resources</span></h2>
+<p><a id="refheading10402591168783983"></a></p>
+<h3 id="1061-an-example">10.6.1. <span style="color: #4f81bd">An example</span></h3>
 <p>In our previous examples, a single resource was shared by the different threads. The situation can become more complicated if there are several resources and they are dependent on one another. In particular, a deadlock situation may arise. This situation, also known as <em>a deadlock</em>, is one in which two threads are waiting for each other. Consider the following actions, which occur sequentially:</p>
 <ul>
   <li>a thread T1 acquires ownership of a Mutex M1 to access a shared resource R1
@@ -2133,13 +2167,10 @@
   <li>A reader only reads when there is something to read in the array
   </li>
   <li>A writer writes only when the array has been fully read
-<a id="refheading10402611168783983"></a>
-
-### 10.6.2. <span style="color: #4f81bd">The Monitor class</span>
-
   </li>
 </ul>
-
+<p><a id="refheading10402611168783983"></a></p>
+<h3 id="1062-the-monitor-class">10.6.2. <span style="color: #4f81bd">The Monitor class</span></h3>
 <p>In the previous example:</p>
 <ul>
   <li>there are two shared resources to manage
