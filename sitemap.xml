@@ -2,62 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://stahe.github.io/en-csharp-mai-2008/index.html</loc>
-         <lastmod>2026-04-04</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
-         <loc>https://stahe.github.io/en-csharp-mai-2008/----the-basics-of-the-c-language.html</loc>
-         <lastmod>2026-04-04</lastmod>
+         <loc>https://stahe.github.io/en-csharp-mai-2008/----c-language-basics.html</loc>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
-         <loc>https://stahe.github.io/en-csharp-mai-2008/3-tier-architectures.html</loc>
-         <lastmod>2026-04-04</lastmod>
+         <loc>https://stahe.github.io/en-csharp-mai-2008/3-layer-architectures.html</loc>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://stahe.github.io/en-csharp-mai-2008/appendices.html</loc>
-         <lastmod>2026-04-04</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
-         <loc>https://stahe.github.io/en-csharp-mai-2008/classes-structures-interfaces.html</loc>
-         <lastmod>2026-04-04</lastmod>
+         <loc>https://stahe.github.io/en-csharp-mai-2008/classes-stuctures-interfaces.html</loc>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://stahe.github.io/en-csharp-mai-2008/commonly-used-net-classes.html</loc>
-         <lastmod>2026-04-04</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://stahe.github.io/en-csharp-mai-2008/database-access.html</loc>
-         <lastmod>2026-04-04</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://stahe.github.io/en-csharp-mai-2008/execution-threads.html</loc>
-         <lastmod>2026-04-04</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
-         <loc>https://stahe.github.io/en-csharp-mai-2008/graphical-user-interfaces-with-c-and-vsnet.html</loc>
-         <lastmod>2026-04-04</lastmod>
+         <loc>https://stahe.github.io/en-csharp-mai-2008/graphical-interfaces-with-c-and-vsnet.html</loc>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://stahe.github.io/en-csharp-mai-2008/installing-visual-c-2008.html</loc>
-         <lastmod>2026-04-04</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://stahe.github.io/en-csharp-mai-2008/introduction.html</loc>
-         <lastmod>2026-04-04</lastmod>
+         <lastmod>2026-04-19</lastmod>
+    </url>
+    <url>
+         <loc>https://stahe.github.io/en-csharp-mai-2008/programming-internet.html</loc>
+         <lastmod>2026-04-19</lastmod>
+    </url>
+    <url>
+         <loc>https://stahe.github.io/en-csharp-mai-2008/services-web.html</loc>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://stahe.github.io/en-csharp-mai-2008/to-be-continued.html</loc>
-         <lastmod>2026-04-04</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://stahe.github.io/en-csharp-mai-2008/user-events.html</loc>
-         <lastmod>2026-04-04</lastmod>
-    </url>
-    <url>
-         <loc>https://stahe.github.io/en-csharp-mai-2008/web-development.html</loc>
-         <lastmod>2026-04-04</lastmod>
-    </url>
-    <url>
-         <loc>https://stahe.github.io/en-csharp-mai-2008/web-services.html</loc>
-         <lastmod>2026-04-04</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
 </urlset>
