@@ -2080,7 +2080,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">            <span style="color:#008000">// then interactively provides information on network machines</span></span>
 <span class="odt-code-line">            <span style="color:#008000">// identified by name or address IP</span></span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">// machine locale</span></span>
+<span class="odt-code-line">            <span style="color:#008000">// local machine</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Machine Locale= {0}&quot;</span> ,<span style="color:#2b91af">Dns</span>.GetHostName());</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">            <span style="color:#008000">// interactive Q&amp;A</span></span>
@@ -2090,11 +2090,11 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">                <span style="color:#008000">// enter the name or IP address of the machine you are looking for</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.Write(<span style="color:#a31515">&quot;Machine recherchée (rien pour arrêter) : &quot;</span>);</span>
 <span class="odt-code-line">                machine = <span style="color:#2b91af">Console</span>.ReadLine().Trim().ToLower();</span>
-<span class="odt-code-line">                <span style="color:#008000">// fini ?</span></span>
+<span class="odt-code-line">                <span style="color:#008000">// finished?</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">if</span> (machine == <span style="color:#a31515">&quot;&quot;</span>) <span style="color:#0000ff">return</span>;</span>
-<span class="odt-code-line">                <span style="color:#008000">// gestion exception</span></span>
+<span class="odt-code-line">                <span style="color:#008000">// management exception</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">try</span> {</span>
-<span class="odt-code-line">                    <span style="color:#008000">// recherche machine</span></span>
+<span class="odt-code-line">                    <span style="color:#008000">// machine search</span></span>
 <span class="odt-code-line">                    ipHostEntry = <span style="color:#2b91af">Dns</span>.GetHostEntry(machine);</span>
 <span class="odt-code-line">                    <span style="color:#008000">// machine name</span></span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Machine : &quot;</span> + ipHostEntry.HostName);</span>
@@ -2701,7 +2701,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">                                    <span style="color:#008000">// demand comes from the keyboard</span></span>
 <span class="odt-code-line">                                    <span style="color:#2b91af">Console</span>.Write(<span style="color:#a31515">&quot;Demande (bye pour arrêter) : &quot;</span>);</span>
 <span class="odt-code-line">                                    demande = <span style="color:#2b91af">Console</span>.ReadLine();</span>
-<span class="odt-code-line">                                    <span style="color:#008000">// fini ?</span></span>
+<span class="odt-code-line">                                    <span style="color:#008000">// finished?</span></span>
 <span class="odt-code-line">                                    <span style="color:#0000ff">if</span> (demande.Trim().ToLower() == <span style="color:#a31515">&quot;bye&quot;</span>)</span>
 <span class="odt-code-line">                                        <span style="color:#0000ff">break</span>;</span>
 <span class="odt-code-line">                                    <span style="color:#008000">// send the request to the server</span></span>
@@ -2795,11 +2795,11 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">                <span style="color:#2b91af">TcpClient</span> tcpClient = <span style="color:#0000ff">null</span>;</span>
 <span class="odt-code-line">                <span style="color:#008000">// infinite loop - will be stopped by Ctrl-C</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">while</span> (<span style="color:#0000ff">true</span>) {</span>
-<span class="odt-code-line">                    <span style="color:#008000">// attente d&#x27;un client</span></span>
+<span class="odt-code-line">                    <span style="color:#008000">// waiting for a customer</span></span>
 <span class="odt-code-line">                    tcpClient = ecoute.AcceptTcpClient();</span>
 <span class="odt-code-line">                    <span style="color:#008000">// the service is provided by another task</span></span>
 <span class="odt-code-line">                    <span style="color:#2b91af">ThreadPool</span>.QueueUserWorkItem(Service, tcpClient);</span>
-<span class="odt-code-line">                    <span style="color:#008000">// client suivant</span></span>
+<span class="odt-code-line">                <span style="color:#008000">// next customer</span></span>
 <span class="odt-code-line">                }</span>
 <span class="odt-code-line">            } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">Exception</span> ex) {</span>
 <span class="odt-code-line">                <span style="color:#008000">// on signale l&#x27;erreur</span></span>
@@ -2815,7 +2815,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Service(<span style="color:#2b91af">Object</span> infos) {</span>
 <span class="odt-code-line">            <span style="color:#008000">// the customer is picked up and served</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Client</span> client = infos <span style="color:#0000ff">as</span> <span style="color:#2b91af">Client</span>;</span>
-<span class="odt-code-line">            <span style="color:#008000">// exploitation liaison TcpClient</span></span>
+<span class="odt-code-line">            <span style="color:#008000">// operation link TcpClient</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">try</span> {</span>
 <span class="odt-code-line">                <span style="color:#0000ff">using</span> (<span style="color:#2b91af">TcpClient</span> tcpClient = client.CanalTcp) {</span>
 <span class="odt-code-line">                    <span style="color:#0000ff">using</span> (<span style="color:#2b91af">NetworkStream</span> networkStream = tcpClient.GetStream()) {</span>
@@ -2832,7 +2832,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">                                    réponse=...;</span>
 <span class="odt-code-line">                                    <span style="color:#008000">// reply to customer</span></span>
 <span class="odt-code-line">                                    writer.WriteLine(réponse);</span>
-<span class="odt-code-line">                                    <span style="color:#008000">// demande suivante</span></span>
+<span class="odt-code-line">                                <span style="color:#008000">// next request</span></span>
 <span class="odt-code-line">                                }</span>
 <span class="odt-code-line">                            }</span>
 <span class="odt-code-line">                        }</span>
@@ -2842,7 +2842,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">                <span style="color:#008000">// error</span></span>
 <span class="odt-code-line">                ...</span>
 <span class="odt-code-line">            } <span style="color:#0000ff">finally</span> {</span>
-<span class="odt-code-line">                <span style="color:#008000">// fin client</span></span>
+<span class="odt-code-line">                <span style="color:#008000">// end customer</span></span>
 <span class="odt-code-line">                ...</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line">        }</span>
@@ -2892,7 +2892,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line"><span style="color:#0000ff">using</span> System.Threading;</span>
 <span class="odt-code-line"><span style="color:#0000ff">using</span> System.Net;</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">// appel : serveurEcho port</span>
+<span class="odt-code-line">// call: serveurEcho port</span>
 <span class="odt-code-line">// echo server</span>
 <span class="odt-code-line">// returns the line sent to the customer</span>
 <span class="odt-code-line"> </span>
@@ -2900,7 +2900,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">ServeurEcho</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">const</span> <span style="color:#0000ff">string</span> syntaxe = <span style="color:#a31515">&quot;Syntaxe : [serveurEcho] port&quot;</span>;</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// programme principal</span></span>
+<span class="odt-code-line">        <span style="color:#008000">// main program</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">            <span style="color:#008000">// is there an argument?</span></span>
@@ -2916,13 +2916,13 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line">            <span style="color:#008000">// we create the listening service</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">TcpListener</span> ecoute = <span style="color:#0000ff">null</span>;</span>
-<span class="odt-code-line">            <span style="color:#0000ff">int</span> numClient = 0;    <span style="color:#008000">// n° client suivant</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">            </span>int numClient =    <span style="color:#008000"> 0;   // next customer no</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">try</span> {</span>
 <span class="odt-code-line">                <span style="color:#008000">// create the service - it will listen on all the machine&#x27;s network interfaces</span></span>
 <span class="odt-code-line">                ecoute = <span style="color:#0000ff">new</span> <span style="color:#2b91af">TcpListener</span>(<span style="color:#2b91af">IPAddress</span>.Any, port);</span>
 <span class="odt-code-line">                <span style="color:#008000">// launch it</span></span>
 <span class="odt-code-line">                ecoute.Start();</span>
-<span class="odt-code-line">                <span style="color:#008000">// suivi</span></span>
+<span class="odt-code-line">                <span style="color:#008000">// follow-up</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Serveur d&#x27;écho lancé sur le port {0}&quot;</span>, ecoute.LocalEndpoint);</span>
 <span class="odt-code-line">                <span style="color:#008000">// service threads</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">ThreadPool</span>.SetMinThreads(10, 10);</span>
@@ -2931,11 +2931,11 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">                <span style="color:#2b91af">TcpClient</span> tcpClient = <span style="color:#0000ff">null</span>;</span>
 <span class="odt-code-line">                <span style="color:#008000">// infinite loop - will be stopped by Ctrl-C</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">while</span> (<span style="color:#0000ff">true</span>) {</span>
-<span class="odt-code-line">                    <span style="color:#008000">// attente d&#x27;un client</span></span>
+<span class="odt-code-line">                    <span style="color:#008000">// waiting for a customer</span></span>
 <span class="odt-code-line">                    tcpClient = ecoute.AcceptTcpClient();</span>
 <span class="odt-code-line">                    <span style="color:#008000">// the service is provided by another task</span></span>
 <span class="odt-code-line">                    <span style="color:#2b91af">ThreadPool</span>.QueueUserWorkItem(Service, <span style="color:#0000ff">new</span> <span style="color:#2b91af">Client</span>() { CanalTcp = tcpClient, NumClient = numClient });</span>
-<span class="odt-code-line">                    <span style="color:#008000">// client suivant</span></span>
+<span class="odt-code-line">                    <span style="color:#008000">// next customer</span></span>
 <span class="odt-code-line">                    numClient++;</span>
 <span class="odt-code-line">                }</span>
 <span class="odt-code-line">            } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">Exception</span> ex) {</span>
@@ -2954,7 +2954,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">            <span style="color:#2b91af">Client</span> client = infos <span style="color:#0000ff">as</span> <span style="color:#2b91af">Client</span>;</span>
 <span class="odt-code-line">            <span style="color:#008000">// renders service to the customer</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Début de service au client {0}&quot;</span>, client.NumClient);</span>
-<span class="odt-code-line">            <span style="color:#008000">// exploitation liaison TcpClient</span></span>
+<span class="odt-code-line">            <span style="color:#008000">// operation link TcpClient</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">try</span> {</span>
 <span class="odt-code-line">                <span style="color:#0000ff">using</span> (<span style="color:#2b91af">TcpClient</span> tcpClient = client.CanalTcp) {</span>
 <span class="odt-code-line">                    <span style="color:#0000ff">using</span> (<span style="color:#2b91af">NetworkStream</span> networkStream = tcpClient.GetStream()) {</span>
@@ -2965,11 +2965,11 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">                                <span style="color:#008000">// loop read request/write response</span></span>
 <span class="odt-code-line">                                <span style="color:#0000ff">string</span> demande = <span style="color:#0000ff">null</span>;</span>
 <span class="odt-code-line">                                <span style="color:#0000ff">while</span> ((demande = reader.ReadLine()) != <span style="color:#0000ff">null</span>) {</span>
-<span class="odt-code-line">                                    <span style="color:#008000">// suivi console</span></span>
+<span class="odt-code-line">                                    <span style="color:#008000">// console monitoring</span></span>
 <span class="odt-code-line">                                    <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;&lt;--- Client {0} : {1}&quot;</span>, client.NumClient, demande);</span>
 <span class="odt-code-line">                                    <span style="color:#008000">// echo from demand to customer</span></span>
 <span class="odt-code-line">                                    writer.WriteLine(<span style="color:#a31515">&quot;[{0}]&quot;</span>, demande);</span>
-<span class="odt-code-line">                                    <span style="color:#008000">// suivi console</span></span>
+<span class="odt-code-line">                                    <span style="color:#008000">// console monitoring</span></span>
 <span class="odt-code-line">                                    <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;---&gt; Client {0} : {1}&quot;</span>, client.NumClient, demande);</span>
 <span class="odt-code-line">                                    <span style="color:#008000">// service stops when customer sends &quot;bye</span></span>
 <span class="odt-code-line">                                    <span style="color:#0000ff">if</span> (demande.Trim().ToLower() == <span style="color:#a31515">&quot;bye&quot;</span>)</span>
@@ -2983,16 +2983,16 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">                <span style="color:#008000">// error</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;L&#x27;erreur suivante s&#x27;est produite lors du service au client {0} : {1}&quot;</span>, client.NumClient, e.Message);</span>
 <span class="odt-code-line">            } <span style="color:#0000ff">finally</span> {</span>
-<span class="odt-code-line">                <span style="color:#008000">// fin client</span></span>
+<span class="odt-code-line">                <span style="color:#008000">// end customer</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Fin du service au client {0}&quot;</span>, client.NumClient);</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line">    }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">    <span style="color:#008000">// infos client</span></span>
+<span class="odt-code-line">        <span style="color:#008000">// customer info</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">internal</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Client</span> {</span>
-<span class="odt-code-line">        <span style="color:#0000ff">        publ</span>i<span style="color:#2b91af">c TcpClie</span>nt CanalTcp <span style="color:#0000ff">{ g</span>et<span style="color:#0000ff">; s</span>et;        <span style="color:#008000"> }     // customer liaison</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">        publ</span>i<span style="color:#0000ff">c i</span>nt NumClient <span style="color:#0000ff">{ g</span>et<span style="color:#0000ff">; s</span>et;            <span style="color:#008000"> }          // customer no</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">                pu</span>b<span style="color:#2b91af">lic TcpCl</span>ient CanalTc<span style="color:#0000ff">p {</span> g<span style="color:#0000ff">et;</span> se        <span style="color:#008000">t;        }      // customer liaison</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">                pu</span>b<span style="color:#0000ff">lic</span> int NumClien<span style="color:#0000ff">t {</span> g<span style="color:#0000ff">et;</span> se            <span style="color:#008000">t;             }          // customer no</span></span>
 <span class="odt-code-line">    }</span>
 <span class="odt-code-line">}</span>
 </code></pre></div>
@@ -3057,11 +3057,11 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line"><span style="color:#0000ff">using</span> System.Net.Sockets;</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap9 {</span>
-<span class="odt-code-line">        <span style="color:#008000">// connects to an echo server</span></span>
+<span class="odt-code-line">    <span style="color:#008000">// connects to an echo server</span></span>
 <span class="odt-code-line">        <span style="color:#008000">// any line typed on the keyboard is received as an echo</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">ClientEcho</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// syntaxe</span></span>
+<span class="odt-code-line">            <span style="color:#008000">// syntax</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">const</span> <span style="color:#0000ff">string</span> syntaxe = <span style="color:#a31515">&quot;pg machine port&quot;</span>;</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">            <span style="color:#008000">// number of arguments</span></span>
@@ -3082,7 +3082,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">            <span style="color:#008000">// on peut travailler</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">            str</span>ing demande<span style="color:#0000ff"> = n</span>u        <span style="color:#008000">ll;        // customer request</span></span>
-<span class="odt-code-line">            <span style="color:#0000ff">            str</span>ing réponse<span style="color:#0000ff"> = n</span>u        <span style="color:#008000">ll;        // server response</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">                        </span>string répo<span style="color:#0000ff">nse </span>=        <span style="color:#008000"> nu       ll;     // server response</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">try</span> {</span>
 <span class="odt-code-line">                <span style="color:#008000">// connect to the service</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">using</span> (<span style="color:#2b91af">TcpClient</span> tcpClient = <span style="color:#0000ff">new</span> <span style="color:#2b91af">TcpClient</span>(serveur, port)) {</span>
@@ -3096,7 +3096,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">                                    <span style="color:#008000">// demand comes from the keyboard</span></span>
 <span class="odt-code-line">                                    <span style="color:#2b91af">Console</span>.Write(<span style="color:#a31515">&quot;Demande (bye pour arrêter) : &quot;</span>);</span>
 <span class="odt-code-line">                                    demande = <span style="color:#2b91af">Console</span>.ReadLine();</span>
-<span class="odt-code-line">                                    <span style="color:#008000">// fini ?</span></span>
+<span class="odt-code-line">                                    <span style="color:#008000">// finished?</span></span>
 <span class="odt-code-line">                                    <span style="color:#0000ff">if</span> (demande.Trim().ToLower() == <span style="color:#a31515">&quot;bye&quot;</span>)</span>
 <span class="odt-code-line">                                        <span style="color:#0000ff">break</span>;</span>
 <span class="odt-code-line">                                    <span style="color:#008000">// send the request to the server</span></span>
@@ -3228,7 +3228,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">        <span style="color:#008000">// creates a thread to continuously read text lines sent by the server</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">ClientTcpGenerique</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// syntaxe</span></span>
+<span class="odt-code-line">            <span style="color:#008000">// syntax</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">const</span> <span style="color:#0000ff">string</span> syntaxe = <span style="color:#a31515">&quot;pg serveur port&quot;</span>;</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">            <span style="color:#008000">// number of arguments</span></span>
@@ -3253,7 +3253,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">            } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">Exception</span> ex) {</span>
 <span class="odt-code-line">                <span style="color:#008000">// error</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Impossible de se connecter au service ({0},{1}) : erreur {2}&quot;</span>, serveur, port, ex.Message);</span>
-<span class="odt-code-line">                <span style="color:#008000">// fin</span></span>
+<span class="odt-code-line">                <span style="color:#008000">// end</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">return</span>;</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line"> </span>
@@ -3274,7 +3274,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">                            <span style="color:#008000">// request-response loop</span></span>
 <span class="odt-code-line">                            <span style="color:#0000ff">while</span> (<span style="color:#0000ff">true</span>) {</span>
 <span class="odt-code-line">                                demande = <span style="color:#2b91af">Console</span>.ReadLine();</span>
-<span class="odt-code-line">                                <span style="color:#008000">// fini ?</span></span>
+<span class="odt-code-line">                                <span style="color:#008000">// finished?</span></span>
 <span class="odt-code-line">                                <span style="color:#0000ff">if</span> (demande.Trim().ToLower() == <span style="color:#a31515">&quot;bye&quot;</span>)</span>
 <span class="odt-code-line">                                    <span style="color:#0000ff">break</span>;</span>
 <span class="odt-code-line">                                <span style="color:#008000">// send the request to the server</span></span>
@@ -3291,8 +3291,8 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">        <span style="color:#008000">// client read thread &lt;-- server</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Receive(<span style="color:#0000ff">object</span> infos) {</span>
-<span class="odt-code-line">                        <span style="color:#008000">// local data</span></span>
-<span class="odt-code-line">            <span style="color:#0000ff">            str</span>ing réponse<span style="color:#0000ff"> = n</span>u    <span style="color:#008000">ll;    // server response</span></span>
+<span class="odt-code-line">                                    <span style="color:#008000">// local data</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">                        </span>string répo<span style="color:#0000ff">nse </span>=    <span style="color:#008000"> nu   ll; // server response</span></span>
 <span class="odt-code-line">            <span style="color:#008000">// input flow creation</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">try</span> {</span>
 <span class="odt-code-line">                <span style="color:#0000ff">using</span> (<span style="color:#2b91af">TcpClient</span> tcpClient = infos <span style="color:#0000ff">as</span> <span style="color:#2b91af">TcpClient</span>) {</span>
@@ -3300,7 +3300,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">                        <span style="color:#0000ff">using</span> (<span style="color:#2b91af">StreamReader</span> reader = <span style="color:#0000ff">new</span> <span style="color:#2b91af">StreamReader</span>(networkStream)) {</span>
 <span class="odt-code-line">                            <span style="color:#008000">// loop continuous reading of text lines in the input stream</span></span>
 <span class="odt-code-line">                            <span style="color:#0000ff">while</span> ((réponse = reader.ReadLine()) != <span style="color:#0000ff">null</span>) {</span>
-<span class="odt-code-line">                                <span style="color:#008000">// affichage console</span></span>
+<span class="odt-code-line">                                <span style="color:#008000">// console display</span></span>
 <span class="odt-code-line">                                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;&lt;-- {0}&quot;</span>, réponse);</span>
 <span class="odt-code-line">                            }</span>
 <span class="odt-code-line">                        }</span>
@@ -3644,7 +3644,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">ServeurTcpGenerique</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">const</span> <span style="color:#0000ff">string</span> syntaxe = <span style="color:#a31515">&quot;Syntaxe : ServeurGénérique Port&quot;</span>;</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// programme principal</span></span>
+<span class="odt-code-line">        <span style="color:#008000">// main program</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">            <span style="color:#008000">// is there an argument?</span></span>
@@ -3665,10 +3665,10 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">                ecoute = <span style="color:#0000ff">new</span> <span style="color:#2b91af">TcpListener</span>(<span style="color:#2b91af">IPAddress</span>.Any, port);</span>
 <span class="odt-code-line">                <span style="color:#008000">// launch it</span></span>
 <span class="odt-code-line">                ecoute.Start();</span>
-<span class="odt-code-line">                <span style="color:#008000">// suivi</span></span>
+<span class="odt-code-line">                <span style="color:#008000">// follow-up</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Serveur générique lancé sur le port {0}&quot;</span>, ecoute.LocalEndpoint);</span>
 <span class="odt-code-line">                <span style="color:#0000ff">while</span> (<span style="color:#0000ff">true</span>) {</span>
-<span class="odt-code-line">                    <span style="color:#008000">// attente d&#x27;un client</span></span>
+<span class="odt-code-line">                    <span style="color:#008000">// waiting for a customer</span></span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Attente du client suivant...&quot;</span>);</span>
 <span class="odt-code-line">                    <span style="color:#2b91af">TcpClient</span> tcpClient = ecoute.AcceptTcpClient();</span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Client {0}&quot;</span>, tcpClient.Client.RemoteEndPoint);</span>
@@ -3676,7 +3676,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">                    <span style="color:#2b91af">ThreadPool</span>.QueueUserWorkItem(Receive, tcpClient);</span>
 <span class="odt-code-line">                    <span style="color:#008000">// keyboard commands are read in the main thread</span></span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Tapez vos commandes (bye pour arrêter) : &quot;</span>);</span>
-<span class="odt-code-line">                    <span style="color:#0000ff">                    s</span>tring répon<span style="color:#0000ff">se =</span>         <span style="color:#008000">null;        // server response</span></span>
+<span class="odt-code-line">                    <span style="color:#0000ff">                        </span>             string <span style="color:#0000ff">répo</span>n        <span style="color:#008000">se =         null;       // server response</span></span>
 <span class="odt-code-line">                    <span style="color:#008000">// operate the customer connection</span></span>
 <span class="odt-code-line">                    <span style="color:#0000ff">using</span> (tcpClient) {</span>
 <span class="odt-code-line">                        <span style="color:#008000">// create a write flow to the client</span></span>
@@ -3687,7 +3687,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">                                <span style="color:#008000">// keyboard response loop</span></span>
 <span class="odt-code-line">                                <span style="color:#0000ff">while</span> (<span style="color:#0000ff">true</span>) {</span>
 <span class="odt-code-line">                                    réponse = <span style="color:#2b91af">Console</span>.ReadLine();</span>
-<span class="odt-code-line">                                    <span style="color:#008000">// fini ?</span></span>
+<span class="odt-code-line">                                    <span style="color:#008000">// finished?</span></span>
 <span class="odt-code-line">                                    <span style="color:#0000ff">if</span> (réponse.Trim().ToLower() == <span style="color:#a31515">&quot;bye&quot;</span>)</span>
 <span class="odt-code-line">                                        <span style="color:#0000ff">break</span>;</span>
 <span class="odt-code-line">                                    <span style="color:#008000">// we send the request to the customer</span></span>
@@ -3710,9 +3710,9 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Receive(<span style="color:#0000ff">object</span> infos) {</span>
 <span class="odt-code-line">                        <span style="color:#008000">// local data</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">            str</span>ing demande<span style="color:#0000ff"> = n</span>u    <span style="color:#008000">ll;    // customer request</span></span>
-<span class="odt-code-line">            <span style="color:#0000ff">            str</span>ing idClie<span style="color:#0000ff">nt=n</span>u    <span style="color:#008000">ll; // customer identity</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">                        </span>string idC<span style="color:#0000ff">lien</span>t    <span style="color:#008000">=nu    ll; // customer identity</span></span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">// exploitation connexion client</span></span>
+<span class="odt-code-line">            <span style="color:#008000">// operation customer connection</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">try</span> {</span>
 <span class="odt-code-line">                <span style="color:#0000ff">using</span> (<span style="color:#2b91af">TcpClient</span> tcpClient = infos <span style="color:#0000ff">as</span> <span style="color:#2b91af">TcpClient</span>) {</span>
 <span class="odt-code-line">                    <span style="color:#008000">// customer identity</span></span>
@@ -3721,7 +3721,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">                        <span style="color:#0000ff">using</span> (<span style="color:#2b91af">StreamReader</span> reader = <span style="color:#0000ff">new</span> <span style="color:#2b91af">StreamReader</span>(networkStream)) {</span>
 <span class="odt-code-line">                            <span style="color:#008000">// loop continuous reading of text lines in the input stream</span></span>
 <span class="odt-code-line">                            <span style="color:#0000ff">while</span> ((demande = reader.ReadLine()) != <span style="color:#0000ff">null</span>) {</span>
-<span class="odt-code-line">                                <span style="color:#008000">// affichage console</span></span>
+<span class="odt-code-line">                                <span style="color:#008000">// console display</span></span>
 <span class="odt-code-line">                                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;&lt;-- {0}&quot;</span>, demande);</span>
 <span class="odt-code-line">                            }</span>
 <span class="odt-code-line">                        }</span>
@@ -3848,7 +3848,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap9 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">ClientWeb</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// syntaxe</span></span>
+<span class="odt-code-line">            <span style="color:#008000">// syntax</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">const</span> <span style="color:#0000ff">string</span> syntaxe = <span style="color:#a31515">&quot;pg URI GET/HEAD&quot;</span>;</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">            <span style="color:#008000">// number of arguments</span></span>
@@ -4203,7 +4203,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap9 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">ClientWebAvecRedirection</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// syntaxe</span></span>
+<span class="odt-code-line">            <span style="color:#008000">// syntax</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">const</span> <span style="color:#0000ff">string</span> syntaxe = <span style="color:#a31515">&quot;pg URI GET/HEAD&quot;</span>;</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">            <span style="color:#008000">// number of arguments</span></span>
@@ -4236,7 +4236,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">                <span style="color:#0000ff">return</span>;</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#0000ff">            co</span>n<span style="color:#0000ff">st </span>int nbRedirsMax =        <span style="color:#008000"> 1;        // no more than one redirection accepted</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">                    </span> <span style="color:#0000ff">con</span>st int nbRedirsMa        <span style="color:#008000">x =       1;     // no more than one redirection accepted</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">            </span>int nbRedirs =                            <span style="color:#008000"> 0;                            // number of redirects in progress</span></span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">            <span style="color:#008000">// regular expression to find a URL redirect</span></span>
@@ -4244,7 +4244,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">            <span style="color:#0000ff">try</span> {</span>
 <span class="odt-code-line">                <span style="color:#008000">// you may have several URL to request if there are redirections</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">while</span> (nbRedirs &lt;= nbRedirsMax) {</span>
-<span class="odt-code-line">                    <span style="color:#008000">// gestion redirection</span></span>
+<span class="odt-code-line">                    <span style="color:#008000">// redirection management</span></span>
 <span class="odt-code-line">                    <span style="color:#0000ff">bool</span> redir = <span style="color:#0000ff">false</span>;</span>
 <span class="odt-code-line">                    <span style="color:#0000ff">bool</span> locationFound = <span style="color:#0000ff">false</span>;</span>
 <span class="odt-code-line">                    <span style="color:#0000ff">string</span> locationString = <span style="color:#0000ff">null</span>;</span>
@@ -4264,7 +4264,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">                                <span style="color:#008000">// screen echo</span></span>
 <span class="odt-code-line">                                <span style="color:#2b91af">Console</span>.WriteLine(premièreLigne);</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">                                <span style="color:#008000">// redirection ?</span></span>
+<span class="odt-code-line">                                <span style="color:#008000">// redirection?</span></span>
 <span class="odt-code-line">                                <span style="color:#0000ff">if</span> (<span style="color:#2b91af">Regex</span>.IsMatch(premièreLigne.ToLower(), <span style="color:#a31515">@&quot;\s+moved\s*&quot;</span>)) {</span>
 <span class="odt-code-line">                                    <span style="color:#008000">// there is a redirection</span></span>
 <span class="odt-code-line">                                    redir = <span style="color:#0000ff">true</span>;</span>
@@ -4358,7 +4358,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap9 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Program</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// syntaxe : [prog] Uri</span></span>
+<span class="odt-code-line">            <span style="color:#008000">// syntax: [prog] Uri</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">const</span> <span style="color:#0000ff">string</span> syntaxe = <span style="color:#a31515">&quot;pg URI&quot;</span>;</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">            <span style="color:#008000">// number of arguments</span></span>
@@ -4602,7 +4602,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap9 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">WebRequestResponse</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// syntaxe</span></span>
+<span class="odt-code-line">            <span style="color:#008000">// syntax</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">const</span> <span style="color:#0000ff">string</span> syntaxe = <span style="color:#a31515">&quot;pg URI GET/HEAD&quot;</span>;</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">            <span style="color:#008000">// number of arguments</span></span>
@@ -4778,7 +4778,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">interface</span> <span style="color:#2b91af">IServiceTraduction</span> {</span>
 <span class="odt-code-line">        <span style="color:#008000">// languages used</span></span>
 <span class="odt-code-line">        <span style="color:#2b91af">IDictionary</span>&lt;<span style="color:#0000ff">string</span>, <span style="color:#0000ff">string</span>&gt; LanguesTraduites { <span style="color:#0000ff">get</span>; }</span>
-<span class="odt-code-line">        <span style="color:#008000">// traduction</span></span>
+<span class="odt-code-line">        <span style="color:#008000">// translation</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">string</span> Traduire(<span style="color:#0000ff">string</span> texte, <span style="color:#0000ff">string</span> deQuoiVersQuoi);</span>
 <span class="odt-code-line">    }</span>
 <span class="odt-code-line">}</span>
@@ -4807,10 +4807,10 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> entites {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">WebTraductionsException</span> : <span style="color:#2b91af">Exception</span> {</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// code d&#x27;erreur</span></span>
+<span class="odt-code-line">        <span style="color:#008000">// error code</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">int</span> Code { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// constructeurs</span></span>
+<span class="odt-code-line">        <span style="color:#008000">// manufacturers</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> WebTraductionsException() {</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> WebTraductionsException(<span style="color:#0000ff">string</span> message)</span>
@@ -4928,7 +4928,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">string</span> ProxyHttp { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#2b91af">String</span> RegexTraduction { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// traduction</span></span>
+<span class="odt-code-line">        <span style="color:#008000">// translation</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">string</span> Traduire(<span style="color:#0000ff">string</span> texte, <span style="color:#0000ff">string</span> deQuoiVersQuoi) {</span>
 <span class="odt-code-line">            <span style="color:#008000">// is the requested translation possible?</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">if</span> (!LanguesTraduites.ContainsKey(deQuoiVersQuoi)) {</span>
@@ -4942,7 +4942,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">            <span style="color:#2b91af">Regex</span> patternTraduction = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Regex</span>(RegexTraduction);</span>
 <span class="odt-code-line">            <span style="color:#008000">// exception</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">WebTraductionsException</span> exception = <span style="color:#0000ff">null</span>;</span>
-<span class="odt-code-line">            <span style="color:#008000">// traduction</span></span>
+<span class="odt-code-line">            <span style="color:#008000">// translation</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">string</span> traduction = <span style="color:#0000ff">null</span>;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">try</span> {</span>
 <span class="odt-code-line">                <span style="color:#008000">// configure the query</span></span>
@@ -4974,7 +4974,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">            } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">Exception</span> e) {</span>
 <span class="odt-code-line">                exception = <span style="color:#0000ff">new</span> <span style="color:#2b91af">WebTraductionsException</span>(<span style="color:#a31515">&quot;Erreur rencontrée lors de la traduction&quot;</span>, e) { Code = 11 };</span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            <span style="color:#008000">// exception ?</span></span>
+<span class="odt-code-line">            <span style="color:#008000">// exception?</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">if</span> (exception != <span style="color:#0000ff">null</span>) {</span>
 <span class="odt-code-line">                <span style="color:#0000ff">throw</span> exception;</span>
 <span class="odt-code-line">            } <span style="color:#0000ff">else</span> {</span>
@@ -5061,7 +5061,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">                serviceTraduction.LanguesTraduites = languesTraduites;</span>
 <span class="odt-code-line">                <span style="color:#008000">// proxy</span></span>
 <span class="odt-code-line">                <span style="color:#008000">//serviceTraduction.ProxyHttp = &quot;pproxy.istia.uang:3128&quot;;</span></span>
-<span class="odt-code-line">                <span style="color:#008000">// traduction</span></span>
+<span class="odt-code-line">                <span style="color:#008000">// translation</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">string</span> texte = <span style="color:#a31515">&quot;ce chien est perdu&quot;</span>;</span>
 <span class="odt-code-line">                <span style="color:#0000ff">string</span> deQuoiVersQuoi = <span style="color:#a31515">&quot;fe&quot;</span>;</span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Traduction [{0}] de [{1}] : [{2}]&quot;</span>, languesTraduites[deQuoiVersQuoi], texte, serviceTraduction.Traduire(texte, deQuoiVersQuoi));</span>
@@ -5188,7 +5188,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">            <span style="color:#2b91af">Exception</span> ex = <span style="color:#0000ff">null</span>;</span>
 <span class="odt-code-line">            <span style="color:#2b91af">ServiceTraduction</span> serviceTraduction = <span style="color:#0000ff">null</span>;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">try</span> {</span>
-<span class="odt-code-line">                <span style="color:#008000">// contexte Spring</span></span>
+<span class="odt-code-line">                <span style="color:#008000">// spring context</span></span>
 <span class="odt-code-line">                ctx = <span style="color:#2b91af">ContextRegistry</span>.GetContext();</span>
 <span class="odt-code-line">                <span style="color:#008000">// request a reference for the translation service</span></span>
 <span class="odt-code-line">                serviceTraduction = ctx.GetObject(<span style="color:#a31515">&quot;ServiceTraduction&quot;</span>) <span style="color:#0000ff">as</span> <span style="color:#2b91af">ServiceTraduction</span>;</span>
@@ -6478,8 +6478,8 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">        <span style="color:#008000">// customer info</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">internal</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Client</span> {</span>
-<span class="odt-code-line">            <span style="color:#0000ff">public</span> <span style="color:#2b91af">TcpClient</span> CanalTcp { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }        <span style="color:#008000">// customer liaison</span></span>
-<span class="odt-code-line">            <span style="color:#0000ff">public</span> <span style="color:#0000ff">int</span> NumClient { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }            <span style="color:#008000">// customer no</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">            pub</span>l<span style="color:#2b91af">ic TcpCli</span>ent CanalTcp<span style="color:#0000ff"> { </span>ge<span style="color:#0000ff">t; </span>set        <span style="color:#008000">; }     // customer liaison</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">            pub</span>l<span style="color:#0000ff">ic </span>int NumClient<span style="color:#0000ff"> { </span>ge<span style="color:#0000ff">t; </span>set            <span style="color:#008000">; }          // customer no</span></span>
 <span class="odt-code-line">}</span>
 </code></pre></div>
 
@@ -6679,7 +6679,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Metier {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">ImpotMetierTcp</span> : <span style="color:#2b91af">IImpotMetier</span> {</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// informations [serveur]</span></span>
+<span class="odt-code-line">        <span style="color:#008000">// information [server]</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">private</span> <span style="color:#0000ff">string</span> Serveur { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
 <span class="odt-code-line">        <span style="color:#0000ff">private</span> <span style="color:#0000ff">int</span> Port { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
 <span class="odt-code-line"> </span>
@@ -6694,7 +6694,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">                                writer.AutoFlush = <span style="color:#0000ff">true</span>;</span>
 <span class="odt-code-line">                                <span style="color:#008000">// skip the welcome message</span></span>
 <span class="odt-code-line">                                reader.ReadLine();</span>
-<span class="odt-code-line">                                <span style="color:#008000">// demande</span></span>
+<span class="odt-code-line">                                <span style="color:#008000">// request</span></span>
 <span class="odt-code-line">                                writer.WriteLine(<span style="color:#0000ff">string</span>.Format(<span style="color:#a31515">&quot;impot {0} {1} {2}&quot;</span>,marié ? <span style="color:#a31515">&quot;o&quot;</span> : <span style="color:#a31515">&quot;n&quot;</span>,nbEnfants, salaire));</span>
 <span class="odt-code-line">                                <span style="color:#008000">// answer</span></span>
 <span class="odt-code-line">                                <span style="color:#0000ff">return</span> <span style="color:#0000ff">int</span>.Parse(reader.ReadLine());</span>

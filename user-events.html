@@ -900,18 +900,18 @@
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">int</span> Ajouter(<span style="color:#0000ff">int</span> n1, <span style="color:#0000ff">int</span> n2) {</span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Ajouter(&quot;</span> + n1 + <span style="color:#a31515">&quot;,&quot;</span> + n2 + <span style="color:#a31515">&quot;)&quot;</span>);</span>
 <span class="odt-code-line">            <span style="color:#0000ff">return</span> n1 + n2;</span>
-<span class="odt-code-line">        }<span style="color:#008000">//ajouter</span></span>
+<span class="odt-code-line">            <span style="color:#008000">    }//add</span></span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">int</span> Soustraire(<span style="color:#0000ff">int</span> n1, <span style="color:#0000ff">int</span> n2) {</span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Soustraire(&quot;</span> + n1 + <span style="color:#a31515">&quot;,&quot;</span> + n2 + <span style="color:#a31515">&quot;)&quot;</span>);</span>
 <span class="odt-code-line">            <span style="color:#0000ff">return</span> n1 - n2;</span>
-<span class="odt-code-line">        }<span style="color:#008000">//soustraire</span></span>
+<span class="odt-code-line">            <span style="color:#008000">    }//subtract</span></span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">        <span style="color:#008000">// a static method corresponding to the prototype</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">int</span> Augmenter(<span style="color:#0000ff">int</span> n1, <span style="color:#0000ff">int</span> n2) {</span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Augmenter(&quot;</span> + n1 + <span style="color:#a31515">&quot;,&quot;</span> + n2 + <span style="color:#a31515">&quot;)&quot;</span>);</span>
 <span class="odt-code-line">            <span style="color:#0000ff">return</span> n1 + 2 * n2;</span>
-<span class="odt-code-line">        }<span style="color:#008000">//augmenter</span></span>
+<span class="odt-code-line">            <span style="color:#008000">    }//increase</span></span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
 <span class="odt-code-line"> </span>
@@ -1016,12 +1016,12 @@
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">int</span> Ajouter(<span style="color:#0000ff">int</span> n1, <span style="color:#0000ff">int</span> n2) {</span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Ajouter(&quot;</span> + n1 + <span style="color:#a31515">&quot;,&quot;</span> + n2 + <span style="color:#a31515">&quot;)&quot;</span>);</span>
 <span class="odt-code-line">            <span style="color:#0000ff">return</span> n1 + n2;</span>
-<span class="odt-code-line">        }<span style="color:#008000">//ajouter</span></span>
+<span class="odt-code-line">            <span style="color:#008000">    }//add</span></span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">int</span> Soustraire(<span style="color:#0000ff">int</span> n1, <span style="color:#0000ff">int</span> n2) {</span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Soustraire(&quot;</span> + n1 + <span style="color:#a31515">&quot;,&quot;</span> + n2 + <span style="color:#a31515">&quot;)&quot;</span>);</span>
 <span class="odt-code-line">            <span style="color:#0000ff">return</span> n1 - n2;</span>
-<span class="odt-code-line">        }<span style="color:#008000">//soustraire</span></span>
+<span class="odt-code-line">            <span style="color:#008000">    }//subtract</span></span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">        <span style="color:#008000">// Executing a delegate</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">int</span> Execute(<span style="color:#2b91af">Opération</span> op, <span style="color:#0000ff">int</span> n1, <span style="color:#0000ff">int</span> n2){</span>
@@ -1052,12 +1052,12 @@
 <span class="odt-code-line"> </span>
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap6 {</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">    <span style="color:#008000">// interface IOperation</span></span>
+<span class="odt-code-line">        <span style="color:#008000">// interface IOperation</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">interface</span> <span style="color:#2b91af">IOperation</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">int</span> operation(<span style="color:#0000ff">int</span> n1, <span style="color:#0000ff">int</span> n2);</span>
 <span class="odt-code-line">    }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">    <span style="color:#008000">// classe Ajouter</span></span>
+<span class="odt-code-line">        <span style="color:#008000">// class Add</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Ajouter</span> : <span style="color:#2b91af">IOperation</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">int</span> operation(<span style="color:#0000ff">int</span> n1, <span style="color:#0000ff">int</span> n2) {</span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Ajouter(&quot;</span> + n1 + <span style="color:#a31515">&quot;,&quot;</span> + n2 + <span style="color:#a31515">&quot;)&quot;</span>);</span>
@@ -1065,7 +1065,7 @@
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line">    }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">    <span style="color:#008000">// classe Soustraire</span></span>
+<span class="odt-code-line">        <span style="color:#008000">// class Subtract</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Soustraire</span> : <span style="color:#2b91af">IOperation</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">int</span> operation(<span style="color:#0000ff">int</span> n1, <span style="color:#0000ff">int</span> n2) {</span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Soustraire(&quot;</span> + n1 + <span style="color:#a31515">&quot;,&quot;</span> + n2 + <span style="color:#a31515">&quot;)&quot;</span>);</span>
@@ -1073,7 +1073,7 @@
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line">    }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// test class</span></span>
+<span class="odt-code-line">    <span style="color:#008000">// test class</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Program2</span> {</span>
 <span class="odt-code-line">        <span style="color:#008000">// Executing the single method of the IOperation interface</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">int</span> Execute(<span style="color:#2b91af">IOperation</span> op, <span style="color:#0000ff">int</span> n1, <span style="color:#0000ff">int</span> n2) {</span>
@@ -1230,7 +1230,7 @@
 <span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">TemperatureTropHauteEventArgs</span>:<span style="color:#2b91af">EventArgs</span> {</span>
 <span class="odt-code-line">        <span style="color:#008000">// temperature during evt</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">decimal</span> Temperature { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
-<span class="odt-code-line">        <span style="color:#008000">// constructeurs</span></span>
+<span class="odt-code-line">        <span style="color:#008000">// manufacturers</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> TemperatureTropHauteEventArgs() {</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> TemperatureTropHauteEventArgs(<span style="color:#0000ff">decimal</span> temperature) {</span>
@@ -1302,7 +1302,7 @@
 <span class="odt-code-line"> </span>
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap6 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Souscripteur</span> {</span>
-<span class="odt-code-line">        <span style="color:#008000">// nom</span></span>
+<span class="odt-code-line">        <span style="color:#008000">// name</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">string</span> Nom { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">        <span style="color:#008000">// event manager TemperatureTropHaute</span></span>
@@ -1353,10 +1353,10 @@
 <span class="odt-code-line">                    <span style="color:#008000">// on signale l&#x27;erreur</span></span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Température incorrecte&quot;</span>);</span>
 <span class="odt-code-line">                }</span>
-<span class="odt-code-line">                <span style="color:#008000">// nouvelle saisie</span></span>
+<span class="odt-code-line">                <span style="color:#008000">// new entry</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.Write(<span style="color:#a31515">&quot;Température (rien pour arrêter) : &quot;</span>);</span>
 <span class="odt-code-line">                saisie = <span style="color:#2b91af">Console</span>.ReadLine().Trim();</span>
-<span class="odt-code-line">            }<span style="color:#008000">//while</span></span>
+<span class="odt-code-line">                <span style="color:#008000">        }//while</span></span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line">    }</span>
 <span class="odt-code-line">}</span>

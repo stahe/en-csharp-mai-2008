@@ -2599,7 +2599,7 @@
 <span class="odt-code-line">                        fichier.Dispose();</span>
 <span class="odt-code-line">                    }</span>
 <span class="odt-code-line">                }<span style="color:#008000">// close the file</span></span>
-<span class="odt-code-line">            }<span style="color:#008000">//finally</span></span>
+<span class="odt-code-line">                <span style="color:#008000">        }//finally</span></span>
 <span class="odt-code-line">        }</span>
 </code></pre></div>
 
@@ -2637,7 +2637,7 @@
 
 <p>We now have the elements we need to process button clicks <em>Color</em> and <em>Police</em> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line">        <span style="color:#0000ff">private</span> <span style="color:#0000ff">void</span> buttonCouleur_Click(<span style="color:#0000ff">object</span> sender, <span style="color:#2b91af">EventArgs</span> e) {<span style="color:#008000">//if</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">        priva</span>t<span style="color:#0000ff">e vo</span>id buttonCouleur_Clic<span style="color:#0000ff">k(obje</span>ct sender<span style="color:#2b91af">, EventAr</span>gs e)<span style="color:#008000"> {//if</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">if</span> (colorDialog1.ShowDialog() == <span style="color:#2b91af">DialogResult</span>.OK) {</span>
 <span class="odt-code-line">                <span style="color:#008000">// choice of text color</span></span>
 <span class="odt-code-line">                textBoxLignes.ForeColor = colorDialog1.Color;</span>
@@ -2696,7 +2696,7 @@
 <span class="odt-code-line">        <span style="color:#0000ff">private</span> <span style="color:#2b91af">DateTime</span> début = <span style="color:#2b91af">DateTime</span>.Now;</span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">        <span style="color:#0000ff">private</span> <span style="color:#0000ff">void</span> buttonArretMarche_Click(<span style="color:#0000ff">object</span> sender, <span style="color:#2b91af">EventArgs</span> e) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// instance variable</span></span>
+<span class="odt-code-line">            <span style="color:#008000">// variable instance</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">if</span> (buttonArretMarche.Text == <span style="color:#a31515">&quot;Marche&quot;</span>) {</span>
 <span class="odt-code-line">                <span style="color:#008000">// off or on?</span></span>
 <span class="odt-code-line">                début = <span style="color:#2b91af">DateTime</span>.Now;</span>
@@ -2708,7 +2708,7 @@
 <span class="odt-code-line">                buttonArretMarche.Text = <span style="color:#a31515">&quot;Arrêt&quot;</span>;</span>
 <span class="odt-code-line">                <span style="color:#008000">// change the button label</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">return</span>;</span>
-<span class="odt-code-line">            }<span style="color:#008000">// end</span></span>
+<span class="odt-code-line">                <span style="color:#008000">        }// end</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">if</span> (buttonArretMarche.Text == <span style="color:#a31515">&quot;Arrêt&quot;</span>) {</span>
 <span class="odt-code-line">                <span style="color:#008000">// timer off</span></span>
 <span class="odt-code-line">                timer1.Enabled = <span style="color:#0000ff">false</span>;</span>
@@ -2844,7 +2844,7 @@
 <span class="odt-code-line">            <span style="color:#2b91af">Exception</span> ex = <span style="color:#0000ff">null</span>;</span>
 <span class="odt-code-line">            <span style="color:#2b91af">IImpotMetier</span> metier = <span style="color:#0000ff">null</span>;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">try</span> {</span>
-<span class="odt-code-line">                <span style="color:#008000">// contexte Spring</span></span>
+<span class="odt-code-line">                <span style="color:#008000">// spring context</span></span>
 <span class="odt-code-line">                ctx = <span style="color:#2b91af">ContextRegistry</span>.GetContext();</span>
 <span class="odt-code-line">                <span style="color:#008000">// a reference is requested on the [metier] layer</span></span>
 <span class="odt-code-line">                metier = (<span style="color:#2b91af">IImpotMetier</span>)ctx.GetObject(<span style="color:#a31515">&quot;metier&quot;</span>);</span>

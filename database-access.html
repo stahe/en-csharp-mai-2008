@@ -1589,7 +1589,7 @@
 <span class="normal"><a href="#__codelineno-21-13">13</a></span>
 <span class="normal"><a href="#__codelineno-21-14">14</a></span>
 <span class="normal"><a href="#__codelineno-21-15">15</a></span>
-<span class="normal"><a href="#__codelineno-21-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="c1">// ouverture connexion </span>
+<span class="normal"><a href="#__codelineno-21-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="c1">// opening connection </span>
 <a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="n">IDbConnection</span><span class="w"> </span><span class="n">connexion</span><span class="o">=</span><span class="p">...</span>
 <a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="n">connexion</span><span class="p">.</span><span class="n">Open</span><span class="p">();</span>
 <a id="__codelineno-21-4" name="__codelineno-21-4"></a><span class="c1">// order preparation</span>
@@ -1603,7 +1603,7 @@
 <a id="__codelineno-21-12" name="__codelineno-21-12"></a><span class="n">commande</span><span class="p">.</span><span class="n">CommandText</span><span class="o">=</span><span class="s">&quot;insert ...&quot;</span><span class="p">;</span>
 <a id="__codelineno-21-13" name="__codelineno-21-13"></a><span class="kt">int</span><span class="w"> </span><span class="n">nbLignesInsérées</span><span class="o">=</span><span class="n">commande</span><span class="p">.</span><span class="n">ExecuteNonQuery</span><span class="p">();</span>
 <a id="__codelineno-21-14" name="__codelineno-21-14"></a><span class="p">...</span>
-<a id="__codelineno-21-15" name="__codelineno-21-15"></a><span class="c1">// fermeture connexion</span>
+<a id="__codelineno-21-15" name="__codelineno-21-15"></a><span class="c1">// locking connection</span>
 <a id="__codelineno-21-16" name="__codelineno-21-16"></a><span class="n">connexion</span><span class="p">.</span><span class="n">Close</span><span class="p">();</span>
 </code></pre></div></td></tr></table></div>
 <p><u><strong>The interface <a id="idatareader"></a>IDataReader</strong></u></p>
@@ -1709,28 +1709,28 @@
 <a id="__codelineno-31-2" name="__codelineno-31-2"></a><span class="n">IDbConnection</span><span class="w"> </span><span class="n">connexion</span><span class="o">=</span><span class="p">...</span>
 <a id="__codelineno-31-3" name="__codelineno-31-3"></a><span class="c1">// operation connection</span>
 <a id="__codelineno-31-4" name="__codelineno-31-4"></a><span class="k">try</span><span class="p">{</span>
-<a id="__codelineno-31-5" name="__codelineno-31-5"></a><span class="w">    </span><span class="c1">// opening</span>
+<a id="__codelineno-31-5" name="__codelineno-31-5"></a><span class="w">        </span><span class="c1">// opening</span>
 <a id="__codelineno-31-6" name="__codelineno-31-6"></a><span class="w">    </span><span class="n">connexion</span><span class="p">.</span><span class="n">Open</span><span class="p">();</span>
-<a id="__codelineno-31-7" name="__codelineno-31-7"></a><span class="w">    </span><span class="c1">// order picking</span>
+<a id="__codelineno-31-7" name="__codelineno-31-7"></a><span class="w">        </span><span class="c1">// order picking</span>
 <a id="__codelineno-31-8" name="__codelineno-31-8"></a><span class="w">    </span><span class="n">IDbCommand</span><span class="w"> </span><span class="n">commande</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">Command</span><span class="p">();</span>
 <a id="__codelineno-31-9" name="__codelineno-31-9"></a><span class="w">    </span><span class="n">commande</span><span class="p">.</span><span class="n">Connection</span><span class="o">=</span><span class="n">connexion</span><span class="p">;</span>
-<a id="__codelineno-31-10" name="__codelineno-31-10"></a><span class="w">    </span><span class="c1">// order execution select</span>
+<a id="__codelineno-31-10" name="__codelineno-31-10"></a><span class="w">        </span><span class="c1">// order execution select</span>
 <a id="__codelineno-31-11" name="__codelineno-31-11"></a><span class="w">    </span><span class="n">commande</span><span class="p">.</span><span class="n">CommandText</span><span class="o">=</span><span class="s">&quot;select ...&quot;</span><span class="p">;</span>
 <a id="__codelineno-31-12" name="__codelineno-31-12"></a><span class="w">    </span><span class="n">IDbDataReader</span><span class="w"> </span><span class="n">reader</span><span class="o">=</span><span class="n">commande</span><span class="p">.</span><span class="n">ExecuteReader</span><span class="p">();</span>
-<a id="__codelineno-31-13" name="__codelineno-31-13"></a><span class="w">    </span><span class="c1">// operation results</span>
+<a id="__codelineno-31-13" name="__codelineno-31-13"></a><span class="w">        </span><span class="c1">// operation results</span>
 <a id="__codelineno-31-14" name="__codelineno-31-14"></a><span class="w">    </span><span class="k">try</span><span class="p">{</span>
 <a id="__codelineno-31-15" name="__codelineno-31-15"></a><span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">reader</span><span class="p">.</span><span class="n">Read</span><span class="p">()){</span>
 <a id="__codelineno-31-16" name="__codelineno-31-16"></a><span class="w">        </span><span class="c1">// operate current line</span>
 <a id="__codelineno-31-17" name="__codelineno-31-17"></a><span class="w">        </span><span class="p">...</span>
 <a id="__codelineno-31-18" name="__codelineno-31-18"></a><span class="w">    </span><span class="p">}</span><span class="k">finally</span><span class="p">{</span>
-<a id="__codelineno-31-19" name="__codelineno-31-19"></a><span class="w">        </span><span class="c1">// lock reader</span>
+<a id="__codelineno-31-19" name="__codelineno-31-19"></a><span class="w">                </span><span class="c1">// lock reader</span>
 <a id="__codelineno-31-20" name="__codelineno-31-20"></a><span class="w">        </span><span class="n">reader</span><span class="p">.</span><span class="n">Close</span><span class="p">();</span>
 <a id="__codelineno-31-21" name="__codelineno-31-21"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-31-22" name="__codelineno-31-22"></a><span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">ex</span><span class="p">){</span>
-<a id="__codelineno-31-23" name="__codelineno-31-23"></a><span class="w">    </span><span class="c1">// management exception</span>
+<a id="__codelineno-31-23" name="__codelineno-31-23"></a><span class="w">        </span><span class="c1">// management exception</span>
 <a id="__codelineno-31-24" name="__codelineno-31-24"></a><span class="w">    </span><span class="p">...</span>
 <a id="__codelineno-31-25" name="__codelineno-31-25"></a><span class="p">}</span><span class="k">finally</span><span class="p">{</span>
-<a id="__codelineno-31-26" name="__codelineno-31-26"></a><span class="w">    </span><span class="c1">// locking connection</span>
+<a id="__codelineno-31-26" name="__codelineno-31-26"></a><span class="w">        </span><span class="c1">// locking connection</span>
 <a id="__codelineno-31-27" name="__codelineno-31-27"></a><span class="w">    </span><span class="n">connexion</span><span class="p">.</span><span class="n">Close</span><span class="p">();</span>
 <a id="__codelineno-31-28" name="__codelineno-31-28"></a><span class="p">}</span>
 <a id="__codelineno-31-29" name="__codelineno-31-29"></a><span class="p">...</span>
@@ -1761,22 +1761,22 @@
 <span class="normal"><a href="#__codelineno-32-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1"></a><span class="c1">// operation connection</span>
 <a id="__codelineno-32-2" name="__codelineno-32-2"></a><span class="k">try</span><span class="p">{</span>
 <a id="__codelineno-32-3" name="__codelineno-32-3"></a><span class="w">    </span><span class="n">using</span><span class="p">(</span><span class="n">IDbConnection</span><span class="w"> </span><span class="n">connexion</span><span class="o">=</span><span class="p">...){</span>
-<a id="__codelineno-32-4" name="__codelineno-32-4"></a><span class="w">        </span><span class="c1">// opening</span>
+<a id="__codelineno-32-4" name="__codelineno-32-4"></a><span class="w">                </span><span class="c1">// opening</span>
 <a id="__codelineno-32-5" name="__codelineno-32-5"></a><span class="w">        </span><span class="n">connexion</span><span class="p">.</span><span class="n">Open</span><span class="p">();</span>
-<a id="__codelineno-32-6" name="__codelineno-32-6"></a><span class="w">        </span><span class="c1">// order preparation</span>
+<a id="__codelineno-32-6" name="__codelineno-32-6"></a><span class="w">                </span><span class="c1">// order preparation</span>
 <a id="__codelineno-32-7" name="__codelineno-32-7"></a><span class="w">        </span><span class="n">IDbCommand</span><span class="w"> </span><span class="n">commande</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">Command</span><span class="p">();</span>
 <a id="__codelineno-32-8" name="__codelineno-32-8"></a><span class="w">        </span><span class="n">commande</span><span class="p">.</span><span class="n">Connection</span><span class="o">=</span><span class="n">connexion</span><span class="p">;</span>
-<a id="__codelineno-32-9" name="__codelineno-32-9"></a><span class="w">        </span><span class="c1">// order execution select</span>
+<a id="__codelineno-32-9" name="__codelineno-32-9"></a><span class="w">                </span><span class="c1">// order execution select</span>
 <a id="__codelineno-32-10" name="__codelineno-32-10"></a><span class="w">        </span><span class="n">commande</span><span class="p">.</span><span class="n">CommandText</span><span class="o">=</span><span class="s">&quot;select ...&quot;</span><span class="p">;</span>
 <a id="__codelineno-32-11" name="__codelineno-32-11"></a><span class="w">        </span><span class="n">using</span><span class="p">(</span><span class="n">IDbDataReader</span><span class="w"> </span><span class="n">reader</span><span class="o">=</span><span class="n">commande</span><span class="p">.</span><span class="n">ExecuteReader</span><span class="p">()){</span>
-<a id="__codelineno-32-12" name="__codelineno-32-12"></a><span class="w">            </span><span class="c1">// operation results</span>
+<a id="__codelineno-32-12" name="__codelineno-32-12"></a><span class="w">                        </span><span class="c1">// operation results</span>
 <a id="__codelineno-32-13" name="__codelineno-32-13"></a><span class="w">            </span><span class="k">while</span><span class="p">(</span><span class="n">reader</span><span class="p">.</span><span class="n">Read</span><span class="p">()){</span>
 <a id="__codelineno-32-14" name="__codelineno-32-14"></a><span class="w">            </span><span class="c1">// operate current line</span>
 <a id="__codelineno-32-15" name="__codelineno-32-15"></a><span class="w">            </span><span class="p">...</span>
-<a id="__codelineno-32-16" name="__codelineno-32-16"></a><span class="w">        </span><span class="p">}</span><span class="c1">// using IData</span>
-<a id="__codelineno-32-17" name="__codelineno-32-17"></a><span class="w">    </span><span class="p">}</span><span class="c1">//using IDbConnection</span>
+<a id="__codelineno-32-16" name="__codelineno-32-16"></a><span class="w">                </span><span class="p">}</span><span class="c1">// using IData</span>
+<a id="__codelineno-32-17" name="__codelineno-32-17"></a><span class="w">        </span><span class="p">}</span><span class="c1">//using IDbConnection</span>
 <a id="__codelineno-32-18" name="__codelineno-32-18"></a><span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">ex</span><span class="p">){</span>
-<a id="__codelineno-32-19" name="__codelineno-32-19"></a><span class="w">    </span><span class="c1">// management exception</span>
+<a id="__codelineno-32-19" name="__codelineno-32-19"></a><span class="w">        </span><span class="c1">// management exception</span>
 <a id="__codelineno-32-20" name="__codelineno-32-20"></a><span class="w">    </span><span class="p">...</span>
 <a id="__codelineno-32-21" name="__codelineno-32-21"></a><span class="p">}</span>
 <a id="__codelineno-32-22" name="__codelineno-32-22"></a><span class="p">..</span>
@@ -1888,23 +1888,23 @@
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">                        <span style="color:#008000">// read-execute SQL commands typed on the keyboard</span></span>
-<span class="odt-code-line">            <span style="color:#0000ff">            str</span>ing requête<span style="color:#0000ff"> = n</span>u    <span style="color:#008000">ll;    // query text SQL</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">                        </span>string requ<span style="color:#0000ff">ête </span>=    <span style="color:#008000"> nu   ll; // query text SQL</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">            str</span>ing[] cham            <span style="color:#008000">ps;         // query fields     </span></span>
-<span class="odt-code-line">            <span style="color:#2b91af">Regex</span> modèle = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Regex</span>(<span style="color:#a31515">@&quot;\s+&quot;</span>);    <span style="color:#008000">// suite d&#x27;espaces</span></span>
+<span class="odt-code-line">            <span style="color:#2b91af">            Re</span>gex modèle<span style="color:#0000ff"> = </span>n<span style="color:#2b91af">ew Re</span>g<span style="color:#a31515">ex(@&quot;\</span>s+    <span style="color:#008000">&quot;); // sequence of spaces</span></span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">            <span style="color:#008000">// input-execution loop for SQL commands typed on keyboard</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">while</span> (<span style="color:#0000ff">true</span>) {</span>
 <span class="odt-code-line">                <span style="color:#008000">// request for query</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.Write(<span style="color:#a31515">&quot;\nRequête SQL (rien pour arrêter) : &quot;</span>);</span>
 <span class="odt-code-line">                requête = <span style="color:#2b91af">Console</span>.ReadLine().Trim().ToLower();</span>
-<span class="odt-code-line">                <span style="color:#008000">// fini ?</span></span>
+<span class="odt-code-line">                <span style="color:#008000">// finished?</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">if</span> (requête == <span style="color:#a31515">&quot;&quot;</span>)</span>
 <span class="odt-code-line">                    <span style="color:#0000ff">break</span>;</span>
 <span class="odt-code-line">                <span style="color:#008000">// the query is broken down into fields</span></span>
 <span class="odt-code-line">                champs = modèle.Split(requête);</span>
 <span class="odt-code-line">                <span style="color:#008000">// valid request?</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">if</span> (champs.Length == 0 || ! dicoCommandes.ContainsKey(champs[0])) {</span>
-<span class="odt-code-line">                    <span style="color:#008000">// msg d&#x27;erreur</span></span>
+<span class="odt-code-line">                    <span style="color:#008000">// error msg</span></span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Requête invalide. Utilisez select, insert, update, delete ou rien pour arrêter&quot;</span>);</span>
 <span class="odt-code-line">                    <span style="color:#008000">// following request</span></span>
 <span class="odt-code-line">                    <span style="color:#0000ff">continue</span>;</span>
@@ -1975,7 +1975,7 @@
 <span class="odt-code-line">            <span style="color:#008000">// handle any exceptions</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">try</span> {</span>
 <span class="odt-code-line">                <span style="color:#0000ff">using</span> (<span style="color:#2b91af">SqlCeConnection</span> connexion = <span style="color:#0000ff">new</span> <span style="color:#2b91af">SqlCeConnection</span>(connectionString)) {</span>
-<span class="odt-code-line">                    <span style="color:#008000">// ouverture connexion</span></span>
+<span class="odt-code-line">                    <span style="color:#008000">// opening connection</span></span>
 <span class="odt-code-line">                    connexion.Open();</span>
 <span class="odt-code-line">                    <span style="color:#008000">// executes sqlCommand with select query</span></span>
 <span class="odt-code-line">                    <span style="color:#2b91af">SqlCeCommand</span> sqlCommand = <span style="color:#0000ff">new</span> <span style="color:#2b91af">SqlCeCommand</span>(requête, connexion);</span>
@@ -1984,12 +1984,12 @@
 <span class="odt-code-line">                    AfficheReader(reader);</span>
 <span class="odt-code-line">                }</span>
 <span class="odt-code-line">            } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">Exception</span> ex) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// msg d&#x27;erreur</span></span>
+<span class="odt-code-line">                <span style="color:#008000">// error msg</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Erreur d&#x27;accès à la base de données (&quot;</span> + ex.Message + <span style="color:#a31515">&quot;)&quot;</span>);</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// affichage reader</span></span>
+<span class="odt-code-line">        <span style="color:#008000">// reader display</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> AfficheReader(<span style="color:#2b91af">IDataReader</span> reader) {</span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">        }</span>
@@ -2027,11 +2027,11 @@
 </ul>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line">        <span style="color:#008000">// affichage reader</span></span>
+<span class="odt-code-line">        <span style="color:#008000">// reader display</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> AfficheReader(<span style="color:#2b91af">IDataReader</span> reader) {</span>
 <span class="odt-code-line">            <span style="color:#0000ff">using</span> (reader) {</span>
 <span class="odt-code-line">                <span style="color:#008000">// exploitation of results</span></span>
-<span class="odt-code-line">                <span style="color:#008000">// -- colonnes</span></span>
+<span class="odt-code-line">                <span style="color:#008000">// -- columns</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">StringBuilder</span> ligne = <span style="color:#0000ff">new</span> <span style="color:#2b91af">StringBuilder</span>();</span>
 <span class="odt-code-line">                <span style="color:#0000ff">int</span> i;</span>
 <span class="odt-code-line">                <span style="color:#0000ff">for</span> (i = 0; i &lt; reader.FieldCount - 1; i++) {</span>
@@ -2074,7 +2074,7 @@
 <span class="odt-code-line">            <span style="color:#008000">// handle any exceptions</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">try</span> {</span>
 <span class="odt-code-line">                <span style="color:#0000ff">using</span> (<span style="color:#2b91af">SqlCeConnection</span> connexion = <span style="color:#0000ff">new</span> <span style="color:#2b91af">SqlCeConnection</span>(connectionString)) {</span>
-<span class="odt-code-line">                    <span style="color:#008000">// ouverture connexion</span></span>
+<span class="odt-code-line">                    <span style="color:#008000">// opening connection</span></span>
 <span class="odt-code-line">                    connexion.Open();</span>
 <span class="odt-code-line">                    <span style="color:#008000">// executes sqlCommand with update request</span></span>
 <span class="odt-code-line">                    <span style="color:#2b91af">SqlCeCommand</span> sqlCommand = <span style="color:#0000ff">new</span> <span style="color:#2b91af">SqlCeCommand</span>(requête, connexion);</span>
@@ -2083,7 +2083,7 @@
 <span class="odt-code-line">                    <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Il y a eu {0} ligne(s) modifiée(s)&quot;</span>, nbLignes);</span>
 <span class="odt-code-line">                }</span>
 <span class="odt-code-line">            } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">Exception</span> ex) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// msg d&#x27;erreur</span></span>
+<span class="odt-code-line">                <span style="color:#008000">// error msg</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Erreur d&#x27;accès à la base de données (&quot;</span> + ex.Message + <span style="color:#a31515">&quot;)&quot;</span>);</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line">}</span>
@@ -2214,7 +2214,7 @@
 <span class="odt-code-line">            <span style="color:#008000">// handle any exceptions</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">try</span> {</span>
 <span class="odt-code-line">                <span style="color:#0000ff">using</span> (<span style="color:#2b91af">SqlConnection</span> connexion = <span style="color:#0000ff">new</span> <span style="color:#2b91af">SqlConnection</span>(connectionString)) {</span>
-<span class="odt-code-line">                    <span style="color:#008000">// ouverture connexion</span></span>
+<span class="odt-code-line">                    <span style="color:#008000">// opening connection</span></span>
 <span class="odt-code-line">                    connexion.Open();</span>
 <span class="odt-code-line">                    <span style="color:#008000">// executes sqlCommand with update request</span></span>
 <span class="odt-code-line">                    <span style="color:#2b91af">SqlCommand</span> sqlCommand = <span style="color:#0000ff">new</span> <span style="color:#2b91af">SqlCommand</span>(requête, connexion);</span>
@@ -2232,7 +2232,7 @@
 <span class="odt-code-line">            <span style="color:#008000">// handle any exceptions</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">try</span> {</span>
 <span class="odt-code-line">                <span style="color:#0000ff">using</span> (<span style="color:#2b91af">SqlConnection</span> connexion = <span style="color:#0000ff">new</span> <span style="color:#2b91af">SqlConnection</span>(connectionString)) {</span>
-<span class="odt-code-line">                    <span style="color:#008000">// ouverture connexion</span></span>
+<span class="odt-code-line">                    <span style="color:#008000">// opening connection</span></span>
 <span class="odt-code-line">                    connexion.Open();</span>
 <span class="odt-code-line">                    <span style="color:#008000">// executes sqlCommand with select query</span></span>
 <span class="odt-code-line">                    <span style="color:#2b91af">SqlCommand</span> sqlCommand = <span style="color:#0000ff">new</span> <span style="color:#2b91af">SqlCommand</span>(requête, connexion);</span>
@@ -2803,7 +2803,7 @@
 <span class="odt-code-line">                <span style="color:#0000ff">return</span>;</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">// affichages</span></span>
+<span class="odt-code-line">            <span style="color:#008000">// displays</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Provider factory : [{0}]\n&quot;</span>, factory);</span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Chaîne de connexion à la base : [{0}]\n&quot;</span>, connectionString);</span>
 <span class="odt-code-line"> </span>
@@ -2821,9 +2821,9 @@
 <span class="odt-code-line">            <span style="color:#008000">// handle any exceptions</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">try</span> {</span>
 <span class="odt-code-line">                <span style="color:#0000ff">using</span> (<span style="color:#2b91af">DbConnection</span> connexion = connecteur.CreateConnection()) {</span>
-<span class="odt-code-line">                    <span style="color:#008000">// configuration connexion</span></span>
+<span class="odt-code-line">                    <span style="color:#008000">// connection configuration</span></span>
 <span class="odt-code-line">                    connexion.ConnectionString = connectionString;</span>
-<span class="odt-code-line">                    <span style="color:#008000">// ouverture connexion</span></span>
+<span class="odt-code-line">                    <span style="color:#008000">// opening connection</span></span>
 <span class="odt-code-line">                    connexion.Open();</span>
 <span class="odt-code-line">                    <span style="color:#008000">// configuration Command </span></span>
 <span class="odt-code-line">                    <span style="color:#2b91af">DbCommand</span> sqlCommand = connecteur.CreateCommand();</span>
@@ -2835,7 +2835,7 @@
 <span class="odt-code-line">                    <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Il y a eu {0} ligne(s) modifiée(s)&quot;</span>, nbLignes);</span>
 <span class="odt-code-line">                }</span>
 <span class="odt-code-line">            } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">Exception</span> ex) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// msg d&#x27;erreur</span></span>
+<span class="odt-code-line">                <span style="color:#008000">// error msg</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Erreur d&#x27;accès à la base de données (&quot;</span> + ex.Message + <span style="color:#a31515">&quot;)&quot;</span>);</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line">        }</span>
@@ -2845,9 +2845,9 @@
 <span class="odt-code-line">            <span style="color:#008000">// handle any exceptions</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">try</span> {</span>
 <span class="odt-code-line">                <span style="color:#0000ff">using</span> (<span style="color:#2b91af">DbConnection</span> connexion = connecteur.CreateConnection()) {</span>
-<span class="odt-code-line">                    <span style="color:#008000">// configuration connexion</span></span>
+<span class="odt-code-line">                    <span style="color:#008000">// connection configuration</span></span>
 <span class="odt-code-line">                    connexion.ConnectionString = connectionString;</span>
-<span class="odt-code-line">                    <span style="color:#008000">// ouverture connexion</span></span>
+<span class="odt-code-line">                    <span style="color:#008000">// opening connection</span></span>
 <span class="odt-code-line">                    connexion.Open();</span>
 <span class="odt-code-line">                    <span style="color:#008000">// configuration Command </span></span>
 <span class="odt-code-line">                    <span style="color:#2b91af">DbCommand</span> sqlCommand = connecteur.CreateCommand();</span>
@@ -2859,7 +2859,7 @@
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">                }</span>
 <span class="odt-code-line">            } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">Exception</span> ex) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// msg d&#x27;erreur</span></span>
+<span class="odt-code-line">                <span style="color:#008000">// error msg</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Erreur d&#x27;accès à la base de données (&quot;</span> + ex.Message + <span style="color:#a31515">&quot;)&quot;</span>);</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line">        }</span>
@@ -3064,7 +3064,7 @@
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">int</span> StockActuel { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">int</span> StockMinimum { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// constructeurs</span></span>
+<span class="odt-code-line">        <span style="color:#008000">// manufacturers</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> Article() { </span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
@@ -3102,7 +3102,7 @@
 <span class="odt-code-line">                <span style="color:#0000ff">return</span>;</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">// affichages</span></span>
+<span class="odt-code-line">            <span style="color:#008000">// displays</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Chaîne de connexion à la base : [{0}]\n&quot;</span>, connectionString);</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">            <span style="color:#008000">// create a table of items</span></span>
@@ -3126,7 +3126,7 @@
 <span class="odt-code-line">                <span style="color:#008000">// table items are displayed</span></span>
 <span class="odt-code-line">                ExecuteSelect(connectionString, <span style="color:#a31515">&quot;select id,nom,prix,stockactuel,stockminimum from articles&quot;</span>);</span>
 <span class="odt-code-line">            } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">Exception</span> ex) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// msg d&#x27;erreur</span></span>
+<span class="odt-code-line">                <span style="color:#008000">// error msg</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Erreur d&#x27;accès à la base de données (&quot;</span> + ex.Message + <span style="color:#a31515">&quot;)&quot;</span>);</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line">        }</span>
@@ -3134,7 +3134,7 @@
 <span class="odt-code-line">        <span style="color:#008000">// insert table of items</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> InsertArticles(<span style="color:#0000ff">string</span> connectionString, <span style="color:#2b91af">Article</span>[] articles) {</span>
 <span class="odt-code-line">            <span style="color:#0000ff">using</span> (<span style="color:#2b91af">SqlCeConnection</span> connexion = <span style="color:#0000ff">new</span> <span style="color:#2b91af">SqlCeConnection</span>(connectionString)) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// ouverture connexion</span></span>
+<span class="odt-code-line">                <span style="color:#008000">// opening connection</span></span>
 <span class="odt-code-line">                connexion.Open();</span>
 <span class="odt-code-line">                <span style="color:#008000">// control configuration</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">string</span> requête = <span style="color:#a31515">&quot;insert into articles(nom,prix,stockactuel,stockminimum) values(@nom,@prix,@sa,@sm)&quot;</span>;</span>
@@ -3168,7 +3168,7 @@
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// affichage reader</span></span>
+<span class="odt-code-line">        <span style="color:#008000">// reader display</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> AfficheReader(<span style="color:#2b91af">IDataReader</span> reader) {</span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">    }</span>
@@ -3468,7 +3468,7 @@
 <span class="odt-code-line">                <span style="color:#0000ff">return</span>;</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">// affichages</span></span>
+<span class="odt-code-line">            <span style="color:#008000">// displays</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Chaîne de connexion à la base : [{0}]\n&quot;</span>, connectionString);</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">            <span style="color:#008000">// create a table of 2 items with the same name</span></span>
@@ -3484,7 +3484,7 @@
 <span class="odt-code-line">                <span style="color:#0000ff">try</span> {</span>
 <span class="odt-code-line">                    InsertArticlesOutOfTransaction(connectionString, articles);</span>
 <span class="odt-code-line">                } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">Exception</span> ex) {</span>
-<span class="odt-code-line">                    <span style="color:#008000">// msg d&#x27;erreur</span></span>
+<span class="odt-code-line">                    <span style="color:#008000">// error msg</span></span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Erreur d&#x27;accès à la base de données (&quot;</span> + ex.Message + <span style="color:#a31515">&quot;)&quot;</span>);</span>
 <span class="odt-code-line">                }</span>
 <span class="odt-code-line">                ExecuteSelect(connectionString, <span style="color:#a31515">&quot;select id,nom,prix,stockactuel,stockminimum from articles&quot;</span>);</span>
@@ -3495,7 +3495,7 @@
 <span class="odt-code-line">                InsertArticlesInTransaction(connectionString, articles);</span>
 <span class="odt-code-line">                ExecuteSelect(connectionString, <span style="color:#a31515">&quot;select id,nom,prix,stockactuel,stockminimum from articles&quot;</span>);</span>
 <span class="odt-code-line">            } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">Exception</span> ex) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// msg d&#x27;erreur</span></span>
+<span class="odt-code-line">                <span style="color:#008000">// error msg</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Erreur d&#x27;accès à la base de données (&quot;</span> + ex.Message + <span style="color:#a31515">&quot;)&quot;</span>);</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line">        }</span>
@@ -3520,7 +3520,7 @@
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// affichage reader</span></span>
+<span class="odt-code-line">        <span style="color:#008000">// reader display</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> AfficheReader(<span style="color:#2b91af">IDataReader</span> reader) {</span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">            }</span>
@@ -3561,7 +3561,7 @@
 <span class="odt-code-line">// insert an array of items into a transaction</span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> InsertArticlesInTransaction(<span style="color:#0000ff">string</span> connectionString, <span style="color:#2b91af">Article</span>[] articles) {</span>
 <span class="odt-code-line">            <span style="color:#0000ff">using</span> (<span style="color:#2b91af">SqlCeConnection</span> connexion = <span style="color:#0000ff">new</span> <span style="color:#2b91af">SqlCeConnection</span>(connectionString)) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// ouverture connexion</span></span>
+<span class="odt-code-line">                <span style="color:#008000">// opening connection</span></span>
 <span class="odt-code-line">                connexion.Open();</span>
 <span class="odt-code-line">                <span style="color:#008000">// control configuration</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">string</span> requête = <span style="color:#a31515">&quot;insert into articles(nom,prix,stockactuel,stockminimum) values(@nom,@prix,@sa,@sm)&quot;</span>;</span>
@@ -3717,7 +3717,7 @@
 <span class="odt-code-line">            <span style="color:#0000ff">string</span> connectionString = <span style="color:#0000ff">null</span>;</span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">// affichages</span></span>
+<span class="odt-code-line">            <span style="color:#008000">// displays</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Chaîne de connexion à la base : [{0}]\n&quot;</span>, connectionString);</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">            <span style="color:#008000">// creation of a 5-item table</span></span>
@@ -3739,7 +3739,7 @@
 <span class="odt-code-line">                <span style="color:#0000ff">int</span> nbArticles = (<span style="color:#0000ff">int</span>)ExecuteScalar(connectionString, <span style="color:#a31515">&quot;select count(id) from articles&quot;</span>);</span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Nombre d&#x27;articles={0}&quot;</span>, nbArticles);</span>
 <span class="odt-code-line">            } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">Exception</span> ex) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// msg d&#x27;erreur</span></span>
+<span class="odt-code-line">                <span style="color:#008000">// error msg</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Erreur d&#x27;accès à la base de données (&quot;</span> + ex.Message + <span style="color:#a31515">&quot;)&quot;</span>);</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line">        }</span>
@@ -3753,7 +3753,7 @@
 <span class="odt-code-line">        <span style="color:#008000">// execute an update request</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">object</span> ExecuteScalar(<span style="color:#0000ff">string</span> connectionString, <span style="color:#0000ff">string</span> requête) {</span>
 <span class="odt-code-line">            <span style="color:#0000ff">using</span> (<span style="color:#2b91af">SqlCeConnection</span> connexion = <span style="color:#0000ff">new</span> <span style="color:#2b91af">SqlCeConnection</span>(connectionString)) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// ouverture connexion</span></span>
+<span class="odt-code-line">                <span style="color:#008000">// opening connection</span></span>
 <span class="odt-code-line">                connexion.Open();</span>
 <span class="odt-code-line">                <span style="color:#008000">// request execution</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">return</span> <span style="color:#0000ff">new</span> <span style="color:#2b91af">SqlCeCommand</span>(requête, connexion).ExecuteScalar();</span>
@@ -3770,7 +3770,7 @@
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// affichage reader</span></span>
+<span class="odt-code-line">        <span style="color:#008000">// reader display</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> AfficheReader(<span style="color:#2b91af">IDataReader</span> reader) {</span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">        }</span>
@@ -3958,7 +3958,7 @@
 <span class="odt-code-line">        <span style="color:#0000ff">private</span> <span style="color:#2b91af">TrancheImpot</span>[] tranchesImpot;</span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#2b91af">TrancheImpot</span>[] TranchesImpot { <span style="color:#0000ff">get</span> { <span style="color:#0000ff">return</span> tranchesImpot; } }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// constructeur</span></span>
+<span class="odt-code-line">        <span style="color:#008000">// manufacturer</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> DataBaseImpot(<span style="color:#0000ff">string</span> factory, <span style="color:#0000ff">string</span> connectionString, <span style="color:#0000ff">string</span> requête) {</span>
 <span class="odt-code-line">            <span style="color:#008000">// factory: the factory of the target SGBD</span></span>
 <span class="odt-code-line">            <span style="color:#008000">// connectionString: connection string to tax bracket base</span></span>
@@ -3967,9 +3967,9 @@
 <span class="odt-code-line">                <span style="color:#008000">// we retrieve a generic connector for the SGBD</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">DbProviderFactory</span> connecteur = <span style="color:#2b91af">DbProviderFactories</span>.GetFactory(factory);</span>
 <span class="odt-code-line">                <span style="color:#0000ff">using</span> (<span style="color:#2b91af">DbConnection</span> connexion = connecteur.CreateConnection()) {</span>
-<span class="odt-code-line">                    <span style="color:#008000">// configuration connexion</span></span>
+<span class="odt-code-line">                    <span style="color:#008000">// connection configuration</span></span>
 <span class="odt-code-line">                    connexion.ConnectionString = connectionString;</span>
-<span class="odt-code-line">                    <span style="color:#008000">// ouverture connexion</span></span>
+<span class="odt-code-line">                    <span style="color:#008000">// opening connection</span></span>
 <span class="odt-code-line">                    connexion.Open();</span>
 <span class="odt-code-line">                    <span style="color:#008000">// configuration Command </span></span>
 <span class="odt-code-line">                    <span style="color:#2b91af">DbCommand</span> sqlCommand = connecteur.CreateCommand();</span>
@@ -4126,9 +4126,9 @@
 <span class="odt-code-line">        <span style="color:#008000">// layer [dao] to be tested</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">private</span> <span style="color:#2b91af">IImpotDao</span> dao;</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// constructeur</span></span>
+<span class="odt-code-line">        <span style="color:#008000">// manufacturer</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> NUnit1() {</span>
-<span class="odt-code-line">            <span style="color:#008000">// initialisation couche [dao]</span></span>
+<span class="odt-code-line">            <span style="color:#008000">// dao] layer initialization</span></span>
 <span class="odt-code-line">            dao = <span style="color:#0000ff">new</span> <span style="color:#2b91af">DataBaseImpot</span>(<span style="color:#2b91af">ConfigurationManager</span>.AppSettings[<span style="color:#a31515">&quot;factoryMySql5&quot;</span>], <span style="color:#2b91af">ConfigurationManager</span>.ConnectionStrings[<span style="color:#a31515">&quot;dbImpotsMySql5&quot;</span>].ConnectionString, <span style="color:#2b91af">ConfigurationManager</span>.AppSettings[<span style="color:#a31515">&quot;requete&quot;</span>]);</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
@@ -4140,7 +4140,7 @@
 <span class="odt-code-line">            <span style="color:#0000ff">foreach</span> (<span style="color:#2b91af">TrancheImpot</span> t <span style="color:#0000ff">in</span> tranchesImpot) {</span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;{0}:{1}:{2}&quot;</span>, t.Limite, t.CoeffR, t.CoeffN);</span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            <span style="color:#008000">// qqs tests</span></span>
+<span class="odt-code-line">            <span style="color:#008000">// some tests</span></span>
 <span class="odt-code-line">            Expect(tranchesImpot.Length,EqualTo(7));</span>
 <span class="odt-code-line">            Expect(tranchesImpot[2].Limite,EqualTo(14753).Within(1e-6));</span>
 <span class="odt-code-line">            Expect(tranchesImpot[2].CoeffR, EqualTo(0.191).Within(1e-6));</span>

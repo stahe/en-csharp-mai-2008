@@ -1355,7 +1355,7 @@
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap1 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">P00</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// exemple 1</span></span>
+<span class="odt-code-line">            <span style="color:#008000">// example 1</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">int</span> ent = 2;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">float</span> fl = 10.5F;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">double</span> d = -4.6;</span>
@@ -1632,12 +1632,12 @@
 <span class="odt-code-line">                affiche(<span style="color:#a31515">&quot;Erreur : &quot;</span> + e.Message);</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        }<span style="color:#008000">// fin main</span></span>
+<span class="odt-code-line">            <span style="color:#008000">    }// fine hand</span></span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> affiche(s<span style="color:#2b91af">tring</span> S) {</span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.Out.WriteLine(<span style="color:#a31515">&quot;S={0}&quot;</span>,S);</span>
 <span class="odt-code-line">        }</span>
-<span class="odt-code-line">    }<span style="color:#008000">// fin classe</span></span>
+<span class="odt-code-line">        <span style="color:#008000">}// end of class</span></span>
 <span class="odt-code-line">}</span>
 </code></pre></div>
 
@@ -1729,11 +1729,11 @@
 <span class="odt-code-line"><span style="color:#0000ff">using</span> System;</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap1 {</span>
-<span class="odt-code-line">    <span style="color:#008000">// tableaux</span></span>
+<span class="odt-code-line">        <span style="color:#008000">// tables</span></span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">    <span style="color:#0000ff">using</span> System;</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// test class</span></span>
+<span class="odt-code-line">    <span style="color:#008000">// test class</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">P02</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main() {</span>
 <span class="odt-code-line">            <span style="color:#008000">// an initialized 1-dimensional array</span></span>
@@ -1755,20 +1755,20 @@
 <span class="odt-code-line">            <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 0; i &lt; noms.Length; i++) {</span>
 <span class="odt-code-line">                noms[i] = <span style="color:#0000ff">new</span> <span style="color:#0000ff">string</span>[i + 1];</span>
 <span class="odt-code-line">            }<span style="color:#008000">//for</span></span>
-<span class="odt-code-line">            <span style="color:#008000">// initialisation</span></span>
+<span class="odt-code-line">            <span style="color:#008000">// initialization</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 0; i &lt; noms.Length; i++) {</span>
 <span class="odt-code-line">                <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> j = 0; j &lt; noms[i].Length; j++) {</span>
 <span class="odt-code-line">                    noms[i][j] = <span style="color:#a31515">&quot;nom&quot;</span> + i + j;</span>
 <span class="odt-code-line">                }<span style="color:#008000">//for j</span></span>
 <span class="odt-code-line">            }<span style="color:#008000">//for i</span></span>
-<span class="odt-code-line">            <span style="color:#008000">// affichage</span></span>
+<span class="odt-code-line">            <span style="color:#008000">// display</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 0; i &lt; noms.Length; i++) {</span>
 <span class="odt-code-line">                <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> j = 0; j &lt; noms[i].Length; j++) {</span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Console</span>.Out.WriteLine(<span style="color:#a31515">&quot;noms[{0}][{1}]={2}&quot;</span>, i, j, noms[i][j]);</span>
 <span class="odt-code-line">                }<span style="color:#008000">//for j</span></span>
 <span class="odt-code-line">            }<span style="color:#008000">//for i</span></span>
-<span class="odt-code-line">        }<span style="color:#008000">//Main</span></span>
-<span class="odt-code-line">    }<span style="color:#008000">//class</span></span>
+<span class="odt-code-line">            <span style="color:#008000">    }//Main</span></span>
+<span class="odt-code-line">        <span style="color:#008000">}//class</span></span>
 <span class="odt-code-line">}<span style="color:#008000">//namespace</span></span>
 </code></pre></div>
 
@@ -1853,7 +1853,7 @@
 <span class="odt-code-line"><span style="color:#0000ff">using</span> System;</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap1 {</span>
-<span class="odt-code-line">        <span style="color:#008000">// test class</span></span>
+<span class="odt-code-line">    <span style="color:#008000">// test class</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">P03</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main() {</span>
 <span class="odt-code-line"> </span>
@@ -1869,8 +1869,8 @@
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.Write(<span style="color:#a31515">&quot;Tapez une ligne : &quot;</span>);</span>
 <span class="odt-code-line">            <span style="color:#0000ff">string</span> ligne = <span style="color:#2b91af">Console</span>.ReadLine();</span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;ligne={0}&quot;</span>, ligne);</span>
-<span class="odt-code-line">        }<span style="color:#008000">//fin main</span></span>
-<span class="odt-code-line">    }<span style="color:#008000">//fin classe</span></span>
+<span class="odt-code-line">            <span style="color:#008000">    }//fine hand</span></span>
+<span class="odt-code-line">        <span style="color:#008000">}//end of class</span></span>
 <span class="odt-code-line">}</span>
 </code></pre></div>
 
@@ -1944,7 +1944,7 @@
 <span class="odt-code-line"> </span>
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap1 {</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">    <span style="color:#008000">// redirections</span></span>
+<span class="odt-code-line">        <span style="color:#008000">// redirections</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">P04</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
 <span class="odt-code-line">            <span style="color:#008000">// lecture flux In</span></span>
@@ -1953,8 +1953,8 @@
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.Out.WriteLine(<span style="color:#a31515">&quot;écriture dans flux Out : &quot;</span> + data);</span>
 <span class="odt-code-line">            <span style="color:#008000">// écriture flux Error</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.Error.WriteLine(<span style="color:#a31515">&quot;écriture dans flux Error : &quot;</span> + data);</span>
-<span class="odt-code-line">        }<span style="color:#008000">//Main</span></span>
-<span class="odt-code-line">    }<span style="color:#008000">//classe</span></span>
+<span class="odt-code-line">            <span style="color:#008000">    }//Main</span></span>
+<span class="odt-code-line">        <span style="color:#008000">}//class</span></span>
 <span class="odt-code-line">}</span>
 </code></pre></div>
 
@@ -2469,7 +2469,7 @@
 <a id="__codelineno-111-6" name="__codelineno-111-6"></a><span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span><span class="w"> </span><span class="n">M2</span><span class="p">();</span><span class="w"> </span><span class="k">break</span><span class="p">;</span>
 <a id="__codelineno-111-7" name="__codelineno-111-7"></a><span class="w">   </span><span class="k">default</span><span class="p">:</span><span class="w"> </span><span class="n">erreur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span><span class="w"> </span><span class="k">break</span><span class="p">;</span>
 <a id="__codelineno-111-8" name="__codelineno-111-8"></a><span class="p">}</span>
-<a id="__codelineno-111-9" name="__codelineno-111-9"></a><span class="p">}</span><span class="c1">// fin Main</span>
+<a id="__codelineno-111-9" name="__codelineno-111-9"></a><span class="p">}</span><span class="c1">// end Main</span>
 <a id="__codelineno-111-10" name="__codelineno-111-10"></a>
 <a id="__codelineno-111-11" name="__codelineno-111-11"></a><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">M1</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-111-12" name="__codelineno-111-12"></a><span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;M1&quot;</span><span class="p">);</span>
@@ -2742,7 +2742,7 @@
 <span class="odt-code-line">            } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">Exception</span> e) {</span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.Error.WriteLine(<span style="color:#a31515">&quot;L&#x27;erreur suivante s&#x27;est produite : &quot;</span> + e);</span>
 <span class="odt-code-line">                <span style="color:#0000ff">return</span>;</span>
-<span class="odt-code-line">            }<span style="color:#008000">//try-catch</span></span>
+<span class="odt-code-line">                <span style="color:#008000">        }//try-catch</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">finally</span> {</span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;finally ...&quot;</span>);</span>
 <span class="odt-code-line">            }</span>
@@ -2790,7 +2790,7 @@
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">P08</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">// exemple 2</span></span>
+<span class="odt-code-line">            <span style="color:#008000">// example 2</span></span>
 <span class="odt-code-line">            <span style="color:#008000">// We ask for the name</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.Write(<span style="color:#a31515">&quot;Nom : &quot;</span>);</span>
 <span class="odt-code-line">            <span style="color:#008000">// reading response</span></span>
@@ -2806,12 +2806,12 @@
 <span class="odt-code-line">                    age = <span style="color:#0000ff">int</span>.Parse(<span style="color:#2b91af">Console</span>.ReadLine());</span>
 <span class="odt-code-line">                    ageOK = age&gt;=1;</span>
 <span class="odt-code-line">                } <span style="color:#0000ff">catch</span> {</span>
-<span class="odt-code-line">                }<span style="color:#008000">//try-catch</span></span>
+<span class="odt-code-line">                    <span style="color:#008000">            }//try-catch</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">if</span> (!ageOK) {</span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Age incorrect, recommencez...&quot;</span>);</span>
 <span class="odt-code-line">                }</span>
-<span class="odt-code-line">            }<span style="color:#008000">//while</span></span>
-<span class="odt-code-line">            <span style="color:#008000">// affichage final</span></span>
+<span class="odt-code-line">                <span style="color:#008000">        }//while</span></span>
+<span class="odt-code-line">            <span style="color:#008000">// final display</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Vous vous appelez {0} et vous avez {1} an(s)&quot;</span>,nom,age);</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line">    }</span>
@@ -2899,7 +2899,7 @@
 <span class="odt-code-line">                <span style="color:#0000ff">if</span> (reponse != <span style="color:#a31515">&quot;o&quot;</span> &amp;&amp; reponse != <span style="color:#a31515">&quot;n&quot;</span>)</span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Console</span>.Error.WriteLine(<span style="color:#a31515">&quot;Réponse incorrecte. Recommencez&quot;</span>);</span>
 <span class="odt-code-line">                <span style="color:#0000ff">else</span> OK = <span style="color:#0000ff">true</span>;</span>
-<span class="odt-code-line">            }<span style="color:#008000">//while</span></span>
+<span class="odt-code-line">                <span style="color:#008000">        }//while</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">bool</span> marie = reponse == <span style="color:#a31515">&quot;o&quot;</span>;</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">            <span style="color:#008000">// number of children</span></span>
@@ -2911,11 +2911,11 @@
 <span class="odt-code-line">                    nbEnfants = <span style="color:#0000ff">int</span>.Parse(<span style="color:#2b91af">Console</span>.ReadLine());</span>
 <span class="odt-code-line">                    OK = nbEnfants &gt;= 0;</span>
 <span class="odt-code-line">                } <span style="color:#0000ff">catch</span> {</span>
-<span class="odt-code-line">                }<span style="color:#008000">// try</span></span>
+<span class="odt-code-line">                    <span style="color:#008000">            }// try</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">if</span> (!OK) {</span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Réponse incorrecte. Recommencez&quot;</span>);</span>
 <span class="odt-code-line">                }</span>
-<span class="odt-code-line">            }<span style="color:#008000">// while</span></span>
+<span class="odt-code-line">                <span style="color:#008000">        }// while</span></span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">            <span style="color:#008000">// salary</span></span>
 <span class="odt-code-line">            OK = <span style="color:#0000ff">false</span>;</span>
@@ -2926,11 +2926,11 @@
 <span class="odt-code-line">                    salaire = <span style="color:#0000ff">int</span>.Parse(<span style="color:#2b91af">Console</span>.ReadLine());</span>
 <span class="odt-code-line">                    OK = salaire &gt;= 0;</span>
 <span class="odt-code-line">                } <span style="color:#0000ff">catch</span> {</span>
-<span class="odt-code-line">                }<span style="color:#008000">// try</span></span>
+<span class="odt-code-line">                    <span style="color:#008000">            }// try</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">if</span> (!OK) {</span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Réponse incorrecte. Recommencez&quot;</span>);</span>
 <span class="odt-code-line">                }</span>
-<span class="odt-code-line">            }<span style="color:#008000">// while</span></span>
+<span class="odt-code-line">                <span style="color:#008000">        }// while</span></span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">            <span style="color:#008000">// calculating the number of shares</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">decimal</span> nbParts;</span>
@@ -2938,10 +2938,10 @@
 <span class="odt-code-line">            <span style="color:#0000ff">else</span> nbParts = (<span style="color:#0000ff">decimal</span>)nbEnfants / 2 + 1;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">if</span> (nbEnfants &gt;= 3) nbParts += 0.5M;</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">// revenu imposable</span></span>
+<span class="odt-code-line">            <span style="color:#008000">// taxable income</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">decimal</span> revenu = 0.72M * salaire;</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">// quotient familial</span></span>
+<span class="odt-code-line">            <span style="color:#008000">// family quotient</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">decimal</span> QF = revenu / nbParts;</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">            <span style="color:#008000">// search for tax bracket corresponding to QF</span></span>
