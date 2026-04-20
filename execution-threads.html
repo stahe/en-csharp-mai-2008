@@ -1048,22 +1048,22 @@
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap8 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">Program</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// init current thread</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// init current thread</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Thread</span> main = <span style="color:#2b91af">Thread</span>.CurrentThread;</span>
-<span class="odt-code-line">            <span style="color:#008000">// display</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// display</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Thread courant : {0}&quot;</span>, main.Name);</span>
-<span class="odt-code-line">            <span style="color:#008000">// we change the name</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// we change the name</span></span>
 <span class="odt-code-line">            main.Name = <span style="color:#a31515">&quot;main&quot;</span>;</span>
-<span class="odt-code-line">            <span style="color:#008000">// check</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// check</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Thread courant : {0}&quot;</span>, main.Name);</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">// infinite loop</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// infinite loop</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">while</span> (<span style="color:#0000ff">true</span>) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// display</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// display</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;{0} : {1:hh:mm:ss}&quot;</span>, main.Name, <span style="color:#2b91af">DateTime</span>.Now);</span>
-<span class="odt-code-line">                <span style="color:#008000">// temporary shutdown</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// temporary shutdown</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Thread</span>.Sleep(1000);</span>
-<span class="odt-code-line">                <span style="color:#008000">        }//while                </span></span>
+<span class="odt-code-line">             <span style="color:#008000">}//while         </span></span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line">    }</span>
 <span class="odt-code-line">}</span>
@@ -1153,32 +1153,32 @@
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap8 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">Program</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main() {</span>
-<span class="odt-code-line">            <span style="color:#008000">// init Current thread</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// init Current thread</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Thread</span> main = <span style="color:#2b91af">Thread</span>.CurrentThread;</span>
-<span class="odt-code-line">            <span style="color:#008000">// name the Thread</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// name the Thread</span></span>
 <span class="odt-code-line">            main.Name = <span style="color:#a31515">&quot;Main&quot;</span>;</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">// creation of execution threads</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// creation of execution threads</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Thread</span>[] tâches = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Thread</span>[5];</span>
 <span class="odt-code-line">            <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 0; i &lt; tâches.Length; i++) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// create thread i</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// create thread i</span></span>
 <span class="odt-code-line">                tâches[i] = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Thread</span>(Affiche);</span>
-<span class="odt-code-line">                <span style="color:#008000">// set the thread name</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// set the thread name</span></span>
 <span class="odt-code-line">                tâches[i].Name =  i.ToString();</span>
-<span class="odt-code-line">                <span style="color:#008000">// start execution of thread i</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// start execution of thread i</span></span>
 <span class="odt-code-line">                tâches[i].Start();</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">// end of hand</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// end of hand</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Fin du thread {0} à {1:hh:mm:ss}&quot;</span>,main.Name,<span style="color:#2b91af">DateTime</span>.Now);</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Affiche() {</span>
-<span class="odt-code-line">            <span style="color:#008000">// display start of execution</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// display start of execution</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Début d&#x27;exécution de la méthode Affiche dans le Thread {0} : {1:hh:mm:ss}&quot;</span>,<span style="color:#2b91af">Thread</span>.CurrentThread.Name,<span style="color:#2b91af">DateTime</span>.Now);</span>
-<span class="odt-code-line">            <span style="color:#008000">// sleep for 1 s</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// sleep for 1 s</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Thread</span>.Sleep(1000);</span>
-<span class="odt-code-line">            <span style="color:#008000">// display end of run</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// display end of run</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Fin d&#x27;exécution de la méthode Affiche dans le Thread {0} : {1:hh:mm:ss}&quot;</span>, <span style="color:#2b91af">Thread</span>.CurrentThread.Name, <span style="color:#2b91af">DateTime</span>.Now);</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line">    }</span>
@@ -1244,7 +1244,7 @@
 
 <p>Let&#x27;s modify our program to terminate the <em>Main</em> with the instructions :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line">            <span style="color:#008000">// end of hand</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// end of hand</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Fin du thread &quot;</span> + main.Name);</span>
 <span class="odt-code-line"><span style="color:#008000">// stop all threads</span></span>
 <span class="odt-code-line"><span style="color:#2b91af">Environment</span>.Exit(0);</span>
@@ -1277,12 +1277,12 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main() {</span>
 <span class="odt-code-line">...</span>
-<span class="odt-code-line">            <span style="color:#008000">// we wait for all threads</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// we wait for all threads</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 0; i &lt; tâches.Length; i++) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// wait for thread i to finish execution</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// wait for thread i to finish execution</span></span>
 <span class="odt-code-line">                tâches[i].Join();</span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            <span style="color:#008000">// end of hand</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// end of hand</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Fin du thread {0} à {1:hh:mm:ss}&quot;</span>, main.Name, <span style="color:#2b91af">DateTime</span>.Now);</span>
 <span class="odt-code-line">}</span>
 </code></pre></div>
@@ -1351,46 +1351,46 @@
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap8 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">Program4</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main() {</span>
-<span class="odt-code-line">            <span style="color:#008000">// init Current thread</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// init Current thread</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Thread</span> main = <span style="color:#2b91af">Thread</span>.CurrentThread;</span>
-<span class="odt-code-line">            <span style="color:#008000">// name the Thread</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// name the Thread</span></span>
 <span class="odt-code-line">            main.Name = <span style="color:#a31515">&quot;Main&quot;</span>;</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">// creation of execution threads</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// creation of execution threads</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Thread</span>[] tâches = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Thread</span>[5];</span>
 <span class="odt-code-line">            <span style="color:#2b91af">Data</span>[] data = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Data</span>[5];</span>
 <span class="odt-code-line">            <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 0; i &lt; tâches.Length; i++) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// create thread i</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// create thread i</span></span>
 <span class="odt-code-line">                tâches[i] = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Thread</span>(Sleep);</span>
-<span class="odt-code-line">                <span style="color:#008000">// set the thread name</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// set the thread name</span></span>
 <span class="odt-code-line">                tâches[i].Name = i.ToString();</span>
-<span class="odt-code-line">                <span style="color:#008000">// start execution of thread i</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// start execution of thread i</span></span>
 <span class="odt-code-line">                tâches[i].Start(data[i] = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Data</span> { Début = <span style="color:#2b91af">DateTime</span>.Now, Durée = i+1 });</span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            <span style="color:#008000">// we wait for all threads</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// we wait for all threads</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 0; i &lt; tâches.Length; i++) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// wait for thread i to finish execution</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// wait for thread i to finish execution</span></span>
 <span class="odt-code-line">                tâches[i].Join();</span>
-<span class="odt-code-line">                <span style="color:#008000">// result display</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// result display</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Thread {0} terminé : début {1:hh:mm:ss}, durée programmée {2} s, fin {3:hh:mm:ss}, durée effective {4}&quot;</span>,</span>
 <span class="odt-code-line">                    tâches[i].Name,data[i].Début,data[i].Durée,data[i].Fin,(data[i].Fin-data[i].Début));</span>
 <span class="odt-code-line">            }        </span>
-<span class="odt-code-line">            <span style="color:#008000">// end of hand</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// end of hand</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Fin du thread {0} à {1:hh:mm:ss}&quot;</span>, main.Name, <span style="color:#2b91af">DateTime</span>.Now);</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Sleep(<span style="color:#0000ff">object</span> infos) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// parameter is retrieved</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// parameter is retrieved</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Data</span> data = (<span style="color:#2b91af">Data</span>)infos;</span>
-<span class="odt-code-line">            <span style="color:#008000">// sleep mode for Duration</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// sleep mode for Duration</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Thread</span>.Sleep(data.Durée*1000);</span>
-<span class="odt-code-line">            <span style="color:#008000">// end of execution</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// end of execution</span></span>
 <span class="odt-code-line">            data.Fin = <span style="color:#2b91af">DateTime</span>.Now;</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line">    }</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">    <span style="color:#0000ff">internal</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Data</span> {</span>
-<span class="odt-code-line">        <span style="color:#008000">// miscellaneous information</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// miscellaneous information</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#2b91af">DateTime</span> Début { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">int</span> Durée { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#2b91af">DateTime</span> Fin { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
@@ -1483,23 +1483,23 @@
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap8 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">Program</span> {</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">                        <span style="color:#008000">// class variables</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">                st</span>a<span style="color:#0000ff">tic</span> int cptrThreads     <span style="color:#008000">=  0;  // thread counter</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// class variables</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff"> st</span>a<span style="color:#0000ff">tic</span> int cptrThreads     <span style="color:#008000">= 0; // thread counter</span></span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">//hand</span></span>
+<span class="odt-code-line">         <span style="color:#008000">//hand</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// instructions for use</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// instructions for use</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">const</span> <span style="color:#0000ff">string</span> syntaxe = <span style="color:#a31515">&quot;pg nbThreads&quot;</span>;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">const</span> <span style="color:#0000ff">int</span> nbMaxThreads = 100;</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">// verification no. of arguments</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// verification no. of arguments</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">if</span> (args.Length != 1) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// error</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// error</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(syntaxe);</span>
-<span class="odt-code-line">                <span style="color:#008000">// stop</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// stop</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Environment</span>.Exit(1);</span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            <span style="color:#008000">// argument quality check</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// argument quality check</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">int</span> nbThreads = 0;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">bool</span> erreur = <span style="color:#0000ff">false</span>;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">try</span> {</span>
@@ -1507,45 +1507,45 @@
 <span class="odt-code-line">                <span style="color:#0000ff">if</span> (nbThreads &lt; 1 || nbThreads &gt; nbMaxThreads)</span>
 <span class="odt-code-line">                    erreur = <span style="color:#0000ff">true</span>;</span>
 <span class="odt-code-line">            } <span style="color:#0000ff">catch</span> {</span>
-<span class="odt-code-line">                <span style="color:#008000">// error</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// error</span></span>
 <span class="odt-code-line">                erreur = <span style="color:#0000ff">true</span>;</span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            <span style="color:#008000">// mistake?</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// mistake?</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">if</span> (erreur) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// error</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// error</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.Error.WriteLine(<span style="color:#a31515">&quot;Nombre de threads incorrect (entre 1 et 100)&quot;</span>);</span>
-<span class="odt-code-line">                <span style="color:#008000">// end</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// end</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Environment</span>.Exit(2);</span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            <span style="color:#008000">// thread creation and generation</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// thread creation and generation</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Thread</span>[] threads = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Thread</span>[nbThreads];</span>
 <span class="odt-code-line">            <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 0; i &lt; nbThreads; i++) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// creation</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// creation</span></span>
 <span class="odt-code-line">                threads[i] = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Thread</span>(Incrémente);</span>
-<span class="odt-code-line">                <span style="color:#008000">// naming</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// naming</span></span>
 <span class="odt-code-line">                threads[i].Name = <span style="color:#a31515">&quot;&quot;</span> + i;</span>
-<span class="odt-code-line">                <span style="color:#008000">// launch</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// launch</span></span>
 <span class="odt-code-line">                threads[i].Start();</span>
 <span class="odt-code-line">            }<span style="color:#008000">//for</span></span>
-<span class="odt-code-line">            <span style="color:#008000">// waiting for threads to finish</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// waiting for threads to finish</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 0; i &lt; nbThreads; i++) {</span>
 <span class="odt-code-line">                threads[i].Join();</span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            <span style="color:#008000">// counter display</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// counter display</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Nombre de threads générés : &quot;</span> + cptrThreads);</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Incrémente() {</span>
-<span class="odt-code-line">            <span style="color:#008000">// increases thread counter</span></span>
-<span class="odt-code-line">            <span style="color:#008000">// meter reading</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// increases thread counter</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// meter reading</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">int</span> valeur = cptrThreads;</span>
-<span class="odt-code-line">            <span style="color:#008000">// follow-up</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// follow-up</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;A {0:hh:mm:ss}, le thread {1}  a lu la valeur du compteur : {2}&quot;</span>, <span style="color:#2b91af">DateTime</span>.Now, <span style="color:#2b91af">Thread</span>.CurrentThread.Name, cptrThreads);</span>
-<span class="odt-code-line">            <span style="color:#008000">// waiting</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// waiting</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Thread</span>.Sleep(1000);</span>
-<span class="odt-code-line">            <span style="color:#008000">// counter incrementation</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// counter incrementation</span></span>
 <span class="odt-code-line">            cptrThreads = valeur + 1;</span>
-<span class="odt-code-line">            <span style="color:#008000">// follow-up</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// follow-up</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;A {0:hh:mm:ss}, le thread {1}  a écrit la valeur du compteur : {2}&quot;</span>, <span style="color:#2b91af">DateTime</span>.Now, <span style="color:#2b91af">Thread</span>.CurrentThread.Name, cptrThreads);</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line">    }</span>
@@ -1630,38 +1630,38 @@
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap8 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">Program2</span> {</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">                        <span style="color:#008000">// class variables</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">                st</span>a<span style="color:#0000ff">tic</span> int cptrThreads     <span style="color:#008000">=  0;  // thread counter</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">                st</span>a<span style="color:#0000ff">tic ob</span>ject synchr<span style="color:#0000ff">o =</span> <span style="color:#0000ff">new ob</span>ject<span style="color:#008000">(); // synchronization object</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// class variables</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff"> st</span>a<span style="color:#0000ff">tic</span> int cptrThreads     <span style="color:#008000">= 0; // thread counter</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff"> st</span>a<span style="color:#0000ff">tic ob</span>ject synchr<span style="color:#0000ff">o =</span> <span style="color:#0000ff">new ob</span>ject<span style="color:#008000">(); // synchronization object</span></span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">//hand</span></span>
+<span class="odt-code-line">         <span style="color:#008000">//hand</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
 <span class="odt-code-line">    <span style="color:#008000">...</span></span>
-<span class="odt-code-line">            <span style="color:#008000">// waiting for threads to finish</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// waiting for threads to finish</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Thread</span>.CurrentThread.Name = <span style="color:#a31515">&quot;Main&quot;</span>;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = nbThreads - 1; i &gt;= 0; i--) {</span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;A {0:hh:mm:ss}, le thread {1} attend la fin du thread {2}&quot;</span>, <span style="color:#2b91af">DateTime</span>.Now, <span style="color:#2b91af">Thread</span>.CurrentThread.Name, threads[i].Name);</span>
 <span class="odt-code-line">                threads[i].Join();</span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;A {0:hh:mm:ss}, le thread {1} a été prévenu de la fin du thread {2}&quot;</span>, <span style="color:#2b91af">DateTime</span>.Now, <span style="color:#2b91af">Thread</span>.CurrentThread.Name, threads[i].Name);</span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            <span style="color:#008000">// counter display</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// counter display</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Nombre de threads générés : &quot;</span> + cptrThreads);</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Incrémente() {</span>
-<span class="odt-code-line">            <span style="color:#008000">// increases thread counter</span></span>
-<span class="odt-code-line">            <span style="color:#008000">// exclusive access to the meter is required</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// increases thread counter</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// exclusive access to the meter is required</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;A {0:hh:mm:ss}, le thread {1}  attend l&#x27;autorisation d&#x27;entrer dans la section critique&quot;</span>, <span style="color:#2b91af">DateTime</span>.Now, <span style="color:#2b91af">Thread</span>.CurrentThread.Name);</span>
 <span class="odt-code-line">            <span style="color:#0000ff">lock</span> (synchro) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// meter reading</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// meter reading</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">int</span> valeur = cptrThreads;</span>
-<span class="odt-code-line">                <span style="color:#008000">// follow-up</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// follow-up</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;A {0:hh:mm:ss}, le thread {1}  a lu la valeur du compteur : {2}&quot;</span>, <span style="color:#2b91af">DateTime</span>.Now, <span style="color:#2b91af">Thread</span>.CurrentThread.Name, cptrThreads);</span>
-<span class="odt-code-line">                <span style="color:#008000">// waiting</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// waiting</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Thread</span>.Sleep(1000);</span>
-<span class="odt-code-line">                <span style="color:#008000">// counter incrementation</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// counter incrementation</span></span>
 <span class="odt-code-line">                cptrThreads = valeur + 1;</span>
-<span class="odt-code-line">                <span style="color:#008000">// follow-up</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// follow-up</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;A {0:hh:mm:ss}, le thread {1}  a écrit la valeur du compteur : {2}&quot;</span>, <span style="color:#2b91af">DateTime</span>.Now, <span style="color:#2b91af">Thread</span>.CurrentThread.Name, cptrThreads);</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;A {0:hh:mm:ss}, le thread {1} a quitté la section critique&quot;</span>, <span style="color:#2b91af">DateTime</span>.Now, <span style="color:#2b91af">Thread</span>.CurrentThread.Name);</span>
@@ -1775,11 +1775,11 @@
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap8 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">Program3</span> {</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">                        <span style="color:#008000">// class variables</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">                st</span>a<span style="color:#0000ff">tic</span> int cptrThreads     <span style="color:#008000">=  0;  // thread counter</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">                st</span>a<span style="color:#2b91af">tic M</span>utex synchr<span style="color:#0000ff">o =</span> <span style="color:#2b91af">new M</span>utex<span style="color:#008000">(); // synchronization object</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// class variables</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff"> st</span>a<span style="color:#0000ff">tic</span> int cptrThreads     <span style="color:#008000">= 0; // thread counter</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff"> st</span>a<span style="color:#2b91af">tic M</span>utex synchr<span style="color:#0000ff">o =</span> <span style="color:#2b91af">new M</span>utex<span style="color:#008000">(); // synchronization object</span></span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">//hand</span></span>
+<span class="odt-code-line">         <span style="color:#008000">//hand</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
 <span class="odt-code-line">    ...</span>
 <span class="odt-code-line">        }</span>
@@ -1838,19 +1838,19 @@
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap8 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">Program4</span> {</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">                        <span style="color:#008000">// class variables</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">                st</span>a<span style="color:#0000ff">tic</span> int cptrThreads     <span style="color:#008000">=  0;  // thread counter</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">                st</span>a<span style="color:#2b91af">tic EventWaitHa</span>ndle synchr<span style="color:#0000ff">o =</span> <span style="color:#2b91af">new AutoResetE</span>v<span style="color:#0000ff">ent(f</span>als<span style="color:#008000">e); // synchronization object</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// class variables</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff"> st</span>a<span style="color:#0000ff">tic</span> int cptrThreads     <span style="color:#008000">= 0; // thread counter</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff"> st</span>a<span style="color:#2b91af">tic EventWaitHa</span>ndle synchr<span style="color:#0000ff">o =</span> <span style="color:#2b91af">new AutoResetE</span>v<span style="color:#0000ff">ent(f</span>als<span style="color:#008000">e); // synchronization object</span></span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">//hand</span></span>
+<span class="odt-code-line">         <span style="color:#008000">//hand</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
 <span class="odt-code-line">....</span>
-<span class="odt-code-line">            <span style="color:#008000">// we open the critical section barrier</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// we open the critical section barrier</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;A {0:hh:mm:ss}, le thread {1} ouvre la barrière de la section critique&quot;</span>, <span style="color:#2b91af">DateTime</span>.Now, <span style="color:#2b91af">Thread</span>.CurrentThread.Name);</span>
 <span class="odt-code-line">            synchro.Set();</span>
 <span class="odt-code-line"><span style="color:#008000">// waiting for threads to finish</span></span>
 <span class="odt-code-line">...</span>
-<span class="odt-code-line">            <span style="color:#008000">// counter display</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// counter display</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Nombre de threads générés : &quot;</span> + cptrThreads);</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
@@ -1897,16 +1897,16 @@
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap8 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">Program5</span> {</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">                        <span style="color:#008000">// class variables</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">                st</span>a<span style="color:#0000ff">tic</span> int cptrThreads     <span style="color:#008000">=  0;  // thread counter</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// class variables</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff"> st</span>a<span style="color:#0000ff">tic</span> int cptrThreads     <span style="color:#008000">= 0; // thread counter</span></span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">//hand</span></span>
+<span class="odt-code-line">         <span style="color:#008000">//hand</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Incrémente() {</span>
-<span class="odt-code-line">            <span style="color:#008000">// increments the thread counter</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// increments the thread counter</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Interlocked</span>.Increment(<span style="color:#0000ff">ref</span> cptrThreads);</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line">    }</span>
@@ -1984,56 +1984,56 @@
 <span class="odt-code-line"> </span>
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap8 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">Program</span> {</span>
-<span class="odt-code-line">                <span style="color:#008000">// use of reader and writer threads</span></span>
-<span class="odt-code-line">                <span style="color:#008000">// illustrates the use of synchronization events</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// use of reader and writer threads</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// illustrates the use of synchronization events</span></span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">                <span style="color:#008000">// class variables</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">        stat</span>i<span style="color:#0000ff">c i</span>nt[] data <span style="color:#0000ff">= n</span>e<span style="color:#0000ff">w i</span>nt[3    <span style="color:#008000">]; // resource shared between reader and writer threads</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">        stat</span>i<span style="color:#2b91af">c Rand</span>om objRandom <span style="color:#0000ff">= n</span>e<span style="color:#2b91af">w Rand</span>o<span style="color:#2b91af">m(DateTi</span>me.Now.Second    <span style="color:#008000">);   // a random number generator</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">        stat</span>i<span style="color:#2b91af">c AutoResetEve</span>nt peutLir    <span style="color:#008000">e;   // indicates that the contents of data can be read</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">        stat</span>i<span style="color:#2b91af">c AutoResetEve</span>nt peutEcrir    <span style="color:#008000">e; // indicates that you can write the contents of data</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// class variables</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff"> stat</span>i<span style="color:#0000ff">c i</span>nt[] data <span style="color:#0000ff">= n</span>e<span style="color:#0000ff">w i</span>nt[3    <span style="color:#008000">]; // resource shared between reader and writer threads</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff"> stat</span>i<span style="color:#2b91af">c Rand</span>om objRandom <span style="color:#0000ff">= n</span>e<span style="color:#2b91af">w Rand</span>o<span style="color:#2b91af">m(DateTi</span>me.Now.Second    <span style="color:#008000">); // a random number generator</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff"> stat</span>i<span style="color:#2b91af">c AutoResetEve</span>nt peutLir    <span style="color:#008000">e; // indicates that the contents of data can be read</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff"> stat</span>i<span style="color:#2b91af">c AutoResetEve</span>nt peutEcrir    <span style="color:#008000">e; // indicates that you can write the contents of data</span></span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">//hand</span></span>
+<span class="odt-code-line">         <span style="color:#008000">//hand</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">// number of threads to generate</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// number of threads to generate</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">const</span> <span style="color:#0000ff">int</span> nbThreads = 2;</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">                                    <span style="color:#008000">// flag initialization</span></span>
-<span class="odt-code-line">                                    peutL<span style="color:#0000ff">ire</span> <span style="color:#2b91af">= new AutoRese</span>t<span style="color:#0000ff">Event</span>(f    <span style="color:#008000">als e); // cannot be read yet</span></span>
-<span class="odt-code-line">                                    peutEcr<span style="color:#0000ff">ire</span> <span style="color:#2b91af">= new AutoRese</span>t<span style="color:#0000ff">Even</span>t(    <span style="color:#008000">tru    e); // we can already write</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// flag initialization</span></span>
+<span class="odt-code-line">             peutL<span style="color:#0000ff">ire</span> <span style="color:#2b91af">= new AutoRese</span>t<span style="color:#0000ff">Event</span>(f    <span style="color:#008000">als e); // cannot be read yet</span></span>
+<span class="odt-code-line">             peutEcr<span style="color:#0000ff">ire</span> <span style="color:#2b91af">= new AutoRese</span>t<span style="color:#0000ff">Even</span>t(    <span style="color:#008000">tru e); // we can already write</span></span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">// creation of reader threads</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// creation of reader threads</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Thread</span>[] lecteurs = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Thread</span>[nbThreads];</span>
 <span class="odt-code-line">            <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 0; i &lt; nbThreads; i++) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// creation</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// creation</span></span>
 <span class="odt-code-line">                lecteurs[i] = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Thread</span>(Lire);</span>
 <span class="odt-code-line">                lecteurs[i].Name = <span style="color:#a31515">&quot;L&quot;</span> + i.ToString();</span>
-<span class="odt-code-line">                <span style="color:#008000">// launch</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// launch</span></span>
 <span class="odt-code-line">                lecteurs[i].Start();</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">// creating writer threads</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// creating writer threads</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Thread</span>[] écrivains = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Thread</span>[nbThreads];</span>
 <span class="odt-code-line">            <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 0; i &lt; nbThreads; i++) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// creation</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// creation</span></span>
 <span class="odt-code-line">                écrivains[i] = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Thread</span>(Ecrire);</span>
 <span class="odt-code-line">                écrivains[i].Name = <span style="color:#a31515">&quot;E&quot;</span> + i.ToString();</span>
-<span class="odt-code-line">                <span style="color:#008000">// launch</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// launch</span></span>
 <span class="odt-code-line">                écrivains[i].Start();</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">//end of hand</span></span>
+<span class="odt-code-line">             <span style="color:#008000">//end of hand</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Fin de Main...&quot;</span>);</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// read the contents of the table</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// read the contents of the table</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Lire() {</span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// write in the table</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// write in the table</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Ecrire() {</span>
 <span class="odt-code-line">....</span>
 <span class="odt-code-line">        }</span>
@@ -2057,20 +2057,20 @@
 <p>The method <em>Read</em> executed by reader threads is as follows :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Lire() {</span>
-<span class="odt-code-line">            <span style="color:#008000">// follow-up</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// follow-up</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Méthode [Lire] démarrée par le thread n° {0}&quot;</span>, <span style="color:#2b91af">Thread</span>.CurrentThread.Name);</span>
-<span class="odt-code-line">            <span style="color:#008000">// we have to wait for reading authorization</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// we have to wait for reading authorization</span></span>
 <span class="odt-code-line">            peutLire.WaitOne();</span>
-<span class="odt-code-line">            <span style="color:#008000">// table reading</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// table reading</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 0; i &lt; data.Length; i++) {</span>
-<span class="odt-code-line">                <span style="color:#008000">//wait 1 s</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">//wait 1 s</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Thread</span>.Sleep(1000);</span>
-<span class="odt-code-line">                <span style="color:#008000">// display</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// display</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;{0:hh:mm:ss} : Le lecteur {1} a lu le nombre {2}&quot;</span>, <span style="color:#2b91af">DateTime</span>.Now, <span style="color:#2b91af">Thread</span>.CurrentThread.Name, data[i]);</span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            <span style="color:#008000">// we can write</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// we can write</span></span>
 <span class="odt-code-line">            peutEcrire.Set();</span>
-<span class="odt-code-line">            <span style="color:#008000">// follow-up</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// follow-up</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Méthode [Lire] terminée par le thread n° {0}&quot;</span>, <span style="color:#2b91af">Thread</span>.CurrentThread.Name);</span>
 <span class="odt-code-line">        }</span>
 </code></pre></div>
@@ -2087,21 +2087,21 @@
 <p>The method <em>Write</em> executed by the writer threads is as follows :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Ecrire() {</span>
-<span class="odt-code-line">            <span style="color:#008000">// follow-up</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// follow-up</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Méthode [Ecrire] démarrée par le thread n° {0}&quot;</span>, <span style="color:#2b91af">Thread</span>.CurrentThread.Name);</span>
-<span class="odt-code-line">            <span style="color:#008000">// we have to wait for write authorization</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// we have to wait for write authorization</span></span>
 <span class="odt-code-line">            peutEcrire.WaitOne();</span>
-<span class="odt-code-line">            <span style="color:#008000">// writing table</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// writing table</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 0; i &lt; data.Length; i++) {</span>
-<span class="odt-code-line">                <span style="color:#008000">//wait 1 s</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">//wait 1 s</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Thread</span>.Sleep(1000);</span>
-<span class="odt-code-line">                <span style="color:#008000">// display</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// display</span></span>
 <span class="odt-code-line">                data[i] = objRandom.Next(0, 1000);</span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;{0:hh:mm:ss} : L&#x27;écrivain {1} a écrit le nombre {2}&quot;</span>, <span style="color:#2b91af">DateTime</span>.Now, <span style="color:#2b91af">Thread</span>.CurrentThread.Name, data[i]);</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line">            <span style="color:#008000">// on peut lire</span></span>
 <span class="odt-code-line">            peutLire.Set();</span>
-<span class="odt-code-line">            <span style="color:#008000">// follow-up</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// follow-up</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Méthode [Ecrire] terminée par le thread n° {0}&quot;</span>, <span style="color:#2b91af">Thread</span>.CurrentThread.Name);</span>
 <span class="odt-code-line">        }</span>
 </code></pre></div>
@@ -2342,79 +2342,79 @@
 <span class="odt-code-line"> </span>
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap8 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">Program2</span> {</span>
-<span class="odt-code-line">                <span style="color:#008000">// use of reader and writer threads</span></span>
-<span class="odt-code-line">                <span style="color:#008000">// illustrates the use of synchronization events</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// use of reader and writer threads</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// illustrates the use of synchronization events</span></span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">                <span style="color:#008000">// class variables</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">        stat</span>i<span style="color:#0000ff">c i</span>nt[] data <span style="color:#0000ff">= n</span>e<span style="color:#0000ff">w i</span>nt[3            <span style="color:#008000">];         // resource shared between reader and writer threads</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">        stat</span>i<span style="color:#2b91af">c Rand</span>om objRandom <span style="color:#0000ff">= n</span>e<span style="color:#2b91af">w Rand</span>o<span style="color:#2b91af">m(DateTi</span>me.Now.Second    <span style="color:#008000">);   // a random number generator</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">        stat</span>i<span style="color:#0000ff">c obje</span>ct peutLire <span style="color:#0000ff">= n</span>e<span style="color:#0000ff">w obje</span>ct(        <span style="color:#008000">);      // indicates that the contents of data can be read</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">        stat</span>i<span style="color:#0000ff">c obje</span>ct peutEcrire <span style="color:#0000ff">= n</span>e<span style="color:#0000ff">w obje</span>ct(    <span style="color:#008000">);    // indicates that you can write the contents of data</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">        stat</span>i<span style="color:#0000ff">c bo</span>ol lectureAutorisée <span style="color:#0000ff">= fal</span>s    <span style="color:#008000">e;  // to authorize the reading of the table</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">        stat</span>i<span style="color:#0000ff">c bo</span>ol écritureAutorisée <span style="color:#0000ff">= fal</span>s    <span style="color:#008000">e; // to authorize writing in the table</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">        stat</span>i<span style="color:#0000ff">c stri</span>ng[] ordreLectur    <span style="color:#008000">e; // sets the order of readers</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">        stat</span>i<span style="color:#0000ff">c stri</span>ng[] ordreEcritur    <span style="color:#008000">e;    // sets the order for writers</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">        stat</span>i<span style="color:#0000ff">c i</span>nt lecteurSuivant =     <span style="color:#008000">0;    // indicates the next drive number</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">        stat</span>i<span style="color:#0000ff">c i</span>nt écrivainSuivant =     <span style="color:#008000">0;   // indicates the number of the following writer</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// class variables</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff"> stat</span>i<span style="color:#0000ff">c i</span>nt[] data <span style="color:#0000ff">= n</span>e<span style="color:#0000ff">w i</span>nt[3            <span style="color:#008000">]; // resource shared between reader and writer threads</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff"> stat</span>i<span style="color:#2b91af">c Rand</span>om objRandom <span style="color:#0000ff">= n</span>e<span style="color:#2b91af">w Rand</span>o<span style="color:#2b91af">m(DateTi</span>me.Now.Second    <span style="color:#008000">); // a random number generator</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff"> stat</span>i<span style="color:#0000ff">c obje</span>ct peutLire <span style="color:#0000ff">= n</span>e<span style="color:#0000ff">w obje</span>ct(        <span style="color:#008000">); // indicates that the contents of data can be read</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff"> stat</span>i<span style="color:#0000ff">c obje</span>ct peutEcrire <span style="color:#0000ff">= n</span>e<span style="color:#0000ff">w obje</span>ct(    <span style="color:#008000">); // indicates that you can write the contents of data</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff"> stat</span>i<span style="color:#0000ff">c bo</span>ol lectureAutorisée <span style="color:#0000ff">= fal</span>s    <span style="color:#008000">e; // to authorize the reading of the table</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff"> stat</span>i<span style="color:#0000ff">c bo</span>ol écritureAutorisée <span style="color:#0000ff">= fal</span>s    <span style="color:#008000">e; // to authorize writing in the table</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff"> stat</span>i<span style="color:#0000ff">c stri</span>ng[] ordreLectur    <span style="color:#008000">e; // sets the order of readers</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff"> stat</span>i<span style="color:#0000ff">c stri</span>ng[] ordreEcritur    <span style="color:#008000">e; // sets the order for writers</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff"> stat</span>i<span style="color:#0000ff">c i</span>nt lecteurSuivant =     <span style="color:#008000">0; // indicates the next drive number</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff"> stat</span>i<span style="color:#0000ff">c i</span>nt écrivainSuivant =     <span style="color:#008000">0; // indicates the number of the following writer</span></span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">//hand</span></span>
+<span class="odt-code-line">         <span style="color:#008000">//hand</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">// number of threads to generate</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// number of threads to generate</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">const</span> <span style="color:#0000ff">int</span> nbThreads = 5;</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">// creation of reader threads</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// creation of reader threads</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Thread</span>[] lecteurs = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Thread</span>[nbThreads];</span>
 <span class="odt-code-line">            <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 0; i &lt; nbThreads; i++) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// creation</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// creation</span></span>
 <span class="odt-code-line">                lecteurs[i] = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Thread</span>(Lire);</span>
 <span class="odt-code-line">                lecteurs[i].Name = <span style="color:#a31515">&quot;L&quot;</span> + i.ToString();</span>
-<span class="odt-code-line">                <span style="color:#008000">// launch</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// launch</span></span>
 <span class="odt-code-line">                lecteurs[i].Start();</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">// create playback order</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// create playback order</span></span>
 <span class="odt-code-line">            ordreLecture = <span style="color:#0000ff">new</span> <span style="color:#0000ff">string</span>[nbThreads];</span>
 <span class="odt-code-line">            <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 0; i &lt; nbThreads; i++) {</span>
 <span class="odt-code-line">                ordreLecture[i] = lecteurs[nbThreads - i - 1].Name;</span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Le lecteur {0} est en position {1}&quot;</span>, ordreLecture[i], i);</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">// creating writer threads</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// creating writer threads</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Thread</span>[] écrivains = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Thread</span>[nbThreads];</span>
 <span class="odt-code-line">            <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 0; i &lt; nbThreads; i++) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// creation</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// creation</span></span>
 <span class="odt-code-line">                écrivains[i] = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Thread</span>(Ecrire);</span>
 <span class="odt-code-line">                écrivains[i].Name = <span style="color:#a31515">&quot;E&quot;</span> + i.ToString();</span>
-<span class="odt-code-line">                <span style="color:#008000">// launch</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// launch</span></span>
 <span class="odt-code-line">                écrivains[i].Start();</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">// creation of writing order</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// creation of writing order</span></span>
 <span class="odt-code-line">            ordreEcriture = <span style="color:#0000ff">new</span> <span style="color:#0000ff">string</span>[nbThreads];</span>
 <span class="odt-code-line">            <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 0; i &lt; nbThreads; i++) {</span>
 <span class="odt-code-line">                ordreEcriture[i] = écrivains[i].Name;</span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;L&#x27;écrivain {0} est en position {1}&quot;</span>, ordreEcriture[i], i);</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            // write authorization</span>
+<span class="odt-code-line">             // write authorization</span>
 <span class="odt-code-line">            <span style="color:#0000ff">lock</span> (peutEcrire) {</span>
 <span class="odt-code-line">               écritureAutorisée = <span style="color:#0000ff">true</span>;</span>
 <span class="odt-code-line">                <span style="color:#2b91af">Monitor</span>.Pulse(peutEcrire);</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">//end of hand</span></span>
+<span class="odt-code-line">             <span style="color:#008000">//end of hand</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Fin de Main...&quot;</span>);</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// read the contents of the table</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// read the contents of the table</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Lire() {</span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// write in the table</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// write in the table</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Ecrire() {</span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">        }</span>
@@ -2465,30 +2465,30 @@
 <p>The method <em>Read</em> is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Lire() {</span>
-<span class="odt-code-line">            <span style="color:#008000">// follow-up</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// follow-up</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Méthode [Lire] démarrée par le thread n° {0}&quot;</span>, <span style="color:#2b91af">Thread</span>.CurrentThread.Name);</span>
-<span class="odt-code-line">            <span style="color:#008000">// we have to wait for reading authorization</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// we have to wait for reading authorization</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">lock</span> (peutLire) {</span>
 <span class="odt-code-line">                <span style="color:#0000ff">while</span> (!lectureAutorisée || ordreLecture[lecteurSuivant] != <span style="color:#2b91af">Thread</span>.CurrentThread.Name) {</span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Monitor</span>.Wait(peutLire);</span>
 <span class="odt-code-line">                }</span>
-<span class="odt-code-line">                <span style="color:#008000">// table reading</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// table reading</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 0; i &lt; data.Length; i++) {</span>
-<span class="odt-code-line">                    <span style="color:#008000">//wait 1 s</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">//wait 1 s</span></span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Thread</span>.Sleep(1000);</span>
-<span class="odt-code-line">                    <span style="color:#008000">// display</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">// display</span></span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;{0:hh:mm:ss} : Le lecteur {1} a lu le nombre {2}&quot;</span>, <span style="color:#2b91af">DateTime</span>.Now, <span style="color:#2b91af">Thread</span>.CurrentThread.Name, data[i]);</span>
 <span class="odt-code-line">                }</span>
-<span class="odt-code-line">                // next reader</span>
+<span class="odt-code-line">                 // next reader</span>
 <span class="odt-code-line">                lectureAutorisée = <span style="color:#0000ff">false</span>;</span>
 <span class="odt-code-line">                lecteurSuivant++;</span>
-<span class="odt-code-line">                <span style="color:#008000">// writers are warned that they can write</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// writers are warned that they can write</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">lock</span> (peutEcrire) {</span>
 <span class="odt-code-line">                    écritureAutorisée = <span style="color:#0000ff">true</span>;</span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Monitor</span>.PulseAll(peutEcrire);</span>
 <span class="odt-code-line">                }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">                <span style="color:#008000">// follow-up</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// follow-up</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Méthode [Lire] terminée par le thread n° {0}&quot;</span>, <span style="color:#2b91af">Thread</span>.CurrentThread.Name);</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line">}</span>
@@ -2512,30 +2512,30 @@
 <p>The method <em>Write</em> is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Ecrire() {</span>
-<span class="odt-code-line">            <span style="color:#008000">// follow-up</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// follow-up</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Méthode [Ecrire] démarrée par le thread n° {0}&quot;</span>, <span style="color:#2b91af">Thread</span>.CurrentThread.Name);</span>
-<span class="odt-code-line">            <span style="color:#008000">// we have to wait for write authorization</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// we have to wait for write authorization</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">lock</span> (peutEcrire) {</span>
 <span class="odt-code-line">                <span style="color:#0000ff">while</span> (!écritureAutorisée || ordreEcriture[écrivainSuivant] != <span style="color:#2b91af">Thread</span>.CurrentThread.Name) {</span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Monitor</span>.Wait(peutEcrire);</span>
 <span class="odt-code-line">                }</span>
-<span class="odt-code-line">                <span style="color:#008000">// writing table</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// writing table</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 0; i &lt; data.Length; i++) {</span>
-<span class="odt-code-line">                    <span style="color:#008000">//wait 1 s</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">//wait 1 s</span></span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Thread</span>.Sleep(1000);</span>
-<span class="odt-code-line">                    <span style="color:#008000">// display</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">// display</span></span>
 <span class="odt-code-line">                    data[i] = objRandom.Next(0, 1000);</span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;{0:hh:mm:ss} : L&#x27;écrivain {1} a écrit le nombre {2}&quot;</span>, <span style="color:#2b91af">DateTime</span>.Now, <span style="color:#2b91af">Thread</span>.CurrentThread.Name, data[i]);</span>
 <span class="odt-code-line">                }</span>
-<span class="odt-code-line">                <span style="color:#008000">// next writer</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// next writer</span></span>
 <span class="odt-code-line">                écritureAutorisée = <span style="color:#0000ff">false</span>;</span>
 <span class="odt-code-line">                écrivainSuivant++;</span>
-<span class="odt-code-line">                <span style="color:#008000">// readers waiting for the peutLire token are woken up</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// readers waiting for the peutLire token are woken up</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">lock</span> (peutLire) {</span>
 <span class="odt-code-line">                    lectureAutorisée = <span style="color:#0000ff">true</span>;</span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Monitor</span>.PulseAll(peutLire);</span>
 <span class="odt-code-line">                }</span>
-<span class="odt-code-line">                <span style="color:#008000">// follow-up</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// follow-up</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Méthode [Ecrire] terminée par le thread n° {0}&quot;</span>, <span style="color:#2b91af">Thread</span>.CurrentThread.Name);</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line">}</span>
@@ -2685,7 +2685,7 @@
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span><span style="color:#000000"> Chap8 {</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">Program</span><span style="color:#000000"> {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">static</span><span style="color:#000000"> </span><span style="color:#0000ff">void</span><span style="color:#000000"> Main() {</span></span>
-<span class="odt-code-line">            <span style="color:#000000">// init Current thread</span></span>
+<span class="odt-code-line">             <span style="color:#000000">// init Current thread</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#2b91af">Thread</span><span style="color:#000000"> main = </span><span style="color:#2b91af">Thread</span><span style="color:#000000">.CurrentThread;</span></span>
 <span class="odt-code-line">            <span style="color:#000000">// name the Thread</span></span>
 <span class="odt-code-line"><span style="color:#000000">            main.Name = </span><span style="color:#a31515">&quot;Main&quot;</span><span style="color:#000000">;</span></span>
@@ -2712,9 +2712,9 @@
 <span class="odt-code-line">                <span style="color:#000000">// start execution of thread i in a pool</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#2b91af">ThreadPool</span><span style="color:#000000">.QueueUserWorkItem(Sleep, </span><span style="color:#0000ff">new</span><span style="color:#000000"> </span><span style="color:#2b91af">Data2</span><span style="color:#000000"> { Numéro = i.ToString(), Début = </span><span style="color:#2b91af">DateTime</span><span style="color:#000000">.Now, Durée = i + 10 });</span></span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            <span style="color:#000000">// end of hand</span></span>
+<span class="odt-code-line">             <span style="color:#000000">// end of hand</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#2b91af">Console</span><span style="color:#000000">.Write(</span><span style="color:#a31515">&quot;Tapez [entrée] pour terminer le thread {0} à {1:hh:mm:ss:FF}&quot;</span><span style="color:#000000">, main.Name, </span><span style="color:#2b91af">DateTime</span><span style="color:#000000">.Now);</span></span>
-<span class="odt-code-line">            <span style="color:#000000">// waiting</span></span>
+<span class="odt-code-line">             <span style="color:#000000">// waiting</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#2b91af">Console</span><span style="color:#000000">.ReadLine();</span></span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
@@ -2722,20 +2722,20 @@
 <span class="odt-code-line">            <span style="color:#000000">// parameter is retrieved</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#2b91af">Data2</span><span style="color:#000000"> data = infos </span><span style="color:#0000ff">as</span><span style="color:#000000"> </span><span style="color:#2b91af">Data2</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#2b91af">Console</span><span style="color:#000000">.WriteLine(</span><span style="color:#a31515">&quot;A {2:hh:mm:ss:FF}, le thread n° {0} va dormir pendant {1} seconde(s)&quot;</span><span style="color:#000000">, data.Numéro, data.Durée,</span><span style="color:#2b91af">DateTime</span><span style="color:#000000">.Now);</span></span>
-<span class="odt-code-line">            <span style="color:#000000">// pool status</span></span>
+<span class="odt-code-line">             <span style="color:#000000">// pool status</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">int</span><span style="color:#000000"> cpt1, cpt2;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#2b91af">ThreadPool</span><span style="color:#000000">.GetAvailableThreads(</span><span style="color:#0000ff">out</span><span style="color:#000000"> cpt1, </span><span style="color:#0000ff">out</span><span style="color:#000000"> cpt2);</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#2b91af">Console</span><span style="color:#000000">.WriteLine(</span><span style="color:#a31515">&quot;Nombre de threads pour tâches bloquantes disponibles dans le pool : {0}&quot;</span><span style="color:#000000">, cpt1);</span></span>
 <span class="odt-code-line">            <span style="color:#000000">// sleep mode for Duration</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#2b91af">Thread</span><span style="color:#000000">.Sleep(data.Durée * 1000);</span></span>
-<span class="odt-code-line">            <span style="color:#000000">// end of execution</span></span>
+<span class="odt-code-line">             <span style="color:#000000">// end of execution</span></span>
 <span class="odt-code-line"><span style="color:#000000">            data.Fin = </span><span style="color:#2b91af">DateTime</span><span style="color:#000000">.Now;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#2b91af">Console</span><span style="color:#000000">.WriteLine(</span><span style="color:#a31515">&quot;A {3:hh:mm:ss:FF}, le thread n° {0} se termine. Il était programmé pour durer {1} seconde(s). Il a duré {2} seconde(s)&quot;</span><span style="color:#000000">, data.Numéro, data.Durée, data.Fin - data.Début,</span><span style="color:#2b91af">DateTime</span><span style="color:#000000">.Now);</span></span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line">    }</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">internal</span><span style="color:#000000"> </span><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">Data2</span><span style="color:#000000"> {</span></span>
-<span class="odt-code-line">        <span style="color:#000000">// miscellaneous information</span></span>
+<span class="odt-code-line">         <span style="color:#000000">// miscellaneous information</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">string</span><span style="color:#000000"> Numéro { </span><span style="color:#0000ff">get</span><span style="color:#000000">; </span><span style="color:#0000ff">set</span><span style="color:#000000">; }</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#2b91af">DateTime</span><span style="color:#000000"> Début { </span><span style="color:#0000ff">get</span><span style="color:#000000">; </span><span style="color:#0000ff">set</span><span style="color:#000000">; }</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">int</span><span style="color:#000000"> Durée { </span><span style="color:#0000ff">get</span><span style="color:#000000">; </span><span style="color:#0000ff">set</span><span style="color:#000000">; }</span></span>
@@ -2878,7 +2878,7 @@
 <span class="odt-code-line">        <span style="color:#008000">// use of reader and writer threads</span></span>
 <span class="odt-code-line">        <span style="color:#008000">// illustrates the simultaneous use of shared resources and synchronization</span></span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// class variables</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// class variables</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">const</span> <span style="color:#0000ff">int</span> nbThreads = 2;                    <span style="color:#008000">// total number of threads</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">int</span> nbLecteursTerminés = 0;        <span style="color:#008000">// number of terminated threads</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">int</span>[] data = <span style="color:#0000ff">new</span> <span style="color:#0000ff">int</span>[5];            <span style="color:#008000">// shared array between reader and writer threads</span></span>
@@ -2888,46 +2888,46 @@
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#2b91af">AutoResetEvent</span> peutEcrire;        <span style="color:#008000">// points out that we can write in the table</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#2b91af">AutoResetEvent</span> finLecteurs;    <span style="color:#008000">// signals the end of readers</span></span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">//hand</span></span>
+<span class="odt-code-line">         <span style="color:#008000">//hand</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">            <span style="color:#008000">// give the thread a name</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Thread</span>.CurrentThread.Name = <span style="color:#a31515">&quot;Main&quot;</span>;</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">                        <span style="color:#008000">// flag initialization</span></span>
-<span class="odt-code-line">                        peutLire<span style="color:#0000ff"> = </span>n<span style="color:#2b91af">ew AutoResetEv</span>e<span style="color:#0000ff">nt(fa</span>ls        <span style="color:#008000">e);      // cannot be read yet</span></span>
-<span class="odt-code-line">                        peutEcrire<span style="color:#0000ff"> = </span>n<span style="color:#2b91af">ew AutoResetEv</span>e<span style="color:#0000ff">nt(t</span>ru    <span style="color:#008000">e); // we can already write</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// flag initialization</span></span>
+<span class="odt-code-line">             peutLire<span style="color:#0000ff"> = </span>n<span style="color:#2b91af">ew AutoResetEv</span>e<span style="color:#0000ff">nt(fa</span>ls        <span style="color:#008000">e); // cannot be read yet</span></span>
+<span class="odt-code-line">             peutEcrire<span style="color:#0000ff"> = </span>n<span style="color:#2b91af">ew AutoResetEv</span>e<span style="color:#0000ff">nt(t</span>ru    <span style="color:#008000">e); // we can already write</span></span>
 <span class="odt-code-line">            finLecteurs = <span style="color:#0000ff">new</span> <span style="color:#2b91af">AutoResetEvent</span>(<span style="color:#0000ff">false</span>);    <span style="color:#008000">// application not completed</span></span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">// synchronizes access to terminated thread counter</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// synchronizes access to terminated thread counter</span></span>
 <span class="odt-code-line">            appli = <span style="color:#0000ff">new</span> <span style="color:#0000ff">object</span>();                </span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">// creation of reader threads</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// creation of reader threads</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">MyBackgroundWorker</span>[] lecteurs = <span style="color:#0000ff">new</span> <span style="color:#2b91af">MyBackgroundWorker</span>[nbThreads];</span>
 <span class="odt-code-line">            <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 0; i &lt; nbThreads; i++) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// creation</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// creation</span></span>
 <span class="odt-code-line">                lecteurs[i] = <span style="color:#0000ff">new</span> <span style="color:#2b91af">MyBackgroundWorker</span>();</span>
 <span class="odt-code-line">                lecteurs[i].Numéro = <span style="color:#a31515">&quot;L&quot;</span> + i;</span>
 <span class="odt-code-line">                lecteurs[i].DoWork += Lire;</span>
 <span class="odt-code-line">                lecteurs[i].RunWorkerCompleted += EndLecteur;</span>
-<span class="odt-code-line">                <span style="color:#008000">// launch</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// launch</span></span>
 <span class="odt-code-line">                lecteurs[i].RunWorkerAsync();</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">            <span style="color:#008000">// creating writer threads</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">MyBackgroundWorker</span>[] écrivains = <span style="color:#0000ff">new</span> <span style="color:#2b91af">MyBackgroundWorker</span>[nbThreads];</span>
 <span class="odt-code-line">            <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 0; i &lt; nbThreads; i++) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// creation</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// creation</span></span>
 <span class="odt-code-line">                écrivains[i] = <span style="color:#0000ff">new</span> <span style="color:#2b91af">MyBackgroundWorker</span>();</span>
 <span class="odt-code-line">                écrivains[i].Numéro = <span style="color:#a31515">&quot;E&quot;</span> + i;</span>
 <span class="odt-code-line">                écrivains[i].DoWork += Ecrire;</span>
-<span class="odt-code-line">                <span style="color:#008000">// launch</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// launch</span></span>
 <span class="odt-code-line">                écrivains[i].RunWorkerAsync();</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">            <span style="color:#008000">// wait for all threads to finish</span></span>
 <span class="odt-code-line">            finLecteurs.WaitOne();</span>
-<span class="odt-code-line">            <span style="color:#008000">//end of hand</span></span>
+<span class="odt-code-line">             <span style="color:#008000">//end of hand</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Fin de Main...&quot;</span>);</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
@@ -2946,9 +2946,9 @@
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line">    }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// thread</span></span>
+<span class="odt-code-line">     <span style="color:#008000">// thread</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">internal</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">MyBackgroundWorker</span> : <span style="color:#2b91af">BackgroundWorker</span> {</span>
-<span class="odt-code-line">        <span style="color:#008000">// miscellaneous information</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// miscellaneous information</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">string</span> Numéro { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
 <span class="odt-code-line">    }</span>
 <span class="odt-code-line"> </span>
@@ -2990,7 +2990,7 @@
 <p>The methods <em>Read</em> and <em>Write</em> remain unchanged. The method <em>EndLecteur</em> is executed at the end of each reader thread. Its code is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> EndLecteur(<span style="color:#0000ff">object</span> sender, <span style="color:#2b91af">RunWorkerCompletedEventArgs</span> infos) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// increment no. of completed drives</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// increment no. of completed drives</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">lock</span> (appli) {</span>
 <span class="odt-code-line">                nbLecteursTerminés++;</span>
 <span class="odt-code-line">                <span style="color:#0000ff">if</span> (nbLecteursTerminés == nbThreads)</span>
@@ -3030,30 +3030,30 @@
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap8 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">Program3</span> {</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// threads</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// threads</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#2b91af">BackgroundWorker</span>[] tâches = <span style="color:#0000ff">new</span> <span style="color:#2b91af">BackgroundWorker</span>[5];</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main() {</span>
-<span class="odt-code-line">            <span style="color:#008000">// init Current thread</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// init Current thread</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Thread</span> main = <span style="color:#2b91af">Thread</span>.CurrentThread;</span>
 <span class="odt-code-line">            <span style="color:#008000">// name the Thread</span></span>
 <span class="odt-code-line">            main.Name = <span style="color:#a31515">&quot;Main&quot;</span>;</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">// thread creation</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// thread creation</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 0; i &lt; tâches.Length; i++) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// create thread n° i</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// create thread n° i</span></span>
 <span class="odt-code-line">                tâches[i] = <span style="color:#0000ff">new</span> <span style="color:#2b91af">BackgroundWorker</span>();</span>
-<span class="odt-code-line">                <span style="color:#008000">// initialize it</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// initialize it</span></span>
 <span class="odt-code-line">                tâches[i].DoWork += Sleep;</span>
 <span class="odt-code-line">                tâches[i].RunWorkerCompleted += End;</span>
 <span class="odt-code-line">                tâches[i].WorkerSupportsCancellation = <span style="color:#0000ff">true</span>;</span>
-<span class="odt-code-line">                <span style="color:#008000">// launch it</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// launch it</span></span>
 <span class="odt-code-line">                tâches[i].RunWorkerAsync(<span style="color:#0000ff">new</span> <span style="color:#2b91af">Data</span> { Numéro = i, Début = <span style="color:#2b91af">DateTime</span>.Now, Durée = i + 1 });</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line">            <span style="color:#008000">// cancel the last thread</span></span>
 <span class="odt-code-line">            tâches[4].CancelAsync();</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">// end of hand</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// end of hand</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Fin du thread {0}, tapez [entrée] pour terminer...&quot;</span>, main.Name);</span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.ReadLine();</span>
 <span class="odt-code-line">            <span style="color:#0000ff">return</span>;</span>
@@ -3068,7 +3068,7 @@
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">        <span style="color:#0000ff">internal</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Data</span> {</span>
-<span class="odt-code-line">            <span style="color:#008000">// miscellaneous information</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// miscellaneous information</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">public</span> <span style="color:#0000ff">int</span> Numéro { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
 <span class="odt-code-line">            <span style="color:#0000ff">public</span> <span style="color:#2b91af">DateTime</span> Début { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
 <span class="odt-code-line">            <span style="color:#0000ff">public</span> <span style="color:#0000ff">int</span> Durée { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
@@ -3110,20 +3110,20 @@
 <p>All threads execute the <em>Sleep</em> next :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Sleep(<span style="color:#0000ff">object</span> sender, <span style="color:#2b91af">DoWorkEventArgs</span> infos) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// we use the info parameter</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// we use the info parameter</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Data</span> data = (<span style="color:#2b91af">Data</span>)infos.Argument;</span>
-<span class="odt-code-line">            <span style="color:#008000">// exception for task no. 3</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// exception for task no. 3</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">if</span> (data.Numéro == 3) {</span>
 <span class="odt-code-line">                <span style="color:#0000ff">throw</span> <span style="color:#0000ff">new</span> <span style="color:#2b91af">Exception</span>(<span style="color:#a31515">&quot;test....&quot;</span>);</span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            <span style="color:#008000">// sleep mode for Duration, stopping every second</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// sleep mode for Duration, stopping every second</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 1; i &lt;= data.Durée &amp;&amp; !tâches[data.Numéro].CancellationPending; i++) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// wait 1 second</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// wait 1 second</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Thread</span>.Sleep(1000);</span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            <span style="color:#008000">// end of execution</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// end of execution</span></span>
 <span class="odt-code-line">            data.Fin = <span style="color:#2b91af">DateTime</span>.Now;</span>
-<span class="odt-code-line">            <span style="color:#008000">// initialize the result</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// initialize the result</span></span>
 <span class="odt-code-line">            infos.Result = data;</span>
 <span class="odt-code-line">            infos.Cancel = tâches[data.Numéro].CancellationPending;</span>
 <span class="odt-code-line">}</span>
@@ -3152,7 +3152,7 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> End(<span style="color:#0000ff">object</span> sender, <span style="color:#2b91af">RunWorkerCompletedEventArgs</span> infos) {</span>
 <span class="odt-code-line">            <span style="color:#008000">// the infos parameter is used to display the result of execution</span></span>
-<span class="odt-code-line">            <span style="color:#008000">// exception?</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// exception?</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">if</span> (infos.Error != <span style="color:#0000ff">null</span>) {</span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Le thread {1} a rencontré l&#x27;erreur suivante : {0}&quot;</span>, infos.Error.Message, sender);</span>
 <span class="odt-code-line">            } <span style="color:#0000ff">else</span></span>
@@ -3319,14 +3319,14 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap8 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Article</span> {</span>
-<span class="odt-code-line">        <span style="color:#008000">// properties</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// properties</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">int</span> Id { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">string</span> Nom { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">decimal</span> Prix { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">int</span> StockActuel { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">int</span> StockMinimum { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// manufacturers</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// manufacturers</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> Article() { </span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
@@ -3338,7 +3338,7 @@
 <span class="odt-code-line">            StockMinimum = stockMinimum;</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// identity</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// identity</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">override</span> <span style="color:#0000ff">string</span> ToString() {</span>
 <span class="odt-code-line">            <span style="color:#0000ff">return</span> <span style="color:#0000ff">string</span>.Format(<span style="color:#a31515">&quot;[{0},{1},{2},{3},{4}]&quot;</span>, Id, Nom, Prix, StockActuel, StockMinimum);</span>
 <span class="odt-code-line">        }</span>
@@ -3405,25 +3405,25 @@
 <span class="odt-code-line"> </span>
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap8 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Metier</span> : <span style="color:#2b91af">IMetier</span> {</span>
-<span class="odt-code-line">        <span style="color:#008000">// layer [dao]</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// layer [dao]</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#2b91af">IDao</span> Dao { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
-<span class="odt-code-line">        <span style="color:#008000">// connecting chain</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// connecting chain</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">string</span> ConnectionString { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">        <span style="color:#008000">// insert an array of articles inside a transaction</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">void</span> InsertArticlesInTransaction(<span style="color:#2b91af">Article</span>[] articles) {</span>
 <span class="odt-code-line">            <span style="color:#008000">// create the connection to the</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">using</span> (<span style="color:#2b91af">SqlCeConnection</span> connexion = <span style="color:#0000ff">new</span> <span style="color:#2b91af">SqlCeConnection</span>(ConnectionString)) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// opening connection</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// opening connection</span></span>
 <span class="odt-code-line">                connexion.Open();</span>
-<span class="odt-code-line">                <span style="color:#008000">// transaction</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// transaction</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">SqlCeTransaction</span> transaction = <span style="color:#0000ff">null</span>;</span>
 <span class="odt-code-line">                <span style="color:#0000ff">try</span> {</span>
-<span class="odt-code-line">                    <span style="color:#008000">// start of transaction</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">// start of transaction</span></span>
 <span class="odt-code-line">                    transaction = connexion.BeginTransaction(<span style="color:#2b91af">IsolationLevel</span>.ReadCommitted);</span>
 <span class="odt-code-line">                    <span style="color:#008000">// register the transaction in the thread</span></span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Thread</span>.SetData(<span style="color:#2b91af">Thread</span>.GetNamedDataSlot(<span style="color:#a31515">&quot;transaction&quot;</span>), transaction);</span>
-<span class="odt-code-line">                    <span style="color:#008000">// articles insertion</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">// articles insertion</span></span>
 <span class="odt-code-line">                    <span style="color:#0000ff">foreach</span> (<span style="color:#2b91af">Article</span> article <span style="color:#0000ff">in</span> articles) {</span>
 <span class="odt-code-line">                        Dao.InsertArticle(article);</span>
 <span class="odt-code-line">                    }</span>
@@ -3439,17 +3439,17 @@
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">        <span style="color:#008000">// insertion of an array of articles without transaction</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">void</span> InsertArticlesOutOfTransaction(<span style="color:#2b91af">Article</span>[] articles) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// articles insertion</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// articles insertion</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">foreach</span> (<span style="color:#2b91af">Article</span> article <span style="color:#0000ff">in</span> articles) {</span>
 <span class="odt-code-line">                Dao.InsertArticle(article);</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// articles list</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// articles list</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#2b91af">List</span>&lt;<span style="color:#2b91af">Article</span>&gt; GetAllArticles() {</span>
 <span class="odt-code-line">            <span style="color:#0000ff">return</span> Dao.GetAllArticles();</span>
 <span class="odt-code-line">        }</span>
-<span class="odt-code-line">        <span style="color:#008000">// delete all articles</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// delete all articles</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">void</span> DeleteAllArticles() {</span>
 <span class="odt-code-line">            Dao.DeleteAllArticles();</span>
 <span class="odt-code-line">        }</span>
@@ -3497,31 +3497,31 @@
 <span class="odt-code-line"> </span>
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap8 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Dao</span> : <span style="color:#2b91af">IDao</span> {</span>
-<span class="odt-code-line">        <span style="color:#008000">// connecting chain</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// connecting chain</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">string</span> ConnectionString { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
-<span class="odt-code-line">        <span style="color:#008000">// requests</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// requests</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">string</span> InsertText { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">string</span> DeleteAllText { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">string</span> GetAllText { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// interface implementation</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// interface implementation</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line">        <span style="color:#008000">// article insertion</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// article insertion</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">int</span> InsertArticle(<span style="color:#2b91af">Article</span> article) {</span>
 <span class="odt-code-line">            <span style="color:#008000">// is there a transaction in progress?</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">SqlCeTransaction</span> transaction = <span style="color:#2b91af">Thread</span>.GetData(<span style="color:#2b91af">Thread</span>.GetNamedDataSlot(<span style="color:#a31515">&quot;transaction&quot;</span>)) <span style="color:#0000ff">as</span> <span style="color:#2b91af">SqlCeTransaction</span>;</span>
 <span class="odt-code-line">            <span style="color:#008000">// retrieve or create connection</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">SqlCeConnection</span> connexion = <span style="color:#0000ff">null</span>;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">if</span> (transaction != <span style="color:#0000ff">null</span>) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// recover connection</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// recover connection</span></span>
 <span class="odt-code-line">                connexion = transaction.Connection <span style="color:#0000ff">as</span> <span style="color:#2b91af">SqlCeConnection</span>;</span>
 <span class="odt-code-line">            } <span style="color:#0000ff">else</span> {</span>
-<span class="odt-code-line">                <span style="color:#008000">// create it</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// create it</span></span>
 <span class="odt-code-line">                connexion = <span style="color:#0000ff">new</span> <span style="color:#2b91af">SqlCeConnection</span>(ConnectionString);</span>
 <span class="odt-code-line">                connexion.Open();</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line">            <span style="color:#0000ff">try</span> {</span>
-<span class="odt-code-line">                <span style="color:#008000">// preparation of insertion order</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// preparation of insertion order</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">SqlCeCommand</span> sqlCommand = <span style="color:#0000ff">new</span> <span style="color:#2b91af">SqlCeCommand</span>();</span>
 <span class="odt-code-line">                sqlCommand.Transaction = transaction;</span>
 <span class="odt-code-line">                sqlCommand.Connection = connexion;</span>
@@ -3534,7 +3534,7 @@
 <span class="odt-code-line">                sqlCommand.Parameters[<span style="color:#a31515">&quot;@prix&quot;</span>].Value = article.Prix;</span>
 <span class="odt-code-line">                sqlCommand.Parameters[<span style="color:#a31515">&quot;@sa&quot;</span>].Value = article.StockActuel;</span>
 <span class="odt-code-line">                sqlCommand.Parameters[<span style="color:#a31515">&quot;@sm&quot;</span>].Value = article.StockMinimum;</span>
-<span class="odt-code-line">                <span style="color:#008000">// execution</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// execution</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">return</span> sqlCommand.ExecuteNonQuery();</span>
 <span class="odt-code-line">            } <span style="color:#0000ff">finally</span> {</span>
 <span class="odt-code-line">                <span style="color:#008000">// if you were not in a transaction, you close the connection</span></span>
@@ -3544,12 +3544,12 @@
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// articles list</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// articles list</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#2b91af">List</span>&lt;<span style="color:#2b91af">Article</span>&gt; GetAllArticles() {</span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// deletion of articles</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// deletion of articles</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">void</span> DeleteAllArticles() {</span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">        }</span>
@@ -3612,34 +3612,34 @@
 
 <p>The other two methods are based on what we saw in the &quot;Databases&quot; chapter:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line">        <span style="color:#008000">// list of items</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// list of items</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#2b91af">List</span>&lt;<span style="color:#2b91af">Article</span>&gt; GetAllArticles() {</span>
-<span class="odt-code-line">            <span style="color:#008000">// item list - empty at start</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// item list - empty at start</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">List</span>&lt;<span style="color:#2b91af">Article</span>&gt; articles = <span style="color:#0000ff">new</span> <span style="color:#2b91af">List</span>&lt;<span style="color:#2b91af">Article</span>&gt;();</span>
-<span class="odt-code-line">            <span style="color:#008000">// operation connection</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// operation connection</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">using</span> (<span style="color:#2b91af">SqlCeConnection</span> connexion = <span style="color:#0000ff">new</span> <span style="color:#2b91af">SqlCeConnection</span>(ConnectionString)) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// opening connection</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// opening connection</span></span>
 <span class="odt-code-line">                connexion.Open();</span>
-<span class="odt-code-line">                <span style="color:#008000">// executes sqlCommand with select query</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// executes sqlCommand with select query</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">SqlCeCommand</span> sqlCommand = <span style="color:#0000ff">new</span> <span style="color:#2b91af">SqlCeCommand</span>(GetAllText, connexion);</span>
 <span class="odt-code-line">                <span style="color:#0000ff">using</span> (<span style="color:#2b91af">SqlCeDataReader</span> reader = sqlCommand.ExecuteReader()) {</span>
-<span class="odt-code-line">                    <span style="color:#008000">// operating income</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">// operating income</span></span>
 <span class="odt-code-line">                    <span style="color:#0000ff">while</span> (reader.Read()) {</span>
-<span class="odt-code-line">                        <span style="color:#008000">// current line operation</span></span>
+<span class="odt-code-line">                         <span style="color:#008000">// current line operation</span></span>
 <span class="odt-code-line">                        articles.Add(<span style="color:#0000ff">new</span> <span style="color:#2b91af">Article</span>(reader.GetInt32(0), reader.GetString(1), reader.GetDecimal(2), reader.GetInt32(3), reader.GetInt32(4)));</span>
 <span class="odt-code-line">                    }</span>
 <span class="odt-code-line">                }</span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            <span style="color:#008000">// we return the result</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// we return the result</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">return</span> articles;</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// article deletion</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// article deletion</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">void</span> DeleteAllArticles() {</span>
 <span class="odt-code-line">            <span style="color:#0000ff">using</span> (<span style="color:#2b91af">SqlCeConnection</span> connexion = <span style="color:#0000ff">new</span> <span style="color:#2b91af">SqlCeConnection</span>(ConnectionString)) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// opening connection</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// opening connection</span></span>
 <span class="odt-code-line">                connexion.Open();</span>
-<span class="odt-code-line">                <span style="color:#008000">// executes sqlCommand with update request</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// executes sqlCommand with update request</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">new</span> <span style="color:#2b91af">SqlCeCommand</span>(DeleteAllText, connexion).ExecuteNonQuery();</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line">}</span>
@@ -3660,9 +3660,9 @@
 <span class="odt-code-line">            <span style="color:#0000ff">string</span> getAllText;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">string</span> deleteAllText;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">try</span> {</span>
-<span class="odt-code-line">                <span style="color:#008000">// connecting chain</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// connecting chain</span></span>
 <span class="odt-code-line">                connectionString = <span style="color:#2b91af">ConfigurationManager</span>.ConnectionStrings[<span style="color:#a31515">&quot;dbArticlesSqlServerCe&quot;</span>].ConnectionString;</span>
-<span class="odt-code-line">                <span style="color:#008000">// other parameters</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// other parameters</span></span>
 <span class="odt-code-line">                insertText = <span style="color:#2b91af">ConfigurationManager</span>.AppSettings[<span style="color:#a31515">&quot;insertText&quot;</span>];</span>
 <span class="odt-code-line">                getAllText = <span style="color:#2b91af">ConfigurationManager</span>.AppSettings[<span style="color:#a31515">&quot;getAllText&quot;</span>];</span>
 <span class="odt-code-line">                deleteAllText = <span style="color:#2b91af">ConfigurationManager</span>.AppSettings[<span style="color:#a31515">&quot;deleteAllText&quot;</span>];</span>
@@ -3670,13 +3670,13 @@
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Erreur de configuration : {0}&quot;</span>, e.Message);</span>
 <span class="odt-code-line">                <span style="color:#0000ff">return</span>;</span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            <span style="color:#008000">// layer creation [dao]</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// layer creation [dao]</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Dao</span> dao = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Dao</span>();</span>
 <span class="odt-code-line">            dao.ConnectionString = connectionString;</span>
 <span class="odt-code-line">            dao.DeleteAllText = deleteAllText;</span>
 <span class="odt-code-line">            dao.GetAllText = getAllText;</span>
 <span class="odt-code-line">            dao.InsertText = insertText;</span>
-<span class="odt-code-line">            <span style="color:#008000">// layer creation [job]</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// layer creation [job]</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Metier</span> metier = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Metier</span>();</span>
 <span class="odt-code-line">            metier.Dao = dao;</span>
 <span class="odt-code-line">            metier.ConnectionString = connectionString;</span>
@@ -3685,7 +3685,7 @@
 <span class="odt-code-line">            <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 0; i &lt; articles.Length; i++) {</span>
 <span class="odt-code-line">                articles[i] = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Article</span>(0, <span style="color:#a31515">&quot;article&quot;</span>, 100, 10, 1);</span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            <span style="color:#008000">// we delete all articles</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// we delete all articles</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Suppression de tous les articles...&quot;</span>);</span>
 <span class="odt-code-line">            metier.DeleteAllArticles();</span>
 <span class="odt-code-line">            <span style="color:#008000">// insert the table outside the transaction</span></span>
@@ -3698,7 +3698,7 @@
 <span class="odt-code-line">            <span style="color:#008000">// we display the articles</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Liste des articles&quot;</span>);</span>
 <span class="odt-code-line">            AfficheArticles(metier);</span>
-<span class="odt-code-line">            <span style="color:#008000">// we delete all articles</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// we delete all articles</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Suppression de tous les articles...&quot;</span>);</span>
 <span class="odt-code-line">            metier.DeleteAllArticles();</span>
 <span class="odt-code-line">            <span style="color:#008000">// insert the array in a transaction</span></span>

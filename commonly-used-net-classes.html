@@ -1252,13 +1252,13 @@
 <span class="odt-code-line">            }<span style="color:#008000">//for</span></span>
 <span class="odt-code-line">            affiche(<span style="color:#a31515">&quot;Join(\&quot;:\&quot;,champs)=&quot;</span> + System.<span style="color:#2b91af">String</span>.Join(<span style="color:#a31515">&quot;:&quot;</span>, champs));</span>
 <span class="odt-code-line">            affiche(<span style="color:#a31515">&quot;(\&quot;  abc  \&quot;).Trim()=[&quot;</span> + <span style="color:#a31515">&quot;  abc  &quot;</span>.Trim() + <span style="color:#a31515">&quot;]&quot;</span>);</span>
-<span class="odt-code-line">            <span style="color:#008000">    }//Main</span></span>
+<span class="odt-code-line">         <span style="color:#008000">}//Main</span></span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> affiche(<span style="color:#0000ff">string</span> msg) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// poster msg</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// poster msg</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(msg);</span>
-<span class="odt-code-line">            <span style="color:#008000">    }//poster</span></span>
-<span class="odt-code-line">        <span style="color:#008000">}//class</span></span>
+<span class="odt-code-line">         <span style="color:#008000">}//poster</span></span>
+<span class="odt-code-line">     <span style="color:#008000">}//class</span></span>
 <span class="odt-code-line">}<span style="color:#008000">//namespace</span></span>
 </code></pre></div>
 
@@ -1306,16 +1306,16 @@
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap3 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">Program</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// the line to be analyzed</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// the line to be analyzed</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">string</span> ligne = <span style="color:#a31515">&quot;un:deux::trois:&quot;</span>;</span>
-<span class="odt-code-line">            <span style="color:#008000">// field separators</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// field separators</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">char</span>[] séparateurs = <span style="color:#0000ff">new</span> <span style="color:#0000ff">char</span>[] { <span style="color:#a31515">&#x27;:&#x27;</span> };</span>
-<span class="odt-code-line">            <span style="color:#008000">// split</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// split</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">string</span>[] champs = ligne.Split(séparateurs);</span>
 <span class="odt-code-line">            <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 0; i &lt; champs.Length; i++) {</span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Champs[&quot;</span> + i + <span style="color:#a31515">&quot;]=&quot;</span> + champs[i]);</span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            <span style="color:#008000">// join</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// join</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;join=[&quot;</span> + System.<span style="color:#2b91af">String</span>.Join(<span style="color:#a31515">&quot;:&quot;</span>, champs) + <span style="color:#a31515">&quot;]&quot;</span>);</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line">    }</span>
@@ -1397,14 +1397,14 @@
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap3 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">Program</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// str</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// str</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">StringBuilder</span> str = <span style="color:#0000ff">new</span> <span style="color:#2b91af">StringBuilder</span>(<span style="color:#a31515">&quot;test&quot;</span>);</span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;taille={0}, capacité={1}&quot;</span>, str.Length, str.Capacity);</span>
 <span class="odt-code-line">            <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 0; i &lt; 10; i++) {</span>
 <span class="odt-code-line">                str.Append(<span style="color:#a31515">&quot;test&quot;</span>);</span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;taille={0}, capacité={1}&quot;</span>, str.Length, str.Capacity);</span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            <span style="color:#008000">// str2</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// str2</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">StringBuilder</span> str2 = <span style="color:#0000ff">new</span> <span style="color:#2b91af">StringBuilder</span>(<span style="color:#a31515">&quot;test&quot;</span>,10);</span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;taille={0}, capacité={1}&quot;</span>, str2.Length, str2.Capacity);</span>
 <span class="odt-code-line">            <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 0; i &lt; 10; i++) {</span>
@@ -1522,7 +1522,7 @@
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap3 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">Program</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// str3</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// str3</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">StringBuilder</span> str3 = <span style="color:#0000ff">new</span> <span style="color:#2b91af">StringBuilder</span>(<span style="color:#a31515">&quot;test&quot;</span>);</span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(str3.Append(<span style="color:#a31515">&quot;abCD&quot;</span>).Insert(2, <span style="color:#a31515">&quot;xyZT&quot;</span>).Remove(0, 2).Replace(<span style="color:#a31515">&quot;xy&quot;</span>, <span style="color:#a31515">&quot;XY&quot;</span>));</span>
 <span class="odt-code-line">        }</span>
@@ -1635,66 +1635,66 @@
 <span class="odt-code-line"> </span>
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap3 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">Program</span> {</span>
-<span class="odt-code-line">        <span style="color:#008000">// search type</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// search type</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">enum</span> <span style="color:#2b91af">TypeRecherche</span> { linéaire, dichotomique };</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// main method</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// main method</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// reading table elements typed on the keyboard</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// reading table elements typed on the keyboard</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">double</span>[] éléments;</span>
 <span class="odt-code-line">            Saisie(<span style="color:#0000ff">out</span> éléments);</span>
-<span class="odt-code-line">            <span style="color:#008000">// unsorted table display</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// unsorted table display</span></span>
 <span class="odt-code-line">            Affiche(<span style="color:#a31515">&quot;Tableau non trié&quot;</span>, éléments);</span>
-<span class="odt-code-line">            <span style="color:#008000">// Linear search in unsorted table</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// Linear search in unsorted table</span></span>
 <span class="odt-code-line">            Recherche(éléments, <span style="color:#2b91af">TypeRecherche</span>.linéaire);</span>
-<span class="odt-code-line">            <span style="color:#008000">// table sorting</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// table sorting</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Array</span>.Sort(éléments);</span>
-<span class="odt-code-line">            <span style="color:#008000">// sorted table display</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// sorted table display</span></span>
 <span class="odt-code-line">            Affiche(<span style="color:#a31515">&quot;Tableau trié&quot;</span>, éléments);</span>
-<span class="odt-code-line">            <span style="color:#008000">// Dichotomous search in sorted table</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// Dichotomous search in sorted table</span></span>
 <span class="odt-code-line">            Recherche(éléments, <span style="color:#2b91af">TypeRecherche</span>.dichotomique);</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// entering values for the elements table</span></span>
-<span class="odt-code-line">        <span style="color:#008000">// elements: reference on table created by the</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// entering values for the elements table</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// elements: reference on table created by the</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Saisie(<span style="color:#0000ff">out</span> <span style="color:#0000ff">double</span>[] éléments) {</span>
 <span class="odt-code-line">            <span style="color:#0000ff">bool</span> terminé = <span style="color:#0000ff">false</span>;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">string</span> réponse;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">bool</span> erreur;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">double</span> élément = 0;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">int</span> i = 0;</span>
-<span class="odt-code-line">            <span style="color:#008000">// initially, the painting does not exist</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// initially, the painting does not exist</span></span>
 <span class="odt-code-line">            éléments = <span style="color:#0000ff">null</span>;</span>
-<span class="odt-code-line">            <span style="color:#008000">// table element input loop</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// table element input loop</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">while</span> (!terminé) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// question</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// question</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.Write(<span style="color:#a31515">&quot;Elément (réel) &quot;</span> + i + <span style="color:#a31515">&quot; du tableau (rien pour terminer) : &quot;</span>);</span>
-<span class="odt-code-line">                <span style="color:#008000">// reading the answer</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// reading the answer</span></span>
 <span class="odt-code-line">                réponse = <span style="color:#2b91af">Console</span>.ReadLine().Trim();</span>
-<span class="odt-code-line">                <span style="color:#008000">// end of input if string empty</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// end of input if string empty</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">if</span> (réponse.Equals(<span style="color:#a31515">&quot;&quot;</span>))</span>
 <span class="odt-code-line">                    <span style="color:#0000ff">break</span>;</span>
-<span class="odt-code-line">                <span style="color:#008000">// input verification</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// input verification</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">try</span> {</span>
 <span class="odt-code-line">                    élément = <span style="color:#2b91af">Double</span>.Parse(réponse);</span>
 <span class="odt-code-line">                    erreur = <span style="color:#0000ff">false</span>;</span>
 <span class="odt-code-line">                } <span style="color:#0000ff">catch</span> {</span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Console</span>.Error.WriteLine(<span style="color:#a31515">&quot;Saisie incorrecte, recommencez&quot;</span>);</span>
 <span class="odt-code-line">                    erreur = <span style="color:#0000ff">true</span>;</span>
-<span class="odt-code-line">                    <span style="color:#008000">            }//try-catch</span></span>
-<span class="odt-code-line">                <span style="color:#008000">// if no error</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">}//try-catch</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// if no error</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">if</span> (!erreur) {</span>
-<span class="odt-code-line">                    <span style="color:#008000">// one more element in the table</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">// one more element in the table</span></span>
 <span class="odt-code-line">                    i += 1;</span>
-<span class="odt-code-line">                    <span style="color:#008000">// resize table to accommodate new element</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">// resize table to accommodate new element</span></span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Array</span>.Resize(<span style="color:#0000ff">ref</span> éléments, i);</span>
-<span class="odt-code-line">                    <span style="color:#008000">// insert new element</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">// insert new element</span></span>
 <span class="odt-code-line">                    éléments[i - 1] = élément;</span>
 <span class="odt-code-line">                }</span>
-<span class="odt-code-line">                <span style="color:#008000">        }//while</span></span>
+<span class="odt-code-line">             <span style="color:#008000">}//while</span></span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// generic method for displaying a picture&#x27;s elements</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// generic method for displaying a picture&#x27;s elements</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Affiche&lt;T&gt;(<span style="color:#0000ff">string</span> texte, T[] éléments) {</span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(texte.PadRight(50, <span style="color:#a31515">&#x27;-&#x27;</span>));</span>
 <span class="odt-code-line">            <span style="color:#0000ff">foreach</span> (T élément <span style="color:#0000ff">in</span> éléments) {</span>
@@ -1703,47 +1703,47 @@
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">        <span style="color:#008000">// recherche d&#x27;an element in the array</span></span>
-<span class="odt-code-line">        <span style="color:#008000">// elements: array of real</span></span>
-<span class="odt-code-line">        <span style="color:#008000">// TypeRecherche: dichotomous or linear</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// elements: array of real</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// TypeRecherche: dichotomous or linear</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Recherche(<span style="color:#0000ff">double</span>[] éléments, <span style="color:#2b91af">TypeRecherche</span> type) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// Search</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// Search</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">bool</span> terminé = <span style="color:#0000ff">false</span>;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">string</span> réponse = <span style="color:#0000ff">null</span>;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">double</span> élément = 0;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">bool</span> erreur = <span style="color:#0000ff">false</span>;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">int</span> i = 0;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">while</span> (!terminé) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// question</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// question</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Elément cherché (rien pour arrêter) : &quot;</span>);</span>
-<span class="odt-code-line">                <span style="color:#008000">// reading-checking response</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// reading-checking response</span></span>
 <span class="odt-code-line">                réponse = <span style="color:#2b91af">Console</span>.ReadLine().Trim();</span>
-<span class="odt-code-line">                <span style="color:#008000">// finished?</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// finished?</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">if</span> (réponse.Equals(<span style="color:#a31515">&quot;&quot;</span>))</span>
 <span class="odt-code-line">                    <span style="color:#0000ff">break</span>;</span>
-<span class="odt-code-line">                <span style="color:#008000">// check</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// check</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">try</span> {</span>
 <span class="odt-code-line">                    élément = <span style="color:#2b91af">Double</span>.Parse(réponse);</span>
 <span class="odt-code-line">                    erreur = <span style="color:#0000ff">false</span>;</span>
 <span class="odt-code-line">                } <span style="color:#0000ff">catch</span> {</span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Erreur, recommencez...&quot;</span>);</span>
 <span class="odt-code-line">                    erreur = <span style="color:#0000ff">true</span>;</span>
-<span class="odt-code-line">                    <span style="color:#008000">            }//try-catch</span></span>
-<span class="odt-code-line">                <span style="color:#008000">// if no error</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">}//try-catch</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// if no error</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">if</span> (!erreur) {</span>
 <span class="odt-code-line">                    <span style="color:#008000">// on cherche l&#x27;element in the table</span></span>
 <span class="odt-code-line">                    <span style="color:#0000ff">if</span> (type == <span style="color:#2b91af">TypeRecherche</span>.dichotomique)</span>
-<span class="odt-code-line">                        <span style="color:#008000">// dichotomous search</span></span>
+<span class="odt-code-line">                         <span style="color:#008000">// dichotomous search</span></span>
 <span class="odt-code-line">                        i = <span style="color:#2b91af">Array</span>.BinarySearch(éléments, élément);</span>
 <span class="odt-code-line">                    <span style="color:#0000ff">else</span></span>
-<span class="odt-code-line">                        <span style="color:#008000">// linear search</span></span>
+<span class="odt-code-line">                         <span style="color:#008000">// linear search</span></span>
 <span class="odt-code-line">                        i = <span style="color:#2b91af">Array</span>.IndexOf(éléments, élément);</span>
-<span class="odt-code-line">                    <span style="color:#008000">// Display response</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">// Display response</span></span>
 <span class="odt-code-line">                    <span style="color:#0000ff">if</span> (i &gt;= 0)</span>
 <span class="odt-code-line">                        <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Trouvé en position &quot;</span> + i);</span>
 <span class="odt-code-line">                    <span style="color:#0000ff">else</span></span>
 <span class="odt-code-line">                        <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Pas dans le tableau&quot;</span>);</span>
-<span class="odt-code-line">                    <span style="color:#008000">            }//if</span></span>
-<span class="odt-code-line">                <span style="color:#008000">        }//while</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">}//if</span></span>
+<span class="odt-code-line">             <span style="color:#008000">}//while</span></span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line">    }</span>
 <span class="odt-code-line">}</span>
@@ -1962,46 +1962,46 @@
 <span class="odt-code-line"> </span>
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap3 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">Program</span> {</span>
-<span class="odt-code-line">        <span style="color:#008000">// search type</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// search type</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">enum</span> <span style="color:#2b91af">TypeRecherche</span> { linéaire, dichotomique };</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// main method</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// main method</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// play list items typed on keyboard</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// play list items typed on keyboard</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">List</span>&lt;<span style="color:#0000ff">double</span>&gt; éléments;</span>
 <span class="odt-code-line">            Saisie(<span style="color:#0000ff">out</span> éléments);</span>
-<span class="odt-code-line">            <span style="color:#008000">// number of elements</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// number of elements</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;La liste a {0} éléments et une capacité de {1} éléments&quot;</span>, éléments.Count, éléments.Capacity);</span>
-<span class="odt-code-line">            <span style="color:#008000">// display unsorted list</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// display unsorted list</span></span>
 <span class="odt-code-line">            Affiche(<span style="color:#a31515">&quot;Liste non triée&quot;</span>, éléments);</span>
-<span class="odt-code-line">            <span style="color:#008000">// Linear search in unsorted list</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// Linear search in unsorted list</span></span>
 <span class="odt-code-line">            Recherche(éléments, <span style="color:#2b91af">TypeRecherche</span>.linéaire);</span>
-<span class="odt-code-line">            <span style="color:#008000">// list sorting</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// list sorting</span></span>
 <span class="odt-code-line">            éléments.Sort();</span>
-<span class="odt-code-line">            <span style="color:#008000">// sorted list display</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// sorted list display</span></span>
 <span class="odt-code-line">            Affiche(<span style="color:#a31515">&quot;Liste triée&quot;</span>, éléments);</span>
-<span class="odt-code-line">            <span style="color:#008000">// Dichotomous search in sorted list</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// Dichotomous search in sorted list</span></span>
 <span class="odt-code-line">            Recherche(éléments, <span style="color:#2b91af">TypeRecherche</span>.dichotomique);</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// enter values for the items list</span></span>
-<span class="odt-code-line">        <span style="color:#008000">// elements: reference to the list created by the</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// enter values for the items list</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// elements: reference to the list created by the</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Saisie(<span style="color:#0000ff">out</span> <span style="color:#2b91af">List</span>&lt;<span style="color:#0000ff">double</span>&gt; éléments) {</span>
 <span class="odt-code-line">...</span>
-<span class="odt-code-line">            <span style="color:#008000">// initially, the list is empty</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// initially, the list is empty</span></span>
 <span class="odt-code-line">            éléments = <span style="color:#0000ff">new</span> <span style="color:#2b91af">List</span>&lt;<span style="color:#0000ff">double</span>&gt;();</span>
-<span class="odt-code-line">            <span style="color:#008000">// list item entry loop</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// list item entry loop</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">while</span> (!terminé) {</span>
 <span class="odt-code-line">...</span>
-<span class="odt-code-line">                <span style="color:#008000">// if no error</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// if no error</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">if</span> (!erreur) {</span>
-<span class="odt-code-line">                    <span style="color:#008000">// one more item in the list</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">// one more item in the list</span></span>
 <span class="odt-code-line">                    éléments.Add(élément);</span>
 <span class="odt-code-line">                }</span>
-<span class="odt-code-line">                <span style="color:#008000">        }//while</span></span>
+<span class="odt-code-line">             <span style="color:#008000">}//while</span></span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// generic method for displaying the elements of an enumerable object</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// generic method for displaying the elements of an enumerable object</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Affiche&lt;T&gt;(<span style="color:#0000ff">string</span> texte, <span style="color:#2b91af">IEnumerable</span>&lt;T&gt; éléments) {</span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(texte.PadRight(50, <span style="color:#a31515">&#x27;-&#x27;</span>));</span>
 <span class="odt-code-line">            <span style="color:#0000ff">foreach</span> (T élément <span style="color:#0000ff">in</span> éléments) {</span>
@@ -2009,26 +2009,26 @@
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// search for an item in a list</span></span>
-<span class="odt-code-line">        <span style="color:#008000">// elements: list of real numbers</span></span>
-<span class="odt-code-line">        <span style="color:#008000">// TypeRecherche: dichotomous or linear</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// search for an item in a list</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// elements: list of real numbers</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// TypeRecherche: dichotomous or linear</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Recherche(<span style="color:#2b91af">List</span>&lt;<span style="color:#0000ff">double</span>&gt; éléments, <span style="color:#2b91af">TypeRecherche</span> type) {</span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">            <span style="color:#0000ff">while</span> (!terminé) {</span>
 <span class="odt-code-line">...</span>
-<span class="odt-code-line">                <span style="color:#008000">// if no error</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// if no error</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">if</span> (!erreur) {</span>
-<span class="odt-code-line">                    <span style="color:#008000">// search for the element in the list</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">// search for the element in the list</span></span>
 <span class="odt-code-line">                    <span style="color:#0000ff">if</span> (type == <span style="color:#2b91af">TypeRecherche</span>.dichotomique)</span>
-<span class="odt-code-line">                        <span style="color:#008000">// dichotomous search</span></span>
+<span class="odt-code-line">                         <span style="color:#008000">// dichotomous search</span></span>
 <span class="odt-code-line">                        i = éléments.BinarySearch(élément);</span>
 <span class="odt-code-line">                    <span style="color:#0000ff">else</span></span>
-<span class="odt-code-line">                        <span style="color:#008000">// linear search</span></span>
+<span class="odt-code-line">                         <span style="color:#008000">// linear search</span></span>
 <span class="odt-code-line">                        i = éléments.IndexOf(élément);</span>
 <span class="odt-code-line"><span style="color:#008000">// Display response</span></span>
 <span class="odt-code-line">...</span>
-<span class="odt-code-line">                    <span style="color:#008000">            }//if</span></span>
-<span class="odt-code-line">                <span style="color:#008000">        }//while</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">}//if</span></span>
+<span class="odt-code-line">             <span style="color:#008000">}//while</span></span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line">    }</span>
 <span class="odt-code-line">}</span>
@@ -2176,7 +2176,7 @@
 <span class="odt-code-line">            }<span style="color:#008000">//for</span></span>
 <span class="odt-code-line">            <span style="color:#008000">// number of elements in the dictionary</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Le dictionnaire a &quot;</span> + dico.Count + <span style="color:#a31515">&quot; éléments&quot;</span>);</span>
-<span class="odt-code-line">            <span style="color:#008000">// kEY LIST</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// kEY LIST</span></span>
 <span class="odt-code-line">            Affiche(<span style="color:#a31515">&quot;[Liste des clés]&quot;</span>,dico.Keys);</span>
 <span class="odt-code-line">            <span style="color:#008000">// list of values</span></span>
 <span class="odt-code-line">            Affiche(<span style="color:#a31515">&quot;[Liste des valeurs]&quot;</span>, dico.Values);</span>
@@ -2193,7 +2193,7 @@
 <span class="odt-code-line">            <span style="color:#0000ff">foreach</span> (<span style="color:#0000ff">string</span> clé <span style="color:#0000ff">in</span> dico.Keys) {</span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;clé=&quot;</span> + clé + <span style="color:#a31515">&quot; valeur=&quot;</span> + dico[clé]);</span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            <span style="color:#008000">// dictionary search</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// dictionary search</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">String</span> nomCherché = <span style="color:#0000ff">null</span>;</span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.Write(<span style="color:#a31515">&quot;Nom recherché (rien pour arrêter) : &quot;</span>);</span>
 <span class="odt-code-line">            nomCherché = <span style="color:#2b91af">Console</span>.ReadLine().Trim();</span>
@@ -2205,10 +2205,10 @@
 <span class="odt-code-line">                } <span style="color:#0000ff">else</span> {</span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Nom &quot;</span> + nomCherché + <span style="color:#a31515">&quot; inconnu&quot;</span>);</span>
 <span class="odt-code-line">                }</span>
-<span class="odt-code-line">                <span style="color:#008000">// next search</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// next search</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.Out.Write(<span style="color:#a31515">&quot;Nom recherché (rien pour arrêter) : &quot;</span>);</span>
 <span class="odt-code-line">                nomCherché = <span style="color:#2b91af">Console</span>.ReadLine().Trim();</span>
-<span class="odt-code-line">                <span style="color:#008000">        }//while</span></span>
+<span class="odt-code-line">             <span style="color:#008000">}//while</span></span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">        <span style="color:#008000">// generic method for displaying elements of an enumerable type</span></span>
@@ -2377,13 +2377,13 @@
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap3 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">Program</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// execution directory</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// execution directory</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Répertoire d&#x27;exécution : &quot;</span>+<span style="color:#2b91af">Environment</span>.CurrentDirectory);</span>
 <span class="odt-code-line">            <span style="color:#0000ff">string</span> ligne = <span style="color:#0000ff">null</span>;</span>
 <span class="odt-code-line">            <span style="color:#2b91af">StreamReader</span> fluxInfos = <span style="color:#0000ff">null</span>;</span>
-<span class="odt-code-line">            <span style="color:#008000">// read contents of infos.txt file</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// read contents of infos.txt file</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">try</span> {</span>
-<span class="odt-code-line">                <span style="color:#008000">// reading 1</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// reading 1</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Lecture 1----------------&quot;</span>);</span>
 <span class="odt-code-line">                <span style="color:#0000ff">using</span> (fluxInfos = <span style="color:#0000ff">new</span> <span style="color:#2b91af">StreamReader</span>(<span style="color:#a31515">&quot;infos.txt&quot;</span>)) {</span>
 <span class="odt-code-line">                    ligne = fluxInfos.ReadLine();</span>
@@ -2392,7 +2392,7 @@
 <span class="odt-code-line">                        ligne = fluxInfos.ReadLine();</span>
 <span class="odt-code-line">                    }</span>
 <span class="odt-code-line">                }</span>
-<span class="odt-code-line">                <span style="color:#008000">// reading 2</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// reading 2</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Lecture 2----------------&quot;</span>);</span>
 <span class="odt-code-line">                <span style="color:#0000ff">using</span> (fluxInfos = <span style="color:#0000ff">new</span> <span style="color:#2b91af">StreamReader</span>(<span style="color:#a31515">&quot;infos.txt&quot;</span>)) {</span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Console</span>.WriteLine(fluxInfos.ReadToEnd());</span>
@@ -2543,25 +2543,25 @@
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap3 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">Program2</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// execution directory</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// execution directory</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Répertoire d&#x27;exécution : &quot;</span> + <span style="color:#2b91af">Environment</span>.CurrentDirectory);</span>
-<span class="odt-code-line">            <span style="color:#0000ff">            str</span>ing ligne<span style="color:#0000ff"> = n</span>u                        <span style="color:#008000">ll;                      // one line of text</span></span>
-<span class="odt-code-line">            <span style="color:#2b91af">            StreamWri</span>ter fluxInfos<span style="color:#0000ff"> = n</span>u    <span style="color:#008000">ll;    // the text file</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff"> str</span>ing ligne<span style="color:#0000ff"> = n</span>u                        <span style="color:#008000">ll; // one line of text</span></span>
+<span class="odt-code-line">            <span style="color:#2b91af"> StreamWri</span>ter fluxInfos<span style="color:#0000ff"> = n</span>u    <span style="color:#008000">ll; // the text file</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">try</span> {</span>
-<span class="odt-code-line">                <span style="color:#008000">// text file creation</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// text file creation</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">using</span> (fluxInfos = <span style="color:#0000ff">new</span> <span style="color:#2b91af">StreamWriter</span>(<span style="color:#a31515">&quot;infos2.txt&quot;</span>)) {</span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Mode AutoFlush : {0}&quot;</span>, fluxInfos.AutoFlush);</span>
-<span class="odt-code-line">                    <span style="color:#008000">// read line typed on keyboard</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">// read line typed on keyboard</span></span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Console</span>.Write(<span style="color:#a31515">&quot;ligne (rien pour arrêter) : &quot;</span>);</span>
 <span class="odt-code-line">                    ligne = <span style="color:#2b91af">Console</span>.ReadLine().Trim();</span>
-<span class="odt-code-line">                    <span style="color:#008000">// loop as long as the line entered is not empty</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">// loop as long as the line entered is not empty</span></span>
 <span class="odt-code-line">                    <span style="color:#0000ff">while</span> (ligne != <span style="color:#a31515">&quot;&quot;</span>) {</span>
-<span class="odt-code-line">                        <span style="color:#008000">// write line to text file</span></span>
+<span class="odt-code-line">                         <span style="color:#008000">// write line to text file</span></span>
 <span class="odt-code-line">                        fluxInfos.WriteLine(ligne);</span>
-<span class="odt-code-line">                        <span style="color:#008000">// read new line on keyboard</span></span>
+<span class="odt-code-line">                         <span style="color:#008000">// read new line on keyboard</span></span>
 <span class="odt-code-line">                        <span style="color:#2b91af">Console</span>.Write(<span style="color:#a31515">&quot;ligne (rien pour arrêter) : &quot;</span>);</span>
 <span class="odt-code-line">                        ligne = <span style="color:#2b91af">Console</span>.ReadLine().Trim();</span>
-<span class="odt-code-line">                        <span style="color:#008000">                }//while</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">}//while</span></span>
 <span class="odt-code-line">                }</span>
 <span class="odt-code-line">            } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">Exception</span> e) {</span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;L&#x27;erreur suivante s&#x27;est produite : &quot;</span> + e.Message);</span>
@@ -2633,13 +2633,13 @@
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap3 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">Program</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] arguments) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// you need 3 arguments</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// you need 3 arguments</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">if</span> (arguments.Length != 3) {</span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;syntaxe : pg texte binaire log&quot;</span>);</span>
 <span class="odt-code-line">                <span style="color:#2b91af">Environment</span>.Exit(1);</span>
-<span class="odt-code-line">                <span style="color:#008000">        }//if</span></span>
+<span class="odt-code-line">             <span style="color:#008000">}//if</span></span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">// variables</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// variables</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">string</span> ligne=<span style="color:#0000ff">null</span>;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">string</span> nom=<span style="color:#0000ff">null</span>;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">int</span> age=0;</span>
@@ -2650,33 +2650,33 @@
 <span class="odt-code-line">            <span style="color:#2b91af">BinaryWriter</span> output = <span style="color:#0000ff">null</span>;</span>
 <span class="odt-code-line">            <span style="color:#2b91af">StreamWriter</span> logs = <span style="color:#0000ff">null</span>;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">bool</span> erreur = <span style="color:#0000ff">false</span>;</span>
-<span class="odt-code-line">            <span style="color:#008000">// read text file - write binary file</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// read text file - write binary file</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">try</span> {</span>
-<span class="odt-code-line">                <span style="color:#008000">// open text file in read mode</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// open text file in read mode</span></span>
 <span class="odt-code-line">                input = <span style="color:#0000ff">new</span> <span style="color:#2b91af">StreamReader</span>(arguments[0]);</span>
-<span class="odt-code-line">                <span style="color:#008000">// open binary file for writing</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// open binary file for writing</span></span>
 <span class="odt-code-line">                output = <span style="color:#0000ff">new</span> <span style="color:#2b91af">BinaryWriter</span>(<span style="color:#0000ff">new</span> <span style="color:#2b91af">FileStream</span>(arguments[1], <span style="color:#2b91af">FileMode</span>.Create, <span style="color:#2b91af">FileAccess</span>.Write));</span>
-<span class="odt-code-line">                <span style="color:#008000">// open write log file</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// open write log file</span></span>
 <span class="odt-code-line">                logs = <span style="color:#0000ff">new</span> <span style="color:#2b91af">StreamWriter</span>(arguments[2]);</span>
-<span class="odt-code-line">                <span style="color:#008000">// text file processing</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// text file processing</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">while</span> ((ligne = input.ReadLine()) != <span style="color:#0000ff">null</span>) {</span>
-<span class="odt-code-line">                    <span style="color:#008000">// one more line</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">// one more line</span></span>
 <span class="odt-code-line">                    numLigne++;</span>
-<span class="odt-code-line">                    <span style="color:#008000">// empty line?</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">// empty line?</span></span>
 <span class="odt-code-line">                    <span style="color:#0000ff">if</span> (ligne.Trim() == <span style="color:#a31515">&quot;&quot;</span>) {</span>
 <span class="odt-code-line">                        <span style="color:#008000">// on ignore</span></span>
 <span class="odt-code-line">                        <span style="color:#0000ff">continue</span>;</span>
 <span class="odt-code-line">                    }</span>
-<span class="odt-code-line">                    <span style="color:#008000">// one line name: age</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">// one line name: age</span></span>
 <span class="odt-code-line">                    champs = ligne.Split(séparateurs);</span>
-<span class="odt-code-line">                    <span style="color:#008000">// we need 2 fields</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">// we need 2 fields</span></span>
 <span class="odt-code-line">                    <span style="color:#0000ff">if</span> (champs.Length != 2) {</span>
 <span class="odt-code-line">                        <span style="color:#008000">// on logue l&#x27;erreur</span></span>
 <span class="odt-code-line">                        logs.WriteLine(<span style="color:#a31515">&quot;La ligne n° [{0}] du fichier [{1}] a un nombre de champs incorrect&quot;</span>, numLigne, arguments[0]);</span>
-<span class="odt-code-line">                        <span style="color:#008000">// next line</span></span>
+<span class="odt-code-line">                         <span style="color:#008000">// next line</span></span>
 <span class="odt-code-line">                        <span style="color:#0000ff">continue</span>;</span>
-<span class="odt-code-line">                        <span style="color:#008000">                }//if</span></span>
-<span class="odt-code-line">                    <span style="color:#008000">// 1st field must be non-empty</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">}//if</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">// 1st field must be non-empty</span></span>
 <span class="odt-code-line">                    erreur = <span style="color:#0000ff">false</span>;</span>
 <span class="odt-code-line">                    nom = champs[0].Trim();</span>
 <span class="odt-code-line">                    <span style="color:#0000ff">if</span> (nom == <span style="color:#a31515">&quot;&quot;</span>) {</span>
@@ -2684,23 +2684,23 @@
 <span class="odt-code-line">                        logs.WriteLine(<span style="color:#a31515">&quot;La ligne n° [{0}] du fichier [{1}] a un nom vide&quot;</span>, numLigne, arguments[0]);</span>
 <span class="odt-code-line">                        erreur = <span style="color:#0000ff">true</span>;</span>
 <span class="odt-code-line">                    }</span>
-<span class="odt-code-line">                    <span style="color:#008000">// the second field must be an integer &gt;=0</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">// the second field must be an integer &gt;=0</span></span>
 <span class="odt-code-line">                    <span style="color:#0000ff">if</span> (!<span style="color:#0000ff">int</span>.TryParse(champs[1],<span style="color:#0000ff">out</span> age) || age&lt;0) {</span>
 <span class="odt-code-line">                        <span style="color:#008000">// on logue l&#x27;erreur</span></span>
 <span class="odt-code-line">                        logs.WriteLine(<span style="color:#a31515">&quot;La ligne n° [{0}] du fichier [{1}] a un âge [{2}] incorrect&quot;</span>, numLigne, arguments[0], champs[1].Trim());</span>
 <span class="odt-code-line">                        erreur = <span style="color:#0000ff">true</span>;</span>
-<span class="odt-code-line">                        <span style="color:#008000">                }//if</span></span>
-<span class="odt-code-line">                    <span style="color:#008000">// if no error, write data to binary file</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">}//if</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">// if no error, write data to binary file</span></span>
 <span class="odt-code-line">                    <span style="color:#0000ff">if</span> (!erreur) {</span>
 <span class="odt-code-line">                        output.Write(nom);</span>
 <span class="odt-code-line">                        output.Write(age);</span>
 <span class="odt-code-line">                    }</span>
-<span class="odt-code-line">                                <span style="color:#008000">// next line</span></span>
-<span class="odt-code-line">                    <span style="color:#008000">            }//while</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">// next line</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">}//while</span></span>
 <span class="odt-code-line">            }<span style="color:#0000ff">catch</span>(<span style="color:#2b91af">Exception</span> e){</span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;L&#x27;erreur suivante s&#x27;est produite : {0}&quot;</span>, e.Message);</span>
 <span class="odt-code-line">            } <span style="color:#0000ff">finally</span> {</span>
-<span class="odt-code-line">                <span style="color:#008000">// closing files</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// closing files</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">if</span>(input!=<span style="color:#0000ff">null</span>) input.Close();</span>
 <span class="odt-code-line">                <span style="color:#0000ff">if</span>(output!=<span style="color:#0000ff">null</span>) output.Close();</span>
 <span class="odt-code-line">                <span style="color:#0000ff">if</span>(logs!=<span style="color:#0000ff">null</span>) logs.Close();</span>
@@ -2809,13 +2809,13 @@
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap3 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">Program2</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] arguments) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// you need 3 arguments</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// you need 3 arguments</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">if</span> (arguments.Length != 3) {</span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;syntaxe : pg binaire texte log&quot;</span>);</span>
 <span class="odt-code-line">                <span style="color:#2b91af">Environment</span>.Exit(1);</span>
-<span class="odt-code-line">                <span style="color:#008000">        }//if</span></span>
+<span class="odt-code-line">             <span style="color:#008000">}//if</span></span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">// variables</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// variables</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">string</span> nom = <span style="color:#0000ff">null</span>;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">int</span> age = 0;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">int</span> numPersonne = 1;</span>
@@ -2823,36 +2823,36 @@
 <span class="odt-code-line">            <span style="color:#2b91af">StreamWriter</span> output = <span style="color:#0000ff">null</span>;</span>
 <span class="odt-code-line">            <span style="color:#2b91af">StreamWriter</span> logs = <span style="color:#0000ff">null</span>;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">bool</span> fini;</span>
-<span class="odt-code-line">            <span style="color:#008000">// read binary file - write text file</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// read binary file - write text file</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">try</span> {</span>
-<span class="odt-code-line">                <span style="color:#008000">// open binary file for reading</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// open binary file for reading</span></span>
 <span class="odt-code-line">                input = <span style="color:#0000ff">new</span> <span style="color:#2b91af">BinaryReader</span>(<span style="color:#0000ff">new</span> <span style="color:#2b91af">FileStream</span>(arguments[0], <span style="color:#2b91af">FileMode</span>.Open, <span style="color:#2b91af">FileAccess</span>.Read));</span>
-<span class="odt-code-line">                <span style="color:#008000">// open text file for writing</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// open text file for writing</span></span>
 <span class="odt-code-line">                output = <span style="color:#0000ff">new</span> <span style="color:#2b91af">StreamWriter</span>(arguments[1]);</span>
-<span class="odt-code-line">                <span style="color:#008000">// open write log file</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// open write log file</span></span>
 <span class="odt-code-line">                logs = <span style="color:#0000ff">new</span> <span style="color:#2b91af">StreamWriter</span>(arguments[2]);</span>
-<span class="odt-code-line">                <span style="color:#008000">// binary file processing</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// binary file processing</span></span>
 <span class="odt-code-line">                fini = <span style="color:#0000ff">false</span>;</span>
 <span class="odt-code-line">                <span style="color:#0000ff">while</span> (!fini) {</span>
 <span class="odt-code-line">                    <span style="color:#0000ff">try</span> {</span>
-<span class="odt-code-line">                        <span style="color:#008000">// read name</span></span>
+<span class="odt-code-line">                         <span style="color:#008000">// read name</span></span>
 <span class="odt-code-line">                        nom = input.ReadString().Trim();</span>
-<span class="odt-code-line">                        <span style="color:#008000">// age reading</span></span>
+<span class="odt-code-line">                         <span style="color:#008000">// age reading</span></span>
 <span class="odt-code-line">                        age = input.ReadInt32();</span>
-<span class="odt-code-line">                        <span style="color:#008000">// writing to text file</span></span>
+<span class="odt-code-line">                         <span style="color:#008000">// writing to text file</span></span>
 <span class="odt-code-line">                        output.WriteLine(nom + <span style="color:#a31515">&quot;:&quot;</span> + age);</span>
-<span class="odt-code-line">                        <span style="color:#008000">// next person</span></span>
+<span class="odt-code-line">                         <span style="color:#008000">// next person</span></span>
 <span class="odt-code-line">                        numPersonne++;</span>
 <span class="odt-code-line">                    } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">EndOfStreamException</span>) {</span>
 <span class="odt-code-line">                        fini = <span style="color:#0000ff">true</span>;</span>
 <span class="odt-code-line">                    } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">Exception</span> e) {</span>
 <span class="odt-code-line">                        logs.WriteLine(<span style="color:#a31515">&quot;L&#x27;erreur suivante s&#x27;est produite à la lecture de la personne n° {0} : {1}&quot;</span>, numPersonne, e.Message);</span>
 <span class="odt-code-line">                    }</span>
-<span class="odt-code-line">                    <span style="color:#008000">            }//while</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">}//while</span></span>
 <span class="odt-code-line">            } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">Exception</span> e) {</span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;L&#x27;erreur suivante s&#x27;est produite : {0}&quot;</span>, e.Message);</span>
 <span class="odt-code-line">            } <span style="color:#0000ff">finally</span> {</span>
-<span class="odt-code-line">                <span style="color:#008000">// closing files</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// closing files</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">if</span> (input != <span style="color:#0000ff">null</span>)</span>
 <span class="odt-code-line">                    input.Close();</span>
 <span class="odt-code-line">                <span style="color:#0000ff">if</span> (output != <span style="color:#0000ff">null</span>)</span>
@@ -3072,22 +3072,22 @@
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap3 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">Program</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// a regular expression template</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// a regular expression template</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">string</span> modèle1 = <span style="color:#a31515">@&quot;^\s*\d+\s*$&quot;</span>;</span>
 <span class="odt-code-line">            <span style="color:#2b91af">Regex</span> regex1 = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Regex</span>(modèle1);</span>
-<span class="odt-code-line">            <span style="color:#008000">// compare a copy with the model</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// compare a copy with the model</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">string</span> exemplaire1 = <span style="color:#a31515">&quot;  123  &quot;</span>;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">if</span> (regex1.IsMatch(exemplaire1)) {</span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;[{0}] correspond au modèle [{1}]&quot;</span>, exemplaire1, modèle1);</span>
 <span class="odt-code-line">            } <span style="color:#0000ff">else</span> {</span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;[{0}] ne correspond pas au modèle [{1}]&quot;</span>, exemplaire1, modèle1);</span>
-<span class="odt-code-line">                <span style="color:#008000">        }//if</span></span>
+<span class="odt-code-line">             <span style="color:#008000">}//if</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">string</span> exemplaire2 = <span style="color:#a31515">&quot;  123a  &quot;</span>;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">if</span> (regex1.IsMatch(exemplaire2)) {</span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;[{0}] correspond au modèle [{1}]&quot;</span>, exemplaire2, modèle1);</span>
 <span class="odt-code-line">            } <span style="color:#0000ff">else</span> {</span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;[{0}] ne correspond pas au modèle [{1}]&quot;</span>, exemplaire2, modèle1);</span>
-<span class="odt-code-line">                <span style="color:#008000">        }//if</span></span>
+<span class="odt-code-line">             <span style="color:#008000">}//if</span></span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">    }</span>
@@ -3127,7 +3127,7 @@
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap3 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">Program2</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// several occurrences of the model in the copy</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// several occurrences of the model in the copy</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">string</span> modèle2 = <span style="color:#a31515">@&quot;\d+&quot;</span>;</span>
 <span class="odt-code-line">            <span style="color:#2b91af">Regex</span> regex2 = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Regex</span>(modèle2);</span>
 <span class="odt-code-line">            <span style="color:#0000ff">string</span> exemplaire3 = <span style="color:#a31515">&quot;  123  456  789 &quot;</span>;</span>
@@ -3175,21 +3175,21 @@
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap3 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">Program3</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// capture elements in the model</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// capture elements in the model</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">string</span> modèle3 = <span style="color:#a31515">@&quot;(\d\d):(\d\d):(\d\d)&quot;</span>;</span>
 <span class="odt-code-line">            <span style="color:#2b91af">Regex</span> regex3 = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Regex</span>(modèle3);</span>
 <span class="odt-code-line">            <span style="color:#0000ff">string</span> exemplaire4 = <span style="color:#a31515">&quot;Il est 18:05:49&quot;</span>;</span>
-<span class="odt-code-line">            <span style="color:#008000">// model checking</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// model checking</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Match</span> résultat = regex3.Match(exemplaire4);</span>
 <span class="odt-code-line">            <span style="color:#0000ff">if</span> (résultat.Success) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// the copy corresponds to the model</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// the copy corresponds to the model</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;L&#x27;exemplaire [{0}] correspond au modèle [{1}]&quot;</span>,exemplaire4,modèle3);</span>
-<span class="odt-code-line">                <span style="color:#008000">// display groups of parentheses</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// display groups of parentheses</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 0; i &lt; résultat.Groups.Count; i++) {</span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;groupes[{0}]=[{1}] trouvé en position {2}&quot;</span>,i, résultat.Groups[i].Value,résultat.Groups[i].Index);</span>
 <span class="odt-code-line">                }<span style="color:#008000">//for</span></span>
 <span class="odt-code-line">            } <span style="color:#0000ff">else</span> {</span>
-<span class="odt-code-line">                <span style="color:#008000">// the copy does not correspond to the model</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// the copy does not correspond to the model</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;L&#x27;exemplaire[{0}] ne correspond pas au modèle [{1}]&quot;</span>, exemplaire4, modèle3);</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line">        }</span>
@@ -3241,43 +3241,43 @@
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap3 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">Program4</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// data</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// data</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">string</span> modèle, chaine;</span>
 <span class="odt-code-line">            <span style="color:#2b91af">Regex</span> regex = <span style="color:#0000ff">null</span>;</span>
 <span class="odt-code-line">            <span style="color:#2b91af">MatchCollection</span> résultats;</span>
-<span class="odt-code-line">            <span style="color:#008000">// the user is asked for models and samples to compare with this one</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// the user is asked for models and samples to compare with this one</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">while</span> (<span style="color:#0000ff">true</span>) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// the model is requested</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// the model is requested</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.Write(<span style="color:#a31515">&quot;Tapez le modèle à tester ou rien pour arrêter :&quot;</span>);</span>
 <span class="odt-code-line">                modèle = <span style="color:#2b91af">Console</span>.In.ReadLine();</span>
-<span class="odt-code-line">                <span style="color:#008000">// finished?</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// finished?</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">if</span> (modèle.Trim() == <span style="color:#a31515">&quot;&quot;</span>)</span>
 <span class="odt-code-line">                    <span style="color:#0000ff">break</span>;</span>
-<span class="odt-code-line">                <span style="color:#008000">// we create the regular expression</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// we create the regular expression</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">try</span> {</span>
 <span class="odt-code-line">                    regex = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Regex</span>(modèle);</span>
 <span class="odt-code-line">                } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">Exception</span> ex) {</span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Erreur : &quot;</span> + ex.Message);</span>
 <span class="odt-code-line">                    <span style="color:#0000ff">continue</span>;</span>
 <span class="odt-code-line">                }</span>
-<span class="odt-code-line">                <span style="color:#008000">// the user is asked for the specimens to be compared with the model</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// the user is asked for the specimens to be compared with the model</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">while</span> (<span style="color:#0000ff">true</span>) {</span>
 <span class="odt-code-line">                    <span style="color:#2b91af">Console</span>.Write(<span style="color:#a31515">&quot;Tapez la chaîne à comparer au modèle [{0}] ou rien pour arrêter :&quot;</span>, modèle);</span>
 <span class="odt-code-line">                    chaine = <span style="color:#2b91af">Console</span>.ReadLine();</span>
-<span class="odt-code-line">                    <span style="color:#008000">// finished?</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">// finished?</span></span>
 <span class="odt-code-line">                    <span style="color:#0000ff">if</span> (chaine.Trim() == <span style="color:#a31515">&quot;&quot;</span>)</span>
 <span class="odt-code-line">                        <span style="color:#0000ff">break</span>;</span>
-<span class="odt-code-line">                    <span style="color:#008000">// we make the comparison</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">// we make the comparison</span></span>
 <span class="odt-code-line">                    résultats = regex.Matches(chaine);</span>
-<span class="odt-code-line">                    <span style="color:#008000">// success?</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">// success?</span></span>
 <span class="odt-code-line">                    <span style="color:#0000ff">if</span> (résultats.Count == 0) {</span>
 <span class="odt-code-line">                        <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Je n&#x27;ai pas trouvé de correspondances&quot;</span>);</span>
 <span class="odt-code-line">                        <span style="color:#0000ff">continue</span>;</span>
-<span class="odt-code-line">                        <span style="color:#008000">                }//if</span></span>
-<span class="odt-code-line">                    <span style="color:#008000">// the elements corresponding to the model are displayed</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">}//if</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">// the elements corresponding to the model are displayed</span></span>
 <span class="odt-code-line">                    <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 0; i &lt; résultats.Count; i++) {</span>
 <span class="odt-code-line">                        <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;J&#x27;ai trouvé la correspondance [{0}] en position [{1}]&quot;</span>, résultats[i].Value, résultats[i].Index);</span>
-<span class="odt-code-line">                        <span style="color:#008000">// sub-elements</span></span>
+<span class="odt-code-line">                         <span style="color:#008000">// sub-elements</span></span>
 <span class="odt-code-line">                        <span style="color:#0000ff">if</span> (résultats[i].Groups.Count != 1) {</span>
 <span class="odt-code-line">                            <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> j = 1; j &lt; résultats[i].Groups.Count; j++) {</span>
 <span class="odt-code-line">                                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;\tsous-élément [{0}] en position [{1}]&quot;</span>, résultats[i].Groups[j].Value, résultats[i].Groups[j].Index);</span>
@@ -3379,13 +3379,13 @@
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap3 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">Program5</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// a line</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// a line</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">string</span> ligne = <span style="color:#a31515">&quot;abc  , def  , ghi&quot;</span>;</span>
-<span class="odt-code-line">            <span style="color:#008000">// a model</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// a model</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Regex</span> modèle = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Regex</span>(<span style="color:#a31515">@&quot;\s*,\s*&quot;</span>);</span>
-<span class="odt-code-line">            <span style="color:#008000">// decomposition of line into fields</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// decomposition of line into fields</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">string</span>[] champs = modèle.Split(ligne);</span>
-<span class="odt-code-line">            <span style="color:#008000">// display</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// display</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 0; i &lt; champs.Length; i++) {</span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;champs[{0}]=[{1}]&quot;</span>, i, champs[i]);</span>
 <span class="odt-code-line">            }</span>
@@ -3401,8 +3401,8 @@
 <a id="__codelineno-194-2" name="__codelineno-194-2"></a><span class="n">champs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="n">def</span><span class="p">]</span>
 <a id="__codelineno-194-3" name="__codelineno-194-3"></a><span class="n">champs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="n">ghi</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
-<p><a id="refheading10400751168783983"></a>
-<a id="impots-v3"></a></p>
+<p><a id="impots-v3"></a>
+<a id="refheading10400751168783983"></a></p>
 <h2 id="58-sample-application-v3">5.8. Sample application - V3</h2>
 <p>We return to the application studied in paragraphs <a href="----c-language-basics.html#impots-v1">3.6</a> (version 1) and <a href="classes-stuctures-interfaces.html#impots-v2">4.10</a> (version 2).</p>
 <p>In the latest version studied, the tax calculation was performed in the abstract class <em>AbstractImpot</em> :</p>
@@ -3410,29 +3410,29 @@
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap2 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">abstract</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">AbstractImpot</span> : <span style="color:#2b91af">IImpot</span> {</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// tax brackets required to calculate tax</span></span>
-<span class="odt-code-line">        <span style="color:#008000">// come from an external source</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// tax brackets required to calculate tax</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// come from an external source</span></span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">        <span style="color:#0000ff">protected</span> <span style="color:#2b91af">TrancheImpot</span>[] tranchesImpot;</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// tAX CALCULATION</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// tAX CALCULATION</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">int</span> calculer(<span style="color:#0000ff">bool</span> marié, <span style="color:#0000ff">int</span> nbEnfants, <span style="color:#0000ff">int</span> salaire) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// calculating the number of shares</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// calculating the number of shares</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">decimal</span> nbParts;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">if</span> (marié) nbParts = (<span style="color:#0000ff">decimal</span>)nbEnfants / 2 + 2;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">else</span> nbParts = (<span style="color:#0000ff">decimal</span>)nbEnfants / 2 + 1;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">if</span> (nbEnfants &gt;= 3) nbParts += 0.5M;</span>
-<span class="odt-code-line">            <span style="color:#008000">// calculation of taxable income &amp; family quota</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// calculation of taxable income &amp; family quota</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">decimal</span> revenu = 0.72M * salaire;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">decimal</span> QF = revenu / nbParts;</span>
-<span class="odt-code-line">            <span style="color:#008000">// tAX CALCULATION</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// tAX CALCULATION</span></span>
 <span class="odt-code-line">            tranchesImpot[tranchesImpot.Length - 1].Limite = QF + 1;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">int</span> i = 0;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">while</span> (QF &gt; tranchesImpot[i].Limite) i++;</span>
-<span class="odt-code-line">            <span style="color:#008000">// return result</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// return result</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">return</span> (<span style="color:#0000ff">int</span>)(revenu * tranchesImpot[i].CoeffR - nbParts * tranchesImpot[i].CoeffN);</span>
-<span class="odt-code-line">            <span style="color:#008000">    }//calculate</span></span>
-<span class="odt-code-line">        <span style="color:#008000">}//class</span></span>
+<span class="odt-code-line">         <span style="color:#008000">}//calculate</span></span>
+<span class="odt-code-line">     <span style="color:#008000">}//class</span></span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">}</span>
 </code></pre></div>
@@ -3444,20 +3444,20 @@
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap2 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">HardwiredImpot</span> : <span style="color:#2b91af">AbstractImpot</span> {</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// data tables required to calculate the </span></span>
+<span class="odt-code-line">         <span style="color:#008000">// data tables required to calculate the </span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">decimal</span>[] limites = { 4962M, 8382M, 14753M, 23888M, 38868M, 47932M, 0M };</span>
 <span class="odt-code-line">        <span style="color:#0000ff">decimal</span>[] coeffR = { 0M, 0.068M, 0.191M, 0.283M, 0.374M, 0.426M, 0.481M };</span>
 <span class="odt-code-line">        <span style="color:#0000ff">decimal</span>[] coeffN = { 0M, 291.09M, 1322.92M, 2668.39M, 4846.98M, 6883.66M, 9505.54M };</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> HardwiredImpot() {</span>
-<span class="odt-code-line">            <span style="color:#008000">// creation of a table of </span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// creation of a table of </span></span>
 <span class="odt-code-line">            tranchesImpot = <span style="color:#0000ff">new</span> <span style="color:#2b91af">TrancheImpot</span>[limites.Length];</span>
-<span class="odt-code-line">            <span style="color:#008000">// filling</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// filling</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">for</span> (<span style="color:#0000ff">int</span> i = 0; i &lt; tranchesImpot.Length; i++) {</span>
 <span class="odt-code-line">                tranchesImpot[i] = <span style="color:#0000ff">new</span> <span style="color:#2b91af">TrancheImpot</span> { Limite = limites[i], CoeffR = coeffR[i], CoeffN = coeffN[i] };</span>
 <span class="odt-code-line">                }</span>
 <span class="odt-code-line">        }</span>
-<span class="odt-code-line">        <span style="color:#008000">}// class</span></span>
+<span class="odt-code-line">     <span style="color:#008000">}// class</span></span>
 <span class="odt-code-line">}<span style="color:#008000">// namespace</span></span>
 </code></pre></div>
 
@@ -3477,14 +3477,14 @@
 <span class="odt-code-line"> </span>
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap3 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">FileImpotException</span> : <span style="color:#2b91af">Exception</span> {</span>
-<span class="odt-code-line">        <span style="color:#008000">// error codes</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// error codes</span></span>
 <span class="odt-code-line">        [<span style="color:#2b91af">Flags</span>]</span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">enum</span> <span style="color:#2b91af">CodeErreurs</span> { Acces = 1, Ligne = 2, Champ1 = 4, Champ2 = 8, Champ3 = 16 };</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// error code</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// error code</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#2b91af">CodeErreurs</span> Code { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// manufacturers</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// manufacturers</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> FileImpotException() {</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> FileImpotException(<span style="color:#0000ff">string</span> message)</span>
@@ -3537,57 +3537,57 @@
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">FileImpot</span> : <span style="color:#2b91af">AbstractImpot</span> {</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> FileImpot(<span style="color:#0000ff">string</span> fileName) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// data</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// data</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">List</span>&lt;<span style="color:#2b91af">TrancheImpot</span>&gt; listTranchesImpot = <span style="color:#0000ff">new</span> <span style="color:#2b91af">List</span>&lt;<span style="color:#2b91af">TrancheImpot</span>&gt;();</span>
 <span class="odt-code-line">            <span style="color:#0000ff">int</span> numLigne = 1;</span>
-<span class="odt-code-line">            <span style="color:#008000">// exception</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// exception</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">FileImpotException</span> fe = <span style="color:#0000ff">null</span>;</span>
-<span class="odt-code-line">            <span style="color:#008000">// read the contents of the fileName file, line by line</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// read the contents of the fileName file, line by line</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Regex</span> pattern = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Regex</span>(<span style="color:#a31515">@&quot;s*:\s*&quot;</span>);</span>
-<span class="odt-code-line">            <span style="color:#008000">// initially no error</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// initially no error</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">FileImpotException</span>.<span style="color:#2b91af">CodeErreurs</span> code = 0;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">try</span> {</span>
 <span class="odt-code-line">                <span style="color:#0000ff">using</span> (<span style="color:#2b91af">StreamReader</span> input = <span style="color:#0000ff">new</span> <span style="color:#2b91af">StreamReader</span>(fileName)) {</span>
 <span class="odt-code-line">                    <span style="color:#0000ff">while</span> (!input.EndOfStream &amp;&amp; code == 0) {</span>
-<span class="odt-code-line">                        <span style="color:#008000">// current line</span></span>
+<span class="odt-code-line">                         <span style="color:#008000">// current line</span></span>
 <span class="odt-code-line">                        <span style="color:#0000ff">string</span> ligne = input.ReadLine().Trim();</span>
-<span class="odt-code-line">                        <span style="color:#008000">// ignore empty lines</span></span>
+<span class="odt-code-line">                         <span style="color:#008000">// ignore empty lines</span></span>
 <span class="odt-code-line">                        <span style="color:#0000ff">if</span> (ligne == <span style="color:#a31515">&quot;&quot;</span>) <span style="color:#0000ff">continue</span>;</span>
-<span class="odt-code-line">                        <span style="color:#008000">// line broken down into three fields separated by :</span></span>
+<span class="odt-code-line">                         <span style="color:#008000">// line broken down into three fields separated by :</span></span>
 <span class="odt-code-line">                        <span style="color:#0000ff">string</span>[] champsLigne = pattern.Split(ligne);</span>
-<span class="odt-code-line">                        <span style="color:#008000">// do we have 3 fields?</span></span>
+<span class="odt-code-line">                         <span style="color:#008000">// do we have 3 fields?</span></span>
 <span class="odt-code-line">                        <span style="color:#0000ff">if</span> (champsLigne.Length != 3) {</span>
 <span class="odt-code-line">                            code = <span style="color:#2b91af">FileImpotException</span>.<span style="color:#2b91af">CodeErreurs</span>.Ligne;</span>
 <span class="odt-code-line">                        }</span>
-<span class="odt-code-line">                        <span style="color:#008000">// 3-field conversions</span></span>
+<span class="odt-code-line">                         <span style="color:#008000">// 3-field conversions</span></span>
 <span class="odt-code-line">                        <span style="color:#0000ff">decimal</span> limite = 0, coeffR = 0, coeffN = 0;</span>
 <span class="odt-code-line">                        <span style="color:#0000ff">if</span> (code == 0) {</span>
 <span class="odt-code-line">                            <span style="color:#0000ff">if</span> (!<span style="color:#2b91af">Decimal</span>.TryParse(champsLigne[0], <span style="color:#0000ff">out</span> limite)) code = <span style="color:#2b91af">FileImpotException</span>.<span style="color:#2b91af">CodeErreurs</span>.Champ1;</span>
 <span class="odt-code-line">                            <span style="color:#0000ff">if</span> (!<span style="color:#2b91af">Decimal</span>.TryParse(champsLigne[1], <span style="color:#0000ff">out</span> coeffR)) code |= <span style="color:#2b91af">FileImpotException</span>.<span style="color:#2b91af">CodeErreurs</span>.Champ2;</span>
 <span class="odt-code-line">                            <span style="color:#0000ff">if</span> (!<span style="color:#2b91af">Decimal</span>.TryParse(champsLigne[2], <span style="color:#0000ff">out</span> coeffN)) code |= <span style="color:#2b91af">FileImpotException</span>.<span style="color:#2b91af">CodeErreurs</span>.Champ3; ;</span>
 <span class="odt-code-line">                        }</span>
-<span class="odt-code-line">                        <span style="color:#008000">// mistake?</span></span>
+<span class="odt-code-line">                         <span style="color:#008000">// mistake?</span></span>
 <span class="odt-code-line">                        <span style="color:#0000ff">if</span> (code != 0) {</span>
 <span class="odt-code-line">                            <span style="color:#008000">// on note l&#x27;erreur</span></span>
 <span class="odt-code-line">                            fe = <span style="color:#0000ff">new</span> <span style="color:#2b91af">FileImpotException</span>(<span style="color:#2b91af">String</span>.Format(<span style="color:#a31515">&quot;Ligne n° {0} incorrecte&quot;</span>, numLigne)) { Code = code };</span>
 <span class="odt-code-line">                        } <span style="color:#0000ff">else</span> {</span>
-<span class="odt-code-line">                            <span style="color:#008000">// the new tax bracket is memorized</span></span>
+<span class="odt-code-line">                             <span style="color:#008000">// the new tax bracket is memorized</span></span>
 <span class="odt-code-line">                            listTranchesImpot.Add(<span style="color:#0000ff">new</span> <span style="color:#2b91af">TrancheImpot</span>() { Limite = limite, CoeffR = coeffR, CoeffN = coeffN });</span>
-<span class="odt-code-line">                            <span style="color:#008000">// next line</span></span>
+<span class="odt-code-line">                             <span style="color:#008000">// next line</span></span>
 <span class="odt-code-line">                            numLigne++;</span>
 <span class="odt-code-line">                        }</span>
 <span class="odt-code-line">                    }</span>
 <span class="odt-code-line">                }</span>
-<span class="odt-code-line">                <span style="color:#008000">// transfer the listImpot list to the tranchesImpot array</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// transfer the listImpot list to the tranchesImpot array</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">if</span> (code == 0) {</span>
-<span class="odt-code-line">                    <span style="color:#008000">// transfer the listImpot list to the tranchesImpot array</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">// transfer the listImpot list to the tranchesImpot array</span></span>
 <span class="odt-code-line">                    tranchesImpot = listTranchesImpot.ToArray();</span>
 <span class="odt-code-line">                }</span>
 <span class="odt-code-line">            } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">Exception</span> e) {</span>
 <span class="odt-code-line">                <span style="color:#008000">// on note l&#x27;erreur</span></span>
 <span class="odt-code-line">                fe= <span style="color:#0000ff">new</span> <span style="color:#2b91af">FileImpotException</span>(<span style="color:#2b91af">String</span>.Format(<span style="color:#a31515">&quot;Erreur lors de la lecture du fichier {0}&quot;</span>, fileName), e) { Code = <span style="color:#2b91af">FileImpotException</span>.<span style="color:#2b91af">CodeErreurs</span>.Acces };</span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            <span style="color:#008000">// error to report?</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// error to report?</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">if</span> (fe != <span style="color:#0000ff">null</span>) <span style="color:#0000ff">throw</span> fe;</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line">    }</span>
@@ -3606,7 +3606,7 @@
 <p>Remember that the <em>TrancheImpot</em> is a :</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap3 {</span>
-<span class="odt-code-line">        <span style="color:#008000">// a tax bracket</span></span>
+<span class="odt-code-line">     <span style="color:#008000">// a tax bracket</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">struct</span> <span style="color:#2b91af">TrancheImpot</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">decimal</span> Limite { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">decimal</span> CoeffR { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
@@ -3676,23 +3676,23 @@
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">Program</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main() {</span>
 <span class="odt-code-line">...</span>
-<span class="odt-code-line">            // creation of a IImpot object</span>
+<span class="odt-code-line">             // creation of a IImpot object</span>
 <span class="odt-code-line">            <span style="color:#2b91af">IImpot</span> impot = <span style="color:#0000ff">null</span>;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">try</span> {</span>
-<span class="odt-code-line">                <span style="color:#008000">// creation of a IImpot object</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// creation of a IImpot object</span></span>
 <span class="odt-code-line">                impot = <span style="color:#0000ff">new</span> <span style="color:#2b91af">FileImpot</span>(<span style="color:#a31515">&quot;DataImpot.txt&quot;</span>);</span>
 <span class="odt-code-line">            } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">FileImpotException</span> e) {</span>
-<span class="odt-code-line">                <span style="color:#008000">// error display</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// error display</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">string</span> msg = e.InnerException == <span style="color:#0000ff">null</span> ? <span style="color:#0000ff">null</span> : <span style="color:#2b91af">String</span>.Format(<span style="color:#a31515">&quot;, Exception d&#x27;origine : {0}&quot;</span>, e.InnerException.Message);</span>
 <span class="odt-code-line">                <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;L&#x27;erreur suivante s&#x27;est produite : [Code={0},Message={1}{2}]&quot;</span>, e.Code, e.Message, msg == <span style="color:#0000ff">null</span> ? <span style="color:#a31515">&quot;&quot;</span> : msg);</span>
-<span class="odt-code-line">                <span style="color:#008000">// program stop</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// program stop</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Environment</span>.Exit(1);</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#008000">// infinite loop</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// infinite loop</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">while</span> (<span style="color:#0000ff">true</span>) {</span>
 <span class="odt-code-line">...</span>
-<span class="odt-code-line">                <span style="color:#008000">        }//while</span></span>
+<span class="odt-code-line">             <span style="color:#008000">}//while</span></span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line">    }</span>
 <span class="odt-code-line">}</span>

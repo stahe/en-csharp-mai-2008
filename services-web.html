@@ -1043,7 +1043,7 @@
 <span class="odt-code-line">    <span style="color:#0000ff">public</span> Service () {</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">        <span style="color:#008000">//Uncomment the following line if using designed components </span></span>
-<span class="odt-code-line">    <span style="color:#008000">//InitializeComponent(); </span></span>
+<span class="odt-code-line">         <span style="color:#008000">//InitializeComponent(); </span></span>
 <span class="odt-code-line">    }</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">    [<span style="color:#2b91af">WebMethod</span>]</span>
@@ -1405,11 +1405,11 @@
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">        <span style="color:#0000ff">private</span> <span style="color:#0000ff">void</span> buttonSalutations_Click(<span style="color:#0000ff">object</span> sender, <span style="color:#2b91af">EventArgs</span> e) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// hourglass</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// hourglass</span></span>
 <span class="odt-code-line">            Cursor=<span style="color:#2b91af">Cursors</span>.WaitCursor;</span>
-<span class="odt-code-line">            <span style="color:#008000">// web query service</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// web query service</span></span>
 <span class="odt-code-line">            labelBonjour.Text = <span style="color:#0000ff">new</span> <span style="color:#2b91af">ServiceSoapClient</span>().DisBonjourALaDame(textBoxNomDame.Text.Trim());</span>
-<span class="odt-code-line">            <span style="color:#008000">// normal slider</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// normal slider</span></span>
 <span class="odt-code-line">            Cursor = <span style="color:#2b91af">Cursors</span>.Arrow;</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line">    }</span>
@@ -1596,18 +1596,18 @@
 <span class="odt-code-line"> </span>
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> ClientWsOperations {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">partial</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Form1</span> : <span style="color:#2b91af">Form</span> {</span>
-<span class="odt-code-line">        <span style="color:#008000">// operations table</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// operations table</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">private</span> <span style="color:#0000ff">string</span>[] opérations = { <span style="color:#a31515">&quot;Ajouter&quot;</span>, <span style="color:#a31515">&quot;Soustraire&quot;</span>, <span style="color:#a31515">&quot;Multiplier&quot;</span>, <span style="color:#a31515">&quot;Diviser&quot;</span> };</span>
-<span class="odt-code-line">        <span style="color:#008000">// department web to contact</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// department web to contact</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">private</span> <span style="color:#2b91af">OperationsSoapClient</span> opérateur = <span style="color:#0000ff">new</span> <span style="color:#2b91af">OperationsSoapClient</span>();</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// manufacturer</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// manufacturer</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> Form1() {</span>
 <span class="odt-code-line">            InitializeComponent();</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">        <span style="color:#0000ff">private</span> <span style="color:#0000ff">void</span> Form1_Load(<span style="color:#0000ff">object</span> sender, <span style="color:#2b91af">EventArgs</span> e) {</span>
-<span class="odt-code-line">            <span style="color:#008000">// combo filling of operations</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// combo filling of operations</span></span>
 <span class="odt-code-line">            comboBoxOperations.Items.AddRange(opérations);</span>
 <span class="odt-code-line">            comboBoxOperations.SelectedIndex = 0;</span>
 <span class="odt-code-line">        }</span>
@@ -1627,7 +1627,7 @@
 <span class="odt-code-line">            <span style="color:#0000ff">if</span> (erreur) {</span>
 <span class="odt-code-line">                <span style="color:#0000ff">return</span>;</span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            <span style="color:#008000">// operation execution</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// operation execution</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Double</span> c=0;</span>
 <span class="odt-code-line">            <span style="color:#0000ff">try</span> {</span>
 <span class="odt-code-line">                <span style="color:#0000ff">switch</span> (comboBoxOperations.SelectedItem.ToString()) {</span>
@@ -1644,7 +1644,7 @@
 <span class="odt-code-line">                        c=opérateur.Diviser(a, b);</span>
 <span class="odt-code-line">                        <span style="color:#0000ff">break</span>;</span>
 <span class="odt-code-line">                }</span>
-<span class="odt-code-line">                <span style="color:#008000">// result display</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// result display</span></span>
 <span class="odt-code-line">                labelRésultat.Text = c.ToString();</span>
 <span class="odt-code-line">            } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">Exception</span> ex) {</span>
 <span class="odt-code-line">                textBoxMessage.Text = ex.Message;</span>
@@ -1876,10 +1876,10 @@
 <span class="odt-code-line">{</span>
 <span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Global</span> : System.Web.<span style="color:#2b91af">HttpApplication</span></span>
 <span class="odt-code-line">    {</span>
-<span class="odt-code-line">        <span style="color:#008000">// business layer</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// business layer</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#2b91af">IImpotMetier</span> Metier;</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// method executed at application startup</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// method executed at application startup</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">private</span> <span style="color:#0000ff">void</span> Application_Start(<span style="color:#0000ff">object</span> sender, <span style="color:#2b91af">EventArgs</span> e)</span>
 <span class="odt-code-line">        {</span>
 <span class="odt-code-line">            <span style="color:#008000">// instantiations [metier] and [dao] layers</span></span>
@@ -2069,10 +2069,10 @@
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Metier {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">ImpotMetierWs</span> : <span style="color:#2b91af">IImpotMetier</span> {</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// remote web customer service</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// remote web customer service</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">private</span> <span style="color:#2b91af">ServiceImpotSoapClient</span> client = <span style="color:#0000ff">new</span> <span style="color:#2b91af">ServiceImpotSoapClient</span>();</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// tAX CALCULATION</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// tAX CALCULATION</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">int</span> CalculerImpot(<span style="color:#0000ff">bool</span> marié, <span style="color:#0000ff">int</span> nbEnfants, <span style="color:#0000ff">int</span> salaire) {</span>
 <span class="odt-code-line">            <span style="color:#0000ff">return</span> client.CalculerImpot(marié, nbEnfants, salaire);</span>
 <span class="odt-code-line">        }</span>
@@ -2142,7 +2142,7 @@
 <span class="odt-code-line"><span style="color:#0000ff">        &lt;/</span><span style="color:#a31515">objects</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">    &lt;/</span><span style="color:#a31515">spring</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#0000ff">&lt;!-- web service --&gt;</span></span>
+<span class="odt-code-line">     <span style="color:#0000ff">&lt;!-- web service --&gt;</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">system.serviceModel</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">        &lt;</span><span style="color:#a31515">bindings</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">            &lt;</span><span style="color:#a31515">basicHttpBinding</span><span style="color:#0000ff">&gt;</span></span>
@@ -2305,7 +2305,7 @@
 <span class="odt-code-line"><span style="color:#0000ff">        &lt;/</span><span style="color:#a31515">objects</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">    &lt;/</span><span style="color:#a31515">spring</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#0000ff">&lt;!-- web service --&gt;</span></span>
+<span class="odt-code-line">     <span style="color:#0000ff">&lt;!-- web service --&gt;</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">system.serviceModel</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">        &lt;</span><span style="color:#a31515">bindings</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">            &lt;</span><span style="color:#a31515">basicHttpBinding</span><span style="color:#0000ff">&gt;</span></span>
@@ -2331,15 +2331,15 @@
 <span class="odt-code-line">      &lt;sectionGroup name=&quot;system.web.extensions&quot;...&gt;</span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">      &lt;/sectionGroup&gt;</span>
-<span class="odt-code-line">        <span style="background-color:#fff5ce">&lt;!-- start Spring section --&gt;</span></span>
+<span class="odt-code-line">       <span style="background-color:#fff5ce">&lt;!-- start Spring section --&gt;</span></span>
 <span class="odt-code-line">        &lt;sectionGroup name=&quot;spring&quot;&gt;</span>
 <span class="odt-code-line">          &lt;section name=&quot;context&quot; type=&quot;Spring.Context.Support.ContextHandler, Spring.Core&quot; /&gt;</span>
 <span class="odt-code-line">          &lt;section name=&quot;objects&quot; type=&quot;Spring.Context.Support.DefaultSectionHandler, Spring.Core&quot; /&gt;</span>
 <span class="odt-code-line">        &lt;/sectionGroup&gt;</span>
-<span class="odt-code-line">    <span style="background-color:#fff5ce">&lt;!-- end Spring section --&gt;</span></span>
+<span class="odt-code-line">       <span style="background-color:#fff5ce">&lt;!-- end Spring section --&gt;</span></span>
 <span class="odt-code-line">    &lt;/configSections&gt;</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">      <span style="background-color:#fff5ce">&lt;!-- start Spring configuration --&gt;</span></span>
+<span class="odt-code-line">   <span style="background-color:#fff5ce">&lt;!-- start Spring configuration --&gt;</span></span>
 <span class="odt-code-line">  &lt;spring&gt;</span>
 <span class="odt-code-line">    &lt;context&gt;</span>
 <span class="odt-code-line">      &lt;resource uri=&quot;config://spring/objects&quot; /&gt;</span>
@@ -2349,9 +2349,9 @@
 <span class="odt-code-line">      &lt;/object&gt;</span>
 <span class="odt-code-line">    &lt;/objects&gt;</span>
 <span class="odt-code-line">  &lt;/spring&gt;</span>
-<span class="odt-code-line">    <span style="background-color:#fff5ce">&lt;!-- end Spring configuration --&gt;</span></span>
+<span class="odt-code-line">   <span style="background-color:#fff5ce">&lt;!-- end Spring configuration --&gt;</span></span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">      <span style="background-color:#fff5ce">&lt;!-- start remote web service client configuration --&gt;</span></span>
+<span class="odt-code-line">   <span style="background-color:#fff5ce">&lt;!-- start remote web service client configuration --&gt;</span></span>
 <span class="odt-code-line">  &lt;system.serviceModel&gt;</span>
 <span class="odt-code-line">    &lt;bindings&gt;</span>
 <span class="odt-code-line">      &lt;basicHttpBinding&gt;</span>
@@ -2364,9 +2364,9 @@
 <span class="odt-code-line">                    contract=&quot;WsImpot.ServiceImpotSoap&quot; name=&quot;ServiceImpotSoap&quot; /&gt;</span>
 <span class="odt-code-line">    &lt;/client&gt;</span>
 <span class="odt-code-line">  &lt;/system.serviceModel&gt;</span>
-<span class="odt-code-line">      <span style="background-color:#fff5ce">&lt;!-- end remote web service client configuration --&gt;</span></span>
+<span class="odt-code-line">   <span style="background-color:#fff5ce">&lt;!-- end remote web service client configuration --&gt;</span></span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">    &lt;!-- other configurations already present in the generated web.config --&gt;</span>
+<span class="odt-code-line">   &lt;!-- other configurations already present in the generated web.config --&gt;</span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">&lt;/configuration&gt;</span>
 </code></pre></div>
@@ -2575,7 +2575,7 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> ButtonCalculer_Click(<span style="color:#0000ff">object</span> sender, <span style="color:#2b91af">EventArgs</span> e)</span>
 <span class="odt-code-line">    {</span>
-<span class="odt-code-line">        <span style="color:#008000">// data verification</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// data verification</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">int</span> nbEnfants;</span>
 <span class="odt-code-line">        <span style="color:#0000ff">bool</span> erreur = <span style="color:#0000ff">false</span>;</span>
 <span class="odt-code-line">        <span style="color:#0000ff">if</span> (!<span style="color:#0000ff">int</span>.TryParse(TextBoxEnfants.Text.Trim(), <span style="color:#0000ff">out</span> nbEnfants) || nbEnfants &lt; 0)</span>
@@ -2589,14 +2589,14 @@
 <span class="odt-code-line">            LabelErreurSalaire.Text = <span style="color:#a31515">&quot;Valeur incorrecte...&quot;</span>;</span>
 <span class="odt-code-line">            erreur = <span style="color:#0000ff">true</span>;</span>
 <span class="odt-code-line">        }</span>
-<span class="odt-code-line">        <span style="color:#008000">// mistake?</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// mistake?</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">if</span> (erreur) <span style="color:#0000ff">return</span>;</span>
-<span class="odt-code-line">        <span style="color:#008000">// erase any errors</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// erase any errors</span></span>
 <span class="odt-code-line">        LabelErreurEnfants.Text = <span style="color:#a31515">&quot;&quot;</span>;</span>
 <span class="odt-code-line">        LabelErreurSalaire.Text = <span style="color:#a31515">&quot;&quot;</span>;</span>
-<span class="odt-code-line">        <span style="color:#008000">// marital status</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// marital status</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">bool</span> marié = RadioButtonOui.Checked;</span>
-<span class="odt-code-line">        <span style="color:#008000">// tAX CALCULATION</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// tAX CALCULATION</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">try</span></span>
 <span class="odt-code-line">        {</span>
 <span class="odt-code-line">            LabelImpot.Text = <span style="color:#2b91af">String</span>.Format(<span style="color:#a31515">&quot;{0} euros&quot;</span>,Global.Metier.CalculerImpot(marié, nbEnfants, salaire));</span>
@@ -2625,7 +2625,7 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> ButtonEffacer_Click(<span style="color:#0000ff">object</span> sender, <span style="color:#2b91af">EventArgs</span> e)</span>
 <span class="odt-code-line">    {</span>
-<span class="odt-code-line">        <span style="color:#008000">// raz form</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// raz form</span></span>
 <span class="odt-code-line">        TextBoxEnfants.Text = <span style="color:#a31515">&quot;&quot;</span>;</span>
 <span class="odt-code-line">        TextBoxSalaire.Text = <span style="color:#a31515">&quot;&quot;</span>;</span>
 <span class="odt-code-line">        LabelImpot.Text = <span style="color:#a31515">&quot;&quot;</span>;</span>
@@ -2688,10 +2688,10 @@
 <span class="odt-code-line">{</span>
 <span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Global</span> : System.Web.<span style="color:#2b91af">HttpApplication</span></span>
 <span class="odt-code-line">    {</span>
-<span class="odt-code-line">        <span style="color:#008000">// business layer</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// business layer</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#2b91af">IImpotMetier</span> Metier;</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">        <span style="color:#008000">// method executed at application startup</span></span>
+<span class="odt-code-line">         <span style="color:#008000">// method executed at application startup</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">private</span> <span style="color:#0000ff">void</span> Application_Start(<span style="color:#0000ff">object</span> sender, <span style="color:#2b91af">EventArgs</span> e)</span>
 <span class="odt-code-line">        {</span>
 <span class="odt-code-line">            <span style="color:#008000">// instantiations [metier] and [dao] layers</span></span>
@@ -2871,19 +2871,19 @@
 <span class="normal"><a href="#__codelineno-4-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2"></a>
 <a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">                </span><span class="c1">// TODO code application logic here</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">            </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Call Web Service Operation</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">         </span><span class="c1">// TODO code application logic here</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">       </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Call Web Service Operation</span>
 <a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">        </span><span class="n">wsimpot</span><span class="p">.</span><span class="na">ServiceImpot</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">wsimpot</span><span class="p">.</span><span class="na">ServiceImpot</span><span class="p">();</span>
 <a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">        </span><span class="n">wsimpot</span><span class="p">.</span><span class="na">ServiceImpotSoap</span><span class="w"> </span><span class="n">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="p">.</span><span class="na">getServiceImpotSoap</span><span class="p">();</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">                </span><span class="c1">// TODO initialize WS operation arguments here</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">         </span><span class="c1">// TODO initialize WS operation arguments here</span>
 <a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">marie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
 <a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">nbEnfants</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">salaire</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">                </span><span class="c1">// TODO process result here</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">         </span><span class="c1">// TODO process result here</span>
 <a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">port</span><span class="p">.</span><span class="na">calculerImpot</span><span class="p">(</span><span class="n">marie</span><span class="p">,</span><span class="w"> </span><span class="n">nbEnfants</span><span class="p">,</span><span class="w"> </span><span class="n">salaire</span><span class="p">);</span>
 <a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Result = &quot;</span><span class="o">+</span><span class="n">result</span><span class="p">);</span>
 <a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="w">                </span><span class="c1">// TODO handle custom exceptions here</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="w">         </span><span class="c1">// TODO handle custom exceptions here</span>
 <a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="w">      </span><span class="p">}</span>
 <a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="p">}</span>
