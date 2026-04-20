@@ -2879,8 +2879,8 @@ An application can therefore reference a machine by name. At the end of the day,
 
 <p><a id="refheading10403371168783983"></a></p>
 <h2 id="116-examples-of-clients-servers-tcp">11.6. Examples of clients / servers TCP</h2>
-<p><a id="serveur-echo"></a>
-<a id="refheading10403391168783983"></a></p>
+<p><a id="refheading10403391168783983"></a>
+<a id="serveur-echo"></a></p>
 <h3 id="1161-an-echo-server">11.6.1. An echo server</h3>
 <p>We propose to write an echo server that will be launched from a DOS window with the command :</p>
 <p><strong>ServeurEcho port</strong></p>
@@ -3194,8 +3194,8 @@ An application can therefore reference a machine by name. At the end of the day,
 <a id="__codelineno-66-2" name="__codelineno-66-2"></a>...
 <a id="__codelineno-66-3" name="__codelineno-66-3"></a>Fin du service au client 0
 </code></pre></div></td></tr></table></div>
-<p><a id="client-tcp-generique"></a>
-<a id="refheading10403431168783983"></a></p>
+<p><a id="refheading10403431168783983"></a>
+<a id="client-tcp-generique"></a></p>
 <h3 id="1163-a-generic-tcp-client">11.6.3. A generic TCP client</h3>
 <p>We will write a generic Tcp client that will be launched as follows: <strong>ClientTcpGenerique server port</strong>. It will operate in a similar way to the putty client, but will have a console interface and no option configuration.</p>
 <p>In the previous application, the dialog protocol was known: the client sent a single line and the server responded with a single line. Each service has its own particular protocol, and the following situations can also be found:</p>
@@ -3932,8 +3932,8 @@ An application can therefore reference a machine by name. At the end of the day,
     </ul>
   </li>
 </ul>
-<p><a id="program-clientwebavecredirection"></a>
-<a id="refheading10403491168783983"></a></p>
+<p><a id="refheading10403491168783983"></a>
+<a id="program-clientwebavecredirection"></a></p>
 <h3 id="1166-a-web-client-to-manage-redirects">11.6.6. A Web client to manage redirects</h3>
 <p>The previous Web client does not handle any redirection of the URL it has requested. Here&#x27;s an example:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-80-1"> 1</a></span>
@@ -4236,7 +4236,7 @@ An application can therefore reference a machine by name. At the end of the day,
 <span class="odt-code-line">                <span style="color:#0000ff">return</span>;</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line"> </span>
-<span class="odt-code-line">            <span style="color:#0000ff"> </span><span style="color:#0000ff">con</span>st int nbRedirsMa        <span style="color:#008000">x = 1; // no more than one redirection accepted</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff"> con</span>st int nbRedirsMa        <span style="color:#008000">x = 1; // no more than one redirection accepted</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff"> </span>int nbRedirs =                            <span style="color:#008000"> 0; // number of redirects in progress</span></span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">             <span style="color:#008000">// regular expression to find a URL redirect</span></span>
@@ -5538,8 +5538,8 @@ An application can therefore reference a machine by name. At the end of the day,
   </li>
 </ul>
 
-<p><a id="client-tcp-graphique-asynchrone"></a>
-<a id="refheading10403611168783983"></a></p>
+<p><a id="refheading10403611168783983"></a>
+<a id="client-tcp-graphique-asynchrone"></a></p>
 <h2 id="118-a-generic-asynchronous-tcp-client">11.8. A generic asynchronous Tcp client</h2>
 <p><a id="refheading10403631168783983"></a></p>
 <h3 id="1181-presentation">11.8.1. Presentation</h3>
@@ -6096,8 +6096,8 @@ An application can therefore reference a machine by name. At the end of the day,
 <p>Asynchronous Tcp / Ip communication offers more serious advantages for a server than those shown by the previous example. We know that the server serves its clients using secondary threads. If its thread pool has N threads, this means it can only serve N clients simultaneously. If all N threads perform a blocking (synchronous) operation, there are no more threads available for a new client until one of the blocking operations completes and frees a thread. If asynchronous rather than synchronous operations are performed on threads, a thread is never blocked and can be quickly recycled for new clients.</p>
 <p><a id="refheading10403771168783983"></a></p>
 <h2 id="119-sample-application-version-8-tax-calculation-server">11.9. Sample application, version 8: Tax calculation server</h2>
-<p><a id="impotsv8-architecture"></a>
-<a id="refheading10403791168783983"></a></p>
+<p><a id="refheading10403791168783983"></a>
+<a id="impotsv8-architecture"></a></p>
 <h3 id="1191-the-architecture-of-the-new-version">11.9.1. The architecture of the new version</h3>
 <p>We return to the tax calculation application that has already been covered in various forms. Let&#x27;s recall its latest version, version 7 of paragraph <a href="database-access.html#impots-v7">9.8</a>.</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000669000001B9CC0FCEF2.png" style="display:inline-block; margin:4px;width:13.019cm;height:3.5cm;" class="odt-zoomable" data-zoom-src="images/1000000000000669000001B9CC0FCEF2.png" /></td></tr></table>
