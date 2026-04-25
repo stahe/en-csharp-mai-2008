@@ -940,9 +940,9 @@
 <span class="odt-code-line"><span style="color:#0000ff">namespace</span> Chap3 {</span>
 <span class="odt-code-line">    <span style="color:#0000ff">class</span> <span style="color:#2b91af">Program</span> {</span>
 <span class="odt-code-line">        <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main() {</span>
-<span class="odt-code-line"><span style="color:#008000">// interactive tax calculator</span></span>
-<span class="odt-code-line"><span style="color:#008000">// the user enters three data points on the keyboard: married nbEnfants salary</span></span>
-<span class="odt-code-line"><span style="color:#008000">// the program then displays Tax payable</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// interactive tax calculator</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// the user enters three data points on the keyboard: married nbEnfants salary</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// the program then displays Tax payable</span></span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">             <span style="color:#008000">// creation of a IImpot object</span></span>
@@ -951,7 +951,7 @@
 <span class="odt-code-line">                 <span style="color:#008000">// creation of a IImpot object</span></span>
 <span class="odt-code-line">                impot = <span style="color:#0000ff">new</span> <span style="color:#2b91af">FileImpot</span>(<span style="color:#a31515">&quot;DataImpotInvalide.txt&quot;</span>);</span>
 <span class="odt-code-line">            } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">FileImpotException</span> e) {</span>
-<span class="odt-code-line"><span style="color:#008000">// error display</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// error display</span></span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">                 <span style="color:#008000">// program stop</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Environment</span>.Exit(1);</span>
@@ -982,7 +982,7 @@
 </ol>
 
 <p>Practical experience has shown that isolating these different processes in separate classes improves the maintainability of applications. The architecture of an application structured in this way is as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006B200000183A0AF0EE9.png" style="display:inline-block; margin:4px;width:15.87cm;height:3.581cm;" class="odt-zoomable" data-zoom-src="images/10000000000006B200000183A0AF0EE9.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006B200000183A0AF0EE9.png" width="600" height="135" style="display:inline-block; margin:4px;width:15.87cm;height:3.581cm;" class="odt-zoomable" data-zoom-src="images/10000000000006B200000183A0AF0EE9.png" /></td></tr></table>
 
 <p>This architecture is called<strong>three-tier architecture</strong>&quot;three tier architecture&quot;. The term &quot;three tier&quot; normally refers to an architecture where each tier is on a different machine. When the tiers are on the same machine, the architecture becomes a &quot;three-tier&quot; architecture<strong>three layers</strong>&quot;.</p>
 <ul>
@@ -1017,7 +1017,7 @@
 <h2 id="62-application-interfaces-impots">6.2. Application interfaces [Impots]</h2>
 <p>Remember that an interface defines a set of method signatures. Classes implementing the interface give content to these methods.</p>
 <p>Let&#x27;s return to the 3-layer architecture of our application:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006CB0000016CA61EA86C.png" style="display:inline-block; margin:4px;width:16.101cm;height:3.371cm;" class="odt-zoomable" data-zoom-src="images/10000000000006CB0000016CA61EA86C.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006CB0000016CA61EA86C.png" width="609" height="127" style="display:inline-block; margin:4px;width:16.101cm;height:3.371cm;" class="odt-zoomable" data-zoom-src="images/10000000000006CB0000016CA61EA86C.png" /></td></tr></table>
 
 <p>In this type of architecture, it is often the user who takes the initiative. He makes a request in [1] and receives a response in [8]. This is known as the request-response cycle. Let&#x27;s take the example of a taxpayer&#x27;s tax calculation. This will require several steps:</p>
 <ol>
@@ -1038,7 +1038,7 @@
 </ol>
 
 <p>This description shows that a layer will use the resources of the layer to its right, but never of the layer to its left. Consider two contiguous layers:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000342000000FAFBA4418D.png" style="display:inline-block; margin:4px;width:7.721cm;height:2.311cm;" class="odt-zoomable" data-zoom-src="images/1000000000000342000000FAFBA4418D.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000342000000FAFBA4418D.png" width="292" height="87" style="display:inline-block; margin:4px;width:7.721cm;height:2.311cm;" class="odt-zoomable" data-zoom-src="images/1000000000000342000000FAFBA4418D.png" /></td></tr></table>
 
 <p>Layer [A] makes requests to layer [B]. In the simplest cases, a layer is implemented by a single class. An application evolves over time. So layer [B] may have different implementation classes [B1, B2, ...]. If layer [B] is layer [dao], it may have a first implementation [B1] which fetches data from a file. A few years later, you may want to put the data in a database.  We then build a second implementation class [B2]. If, in the initial application, layer [A] worked directly with class [B1], we are obliged to partially rewrite the code of layer [A]. For example, let&#x27;s assume that layer [A] has been written as follows:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
@@ -1056,7 +1056,7 @@
 
 <p>If we assume that the new implementation class [B2] uses methods with the same signature as those of class [B1], we&#x27;ll have to change all the [B1s] to [B2s]. This is a very favourable case, and quite unlikely if you haven&#x27;t paid attention to these method signatures. In practice, classes [B1] and [B2] often don&#x27;t have the same method signatures, so much of layer [A] has to be completely rewritten.</p>
 <p>This can be improved by creating an interface between layers [A] and [B]. This means freezing in an interface the signatures of methods presented by layer [B] to layer [A]. The previous diagram then becomes the following:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004D400000105FC2991C3.png" style="display:inline-block; margin:4px;width:11.449cm;height:2.42cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D400000105FC2991C3.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004D400000105FC2991C3.png" width="433" height="91" style="display:inline-block; margin:4px;width:11.449cm;height:2.42cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D400000105FC2991C3.png" /></td></tr></table>
 
 <p>Layer [A] no longer addresses layer [B] directly, but rather its interface [IB]. Thus, in the code of layer [A], the implementation class [Bi] of layer [B] only appears once, when the interface [IB] is implemented. Once this has been done, it is the [IB] interface and not its implementation class that is used in the code. The previous code becomes the following:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
@@ -1075,7 +1075,7 @@
 <p>Now, if we replace the [B1] implementation of layer [B] with a [B2] implementation, and both implementations respect the same [IB] interface, then only line 1 of layer [A] needs to be modified and no others. This is a great advantage, and in itself justifies the systematic use of interfaces between two layers.</p>
 <p>We can go even further and make layer [A] totally independent of layer [B]. In the code above, line 1 is problematic because it references the [B1] class. Ideally, layer [A] should have an implementation of the [IB] interface without having to name a class. This would be consistent with our diagram above. We can see that layer [A] addresses interface [IB], and we don&#x27;t see why it would need to know the name of the class that implements this interface. This detail is of no use to layer [A].</p>
 <p>The Spring framework (http://www.springframework.org) achieves this. The previous architecture evolves as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E80000015E83E13F00.png" style="display:inline-block; margin:4px;width:11.629cm;height:3.24cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E80000015E83E13F00.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E80000015E83E13F00.png" width="440" height="122" style="display:inline-block; margin:4px;width:11.629cm;height:3.24cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E80000015E83E13F00.png" /></td></tr></table>
 
 <p>The transversal layer [Spring] will enable a layer to obtain a reference to the layer to its right by configuration, without having to know the name of the layer&#x27;s implementation class. This name will be in the configuration files and not in the  in the C# code. The C# code for layer [A] then takes the following form:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
@@ -1100,7 +1100,7 @@
 <p>We can now see that the implementation class [B1] of layer B appears nowhere in the code of layer [A]. When implementation [B1] is replaced by a new implementation [B2], nothing will change in the code of class [A]. We simply change the Spring configuration files to instantiate [B2] instead of [B1].</p>
 <p>The couple <strong>Spring</strong> and <strong>interfaces</strong> <strong>C#</strong> brings a decisive improvement to application maintenance by making the layers of the application watertight. This is the solution we&#x27;ll be using for a new version of the [Impots] application.</p>
 <p>Let&#x27;s return to the three-layer architecture of our application:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006C50000016787D48548.png" style="display:inline-block; margin:4px;width:16.05cm;height:3.32cm;" class="odt-zoomable" data-zoom-src="images/10000000000006C50000016787D48548.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006C50000016787D48548.png" width="607" height="125" style="display:inline-block; margin:4px;width:16.05cm;height:3.32cm;" class="odt-zoomable" data-zoom-src="images/10000000000006C50000016787D48548.png" /></td></tr></table>
 
 <p>In simple cases, we can start from the [business] layer to discover the application&#x27;s interfaces. To work, it needs :</p>
 <ul>
@@ -1149,7 +1149,7 @@
 </code></pre></div>
 
 <p>Let&#x27;s return to the three-layer architecture of our application:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006C40000016B73280BE4.png" style="display:inline-block; margin:4px;width:16.041cm;height:3.36cm;" class="odt-zoomable" data-zoom-src="images/10000000000006C40000016B73280BE4.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006C40000016B73280BE4.png" width="606" height="127" style="display:inline-block; margin:4px;width:16.041cm;height:3.36cm;" class="odt-zoomable" data-zoom-src="images/10000000000006C40000016B73280BE4.png" /></td></tr></table>
 
 <p>What interface should the [metier] layer present to the [ui] layer? Let&#x27;s recall the interactions between these two layers:</p>
 <ol>
@@ -1181,7 +1181,7 @@
 <p><a id="refheading10400851168783983"></a></p>
 <h3 id="631-the-visual-studio-project">6.3.1. The Visual Studio project</h3>
 <p>The Visual Studio project will be as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000620000002A7A3628E03.png" style="display:inline-block; margin:4px;width:14.52cm;height:6.29cm;" class="odt-zoomable" data-zoom-src="images/1000000000000620000002A7A3628E03.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000620000002A7A3628E03.png" width="549" height="238" style="display:inline-block; margin:4px;width:14.52cm;height:6.29cm;" class="odt-zoomable" data-zoom-src="images/1000000000000620000002A7A3628E03.png" /></td></tr></table>
 
 <ul>
   <li>[1]: the [Entites] folder contains objects that cross the [ui, metier, dao] layers: the structure <i>TrancheImpot</i>, the exception <i>FileImpotException</i>.
@@ -1198,7 +1198,7 @@
 <p><a id="refheading10400871168783983"></a></p>
 <h3 id="632-application-entities">6.3.2. Application entities</h3>
 <p>Let&#x27;s go back to the 3-layer architecture of our application:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006CF0000019F730C355B.png" style="display:inline-block; margin:4px;width:16.14cm;height:3.84cm;" class="odt-zoomable" data-zoom-src="images/10000000000006CF0000019F730C355B.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006CF0000019F730C355B.png" width="610" height="145" style="display:inline-block; margin:4px;width:16.14cm;height:3.84cm;" class="odt-zoomable" data-zoom-src="images/10000000000006CF0000019F730C355B.png" /></td></tr></table>
 
 <p>We call it <em>entities</em> cross-layer classes. This is generally the case for classes and structures that encapsulate data from the [dao] layer. These entities generally go all the way back to layer [ui].</p>
 <p>The application&#x27;s entities are as follows:</p>
@@ -1243,7 +1243,7 @@
 <p>Note: the <em>FileImpotException</em> is only useful if the [dao] layer is implemented by the <em>FileImpot</em>.</p>
 <p><a id="refheading10400891168783983"></a></p>
 <h3 id="633-the-dao-layer">6.3.3. The [dao] layer</h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006B6000001683D85C8FF.png" style="display:inline-block; margin:4px;width:15.91cm;height:3.33cm;" class="odt-zoomable" data-zoom-src="images/10000000000006B6000001683D85C8FF.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006B6000001683D85C8FF.png" width="601" height="126" style="display:inline-block; margin:4px;width:15.91cm;height:3.33cm;" class="odt-zoomable" data-zoom-src="images/10000000000006B6000001683D85C8FF.png" /></td></tr></table>
 
 <p>Recall the [dao] layer interface:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
@@ -1388,7 +1388,7 @@
 
 <p><a id="refheading10400911168783983"></a></p>
 <h3 id="634-the-diaper-metier">6.3.4. The diaper [metier]</h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006D30000017C8124682C.png" style="display:inline-block; margin:4px;width:16.18cm;height:3.521cm;" class="odt-zoomable" data-zoom-src="images/10000000000006D30000017C8124682C.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006D30000017C8124682C.png" width="612" height="133" style="display:inline-block; margin:4px;width:16.18cm;height:3.521cm;" class="odt-zoomable" data-zoom-src="images/10000000000006D30000017C8124682C.png" /></td></tr></table>
 
 <p>Let&#x27;s recall the interface of this layer:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
@@ -1462,7 +1462,7 @@
 
 <p><a id="refheading10400931168783983"></a></p>
 <h3 id="635-the-ui-layer">6.3.5. The [ui] layer</h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006B700000180F1F14DF5.png" style="display:inline-block; margin:4px;width:15.921cm;height:3.56cm;" class="odt-zoomable" data-zoom-src="images/10000000000006B700000180F1F14DF5.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006B700000180F1F14DF5.png" width="602" height="135" style="display:inline-block; margin:4px;width:15.921cm;height:3.56cm;" class="odt-zoomable" data-zoom-src="images/10000000000006B700000180F1F14DF5.png" /></td></tr></table>
 
 <p>The user dialog classes in versions 2 and 3 were very similar. The one for version 2 was as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
@@ -1596,7 +1596,7 @@
 <h3 id="636-conclusion">6.3.6. Conclusion</h3>
 <p>The layered architecture and use of interfaces has brought a certain flexibility to our application. This is particularly apparent in the way the [ui] layer instantiates the [dao] and [business] layers:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
-<span class="odt-code-line"><span style="color:#008000">// on crée les couches [metier et dao]</span></span>
+<span class="odt-code-line">        <span style="color:#008000">// on crée les couches [metier et dao]</span></span>
 <span class="odt-code-line"><span style="color:#2b91af">IImpotMetier</span> metier = <span style="color:#0000ff">new</span> <span style="color:#2b91af">ImpotMetier</span>(<span style="color:#0000ff">new</span> <span style="color:#2b91af">HardwiredImpot</span>());</span>
 </code></pre></div>
 
@@ -1652,7 +1652,7 @@
 <p><a id="refheading10400971168783983"></a>
 <a id="impots-v5"></a></p>
 <h2 id="64-application-example-version-5">6.4. Application example - version 5</h2>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006BC000001C4AA25F7B2.png" style="display:inline-block; margin:4px;width:15.96cm;height:4.189cm;" class="odt-zoomable" data-zoom-src="images/10000000000006BC000001C4AA25F7B2.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006BC000001C4AA25F7B2.png" width="603" height="158" style="display:inline-block; margin:4px;width:15.96cm;height:4.189cm;" class="odt-zoomable" data-zoom-src="images/10000000000006BC000001C4AA25F7B2.png" /></td></tr></table>
 
 <p>This new version is based on the previous version and includes the following changes: </p>
 <ul>
@@ -1670,21 +1670,21 @@
 <p>Up to now, the tests carried out for our various applications were based on visual verification. We checked that we were getting what was expected on the screen. This method is unusable when there are many tests to be carried out. Human beings are prone to fatigue, and their ability to verify tests dulls as the day goes by. Tests must therefore be automated, and aim for zero human intervention.</p>
 <p>An application evolves over time. Each time it evolves, we need to check that the application does not &quot;regress&quot;, c.a.d. that it continues to pass the functional tests that were performed when it was first written. These tests are called &quot;non-regression&quot; tests. A large application may require hundreds of tests. Every method of every class in the application is tested. These are called <strong>unit tests</strong>. These can involve a lot of developers if they have not been automated.</p>
 <p>Tools have been developed to automate testing. One of them is called <strong>NUnit</strong>. It is available on the [http://www.nunit.org] :</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002180000008CAA9830BB.png" style="display:inline-block; margin:4px;width:8.601cm;height:2.245cm;" class="odt-zoomable" data-zoom-src="images/10000000000002180000008CAA9830BB.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000017900000098B0F80AAB.png" style="display:inline-block; margin:4px;width:6.98cm;height:2.82cm;" class="odt-zoomable" data-zoom-src="images/100000000000017900000098B0F80AAB.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002180000008CAA9830BB.png" width="325" height="85" style="display:inline-block; margin:4px;width:8.601cm;height:2.245cm;" class="odt-zoomable" data-zoom-src="images/10000000000002180000008CAA9830BB.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000017900000098B0F80AAB.png" width="264" height="107" style="display:inline-block; margin:4px;width:6.98cm;height:2.82cm;" class="odt-zoomable" data-zoom-src="images/100000000000017900000098B0F80AAB.png" /></td></tr></table>
 
 <p>Version 2.4.6 above was used for this document (March 2008). Installation places an icon [1] on the desktop:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006A5000001A6B460531F.png" style="display:inline-block; margin:4px;width:13.501cm;height:3.35cm;" class="odt-zoomable" data-zoom-src="images/10000000000006A5000001A6B460531F.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006A5000001A6B460531F.png" width="510" height="127" style="display:inline-block; margin:4px;width:13.501cm;height:3.35cm;" class="odt-zoomable" data-zoom-src="images/10000000000006A5000001A6B460531F.png" /></td></tr></table>
 
 <p>A double-click on the icon [1] launches the NUnit GUI [2]. This does nothing to help test automation, as once again we are reduced to visual verification: the tester checks the test results displayed in the GUI. However, tests can also be run by batch tools and their results saved in XML files. This is the method used by development teams: tests are run at night and developers have the results the next morning.</p>
 <p>Let&#x27;s take a look at an example of NUnit testing. First, let&#x27;s create a new C# project of type <em>Application Console</em> : </p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000681000001ACE37D94D3.png" style="display:inline-block; margin:4px;width:13.22cm;height:3.401cm;" class="odt-zoomable" data-zoom-src="images/1000000000000681000001ACE37D94D3.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000681000001ACE37D94D3.png" width="500" height="129" style="display:inline-block; margin:4px;width:13.22cm;height:3.401cm;" class="odt-zoomable" data-zoom-src="images/1000000000000681000001ACE37D94D3.png" /></td></tr></table>
 
 <p>In [1], we see the <em>references</em> of the project. These references are DLL containing classes and interfaces used by the project. Those presented in [1] are included by default in every new C# project. To be able to use the classes and interfaces of the NUnit framework, we need to add [2] a new reference to the project.</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007F2000001C61546E370.png" style="display:inline-block; margin:4px;width:16.14cm;height:3.6cm;" class="odt-zoomable" data-zoom-src="images/10000000000007F2000001C61546E370.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007F2000001C61546E370.png" width="610" height="136" style="display:inline-block; margin:4px;width:16.14cm;height:3.6cm;" class="odt-zoomable" data-zoom-src="images/10000000000007F2000001C61546E370.png" /></td></tr></table>
 
 <p>In the .NET tab above, we select the component [nunit.framework]. The components [nunit.*] above are not components present by default in the .NET environment. They were brought there by the previous installation of the NUnit framework. Once the reference has been added, it appears [4] in the list of project references.</p>
 <p>Before generating the application, the project&#x27;s [bin/Release] folder is empty. After generation (F6), the [bin/Release] folder is no longer empty:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003E50000012424F81D68.png" style="display:inline-block; margin:4px;width:9.23cm;height:2.701cm;" class="odt-zoomable" data-zoom-src="images/10000000000003E50000012424F81D68.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003E50000012424F81D68.png" width="349" height="102" style="display:inline-block; margin:4px;width:9.23cm;height:2.701cm;" class="odt-zoomable" data-zoom-src="images/10000000000003E50000012424F81D68.png" /></td></tr></table>
 
 <p>In [6], we see the presence of DLL [nunit.framework.dll]. It was the addition of reference [nunit.framework] that caused this DLL to be copied into the execution folder. This is in fact one of the folders that will be explored by the CLR (Common Language Runtime) .NET to find the classes and interfaces referenced by the project.</p>
 <p>Let&#x27;s build a first test class NUnit. To do this, we delete the default class [Program.cs] and add a new class [Nunit1.cs] to the project. We also delete unnecessary references [7].</p>
@@ -1766,7 +1766,7 @@
 </ul>
 
 <p>Let&#x27;s configure the project so that its generation produces a DLL rather than an .exe executable:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000081700000334AE742D3D.png" style="display:inline-block; margin:4px;width:16.439cm;height:6.511cm;" class="odt-zoomable" data-zoom-src="images/100000000000081700000334AE742D3D.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000081700000334AE742D3D.png" width="621" height="246" style="display:inline-block; margin:4px;width:16.439cm;height:6.511cm;" class="odt-zoomable" data-zoom-src="images/100000000000081700000334AE742D3D.png" /></td></tr></table>
 
 <ul>
   <li>in [1]: project properties
@@ -1778,7 +1778,7 @@
 </ul>
 
 <p>Now let&#x27;s use NUnit to execute the test class:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000080F00000187B129520D.png" style="display:inline-block; margin:4px;width:16.371cm;height:3.099cm;" class="odt-zoomable" data-zoom-src="images/100000000000080F00000187B129520D.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000080F00000187B129520D.png" width="619" height="117" style="display:inline-block; margin:4px;width:16.371cm;height:3.099cm;" class="odt-zoomable" data-zoom-src="images/100000000000080F00000187B129520D.png" /></td></tr></table>
 
 <ul>
   <li>in [1]: open a NUnit project
@@ -1793,7 +1793,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000838000002DAC020B66E.png" style="display:inline-block; margin:4px;width:16.701cm;height:5.791cm;" class="odt-zoomable" data-zoom-src="images/1000000000000838000002DAC020B66E.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000838000002DAC020B66E.png" width="631" height="219" style="display:inline-block; margin:4px;width:16.701cm;height:5.791cm;" class="odt-zoomable" data-zoom-src="images/1000000000000838000002DAC020B66E.png" /></td></tr></table>
 
 <ul>
   <li>in [7]: results: t1 succeeded, t2 failed
@@ -1804,7 +1804,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005760000012CBD1B437D.png" style="display:inline-block; margin:4px;width:12.95cm;height:2.78cm;" class="odt-zoomable" data-zoom-src="images/10000000000005760000012CBD1B437D.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005760000012CBD1B437D.png" width="489" height="105" style="display:inline-block; margin:4px;width:12.95cm;height:2.78cm;" class="odt-zoomable" data-zoom-src="images/10000000000005760000012CBD1B437D.png" /></td></tr></table>
 
 <ul>
   <li>in [11]: the different tabs in the results window
@@ -1822,7 +1822,7 @@
 </ul>
 
 <p>You can specify the methods to be tested:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004C80000015AB5B9E078.png" style="display:inline-block; margin:4px;width:11.329cm;height:3.2cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C80000015AB5B9E078.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004C80000015AB5B9E078.png" width="428" height="121" style="display:inline-block; margin:4px;width:11.329cm;height:3.2cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C80000015AB5B9E078.png" /></td></tr></table>
 
 <ul>
   <li>in [1]: a checkbox is displayed next to each test
@@ -1939,7 +1939,7 @@
 </code></pre></div>
 
 <p>If we generate (F6) the new DLL of the C# project, the NUnit project becomes the following:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007BD000001C0063A20E2.png" style="display:inline-block; margin:4px;width:15.72cm;height:3.56cm;" class="odt-zoomable" data-zoom-src="images/10000000000007BD000001C0063A20E2.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007BD000001C0063A20E2.png" width="594" height="135" style="display:inline-block; margin:4px;width:15.72cm;height:3.56cm;" class="odt-zoomable" data-zoom-src="images/10000000000007BD000001C0063A20E2.png" /></td></tr></table>
 
 <ul>
   <li>in [1]: the new test class [NUnit2] has been automatically detected
@@ -1951,14 +1951,14 @@
 </ul>
 
 <p>To find out more about NUnit, read the help for NUnit :</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000011B0000006BB378F215.png" style="display:inline-block; margin:4px;width:5.241cm;height:1.981cm;" class="odt-zoomable" data-zoom-src="images/100000000000011B0000006BB378F215.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E9000000E7A082B620.png" style="display:inline-block; margin:4px;width:4.309cm;height:4.279cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E9000000E7A082B620.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000011B0000006BB378F215.png" width="198" height="75" style="display:inline-block; margin:4px;width:5.241cm;height:1.981cm;" class="odt-zoomable" data-zoom-src="images/100000000000011B0000006BB378F215.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E9000000E7A082B620.png" width="163" height="162" style="display:inline-block; margin:4px;width:4.309cm;height:4.279cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E9000000E7A082B620.png" /></td></tr></table>
 
 <p><a id="refheading10401011168783983"></a></p>
 <h3 id="642-the-visual-studio-solution">6.4.2. The Visual Studio solution</h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006BB000001D6AE9C5A7E.png" style="display:inline-block; margin:4px;width:13.681cm;height:3.731cm;" class="odt-zoomable" data-zoom-src="images/10000000000006BB000001D6AE9C5A7E.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006BB000001D6AE9C5A7E.png" width="517" height="141" style="display:inline-block; margin:4px;width:13.681cm;height:3.731cm;" class="odt-zoomable" data-zoom-src="images/10000000000006BB000001D6AE9C5A7E.png" /></td></tr></table>
 
 <p>We will gradually build the following Visual Studio solution:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007CB000002AFFEABEF4C.png" style="display:inline-block; margin:4px;width:15.829cm;height:5.45cm;" class="odt-zoomable" data-zoom-src="images/10000000000007CB000002AFFEABEF4C.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007CB000002AFFEABEF4C.png" width="598" height="206" style="display:inline-block; margin:4px;width:15.829cm;height:5.45cm;" class="odt-zoomable" data-zoom-src="images/10000000000007CB000002AFFEABEF4C.png" /></td></tr></table>
 
 <ul>
   <li>in [1]: the solution <i>ImpotsV5</i> is made up of three projects, one for each of the application&#x27;s three layers
@@ -1972,7 +1972,7 @@
 </ul>
 
 <p>The solution <em>ImpotsV5</em> can be constructed as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>1</b></div><img src="images/100000000000007000000049B2484001.png" style="display:inline-block; margin:4px;width:2.071cm;height:1.349cm;" class="odt-zoomable" data-zoom-src="images/100000000000007000000049B2484001.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>2</b><b>3</b><b>4</b></div><img src="images/10000000000001BF000000CFA8CC9870.png" style="display:inline-block; margin:4px;width:8.28cm;height:3.829cm;" class="odt-zoomable" data-zoom-src="images/10000000000001BF000000CFA8CC9870.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>5</b></div><img src="images/10000000000000D1000000F0CAF13A2C.png" style="display:inline-block; margin:4px;width:3.87cm;height:4.45cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D1000000F0CAF13A2C.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>1</b></div><img src="images/100000000000007000000049B2484001.png" width="78" height="51" style="display:inline-block; margin:4px;width:2.071cm;height:1.349cm;" class="odt-zoomable" data-zoom-src="images/100000000000007000000049B2484001.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>2</b><b>3</b><b>4</b></div><img src="images/10000000000001BF000000CFA8CC9870.png" width="313" height="145" style="display:inline-block; margin:4px;width:8.28cm;height:3.829cm;" class="odt-zoomable" data-zoom-src="images/10000000000001BF000000CFA8CC9870.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>5</b></div><img src="images/10000000000000D1000000F0CAF13A2C.png" width="146" height="168" style="display:inline-block; margin:4px;width:3.87cm;height:4.45cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D1000000F0CAF13A2C.png" /></td></tr></table>
 
 <ul>
   <li>en [1]: create a new project
@@ -1987,7 +1987,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000075400000166A95016E6.png" style="display:inline-block; margin:4px;width:14.891cm;height:2.84cm;" class="odt-zoomable" data-zoom-src="images/100000000000075400000166A95016E6.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000075400000166A95016E6.png" width="563" height="107" style="display:inline-block; margin:4px;width:14.891cm;height:2.84cm;" class="odt-zoomable" data-zoom-src="images/100000000000075400000166A95016E6.png" /></td></tr></table>
 
 <ul>
   <li>in [6]: keep the name [dao] for the project
@@ -2004,7 +2004,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006090000019D120F31A1.png" style="display:inline-block; margin:4px;width:12.261cm;height:3.281cm;" class="odt-zoomable" data-zoom-src="images/10000000000006090000019D120F31A1.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006090000019D120F31A1.png" width="463" height="124" style="display:inline-block; margin:4px;width:12.261cm;height:3.281cm;" class="odt-zoomable" data-zoom-src="images/10000000000006090000019D120F31A1.png" /></td></tr></table>
 
 <ul>
   <li>in [12]: the solution file <i>ImpotsV5</i>. It contains the [dao] folder from the [dao] folder.
@@ -2015,7 +2015,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000008020000028A89258476.png" style="display:inline-block; margin:4px;width:13.561cm;height:4.3cm;" class="odt-zoomable" data-zoom-src="images/10000000000008020000028A89258476.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000008020000028A89258476.png" width="513" height="163" style="display:inline-block; margin:4px;width:13.561cm;height:4.3cm;" class="odt-zoomable" data-zoom-src="images/10000000000008020000028A89258476.png" /></td></tr></table>
 
 <ul>
   <li>en [15]: the new project is called [metier]
@@ -2026,7 +2026,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000748000002F00644FDE4.png" style="display:inline-block; margin:4px;width:12.33cm;height:4.971cm;" class="odt-zoomable" data-zoom-src="images/1000000000000748000002F00644FDE4.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000748000002F00644FDE4.png" width="466" height="188" style="display:inline-block; margin:4px;width:12.33cm;height:4.971cm;" class="odt-zoomable" data-zoom-src="images/1000000000000748000002F00644FDE4.png" /></td></tr></table>
 
 <ul>
   <li>in [18]: the solution file and the files for the three projects
@@ -2042,9 +2042,9 @@
 <p><a id="refheading10401031168783983"></a>
 <a id="impotsv5-dao"></a></p>
 <h3 id="643-the-layerdao">6.4.3. The [ layerdao]</h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006C3000001D83B9E6292.png" style="display:inline-block; margin:4px;width:13.741cm;height:3.75cm;" class="odt-zoomable" data-zoom-src="images/10000000000006C3000001D83B9E6292.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006C3000001D83B9E6292.png" width="519" height="142" style="display:inline-block; margin:4px;width:13.741cm;height:3.75cm;" class="odt-zoomable" data-zoom-src="images/10000000000006C3000001D83B9E6292.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E9000002A26E2681CE.png" style="display:inline-block; margin:4px;width:9.98cm;height:5.35cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E9000002A26E2681CE.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E9000002A26E2681CE.png" width="377" height="202" style="display:inline-block; margin:4px;width:9.98cm;height:5.35cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E9000002A26E2681CE.png" /></td></tr></table>
 
 <p><u><strong>Project references (see [1] in the project)</strong></u></p>
 <p>We add the [nunit.framework] reference required for [NUnit] tests</p>
@@ -2110,7 +2110,7 @@
 <span class="odt-code-line">                <span style="color:#008000">// on note l&#x27;erreur</span></span>
 <span class="odt-code-line">                fe = <span style="color:#0000ff">new</span> <span style="color:#2b91af">ImpotException</span>(<span style="color:#2b91af">String</span>.Format(<span style="color:#a31515">&quot;Erreur lors de la lecture du fichier {0}&quot;</span>, FileName), e) { Code = (<span style="color:#0000ff">int</span>)<span style="color:#2b91af">CodeErreurs</span>.Acces };</span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line"><span style="color:#008000">// error to report?</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// error to report?</span></span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line">    }</span>
@@ -2165,7 +2165,7 @@
 </ul>
 
 <p>The [DataImpot.txt] file required for testing is automatically copied to the project execution folder (see [5] in the project). The [dao] project will have several classes containing a [Main] method. In this case, you must explicitly indicate the class to be executed when the user requests project execution by pressing Ctrl-F5 :</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007F50000034F9073383D.png" style="display:inline-block; margin:4px;width:16.17cm;height:6.72cm;" class="odt-zoomable" data-zoom-src="images/10000000000007F50000034F9073383D.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007F50000034F9073383D.png" width="611" height="254" style="display:inline-block; margin:4px;width:16.17cm;height:6.72cm;" class="odt-zoomable" data-zoom-src="images/10000000000007F50000034F9073383D.png" /></td></tr></table>
 
 <ul>
   <li>en [1]: access project properties
@@ -2192,7 +2192,7 @@
 </code></pre></div>
 
 <p>The project is modified to run the [Test2] class:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000476000001977C4FC780.png" style="display:inline-block; margin:4px;width:9.059cm;height:3.23cm;" class="odt-zoomable" data-zoom-src="images/1000000000000476000001977C4FC780.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000476000001977C4FC780.png" width="342" height="122" style="display:inline-block; margin:4px;width:9.059cm;height:3.23cm;" class="odt-zoomable" data-zoom-src="images/1000000000000476000001977C4FC780.png" /></td></tr></table>
 
 <p>The screen results are the same as before.</p>
 <p><u><strong>The NUnit [NUnit1] test (see [4] in the project)</strong></u></p>
@@ -2253,7 +2253,7 @@
 </ul>
 
 <p>To run this unit test, the project must be of type [Class Library] :</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007E0000001A95E5A90E3.png" style="display:inline-block; margin:4px;width:16cm;height:3.371cm;" class="odt-zoomable" data-zoom-src="images/10000000000007E0000001A95E5A90E3.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007E0000001A95E5A90E3.png" width="605" height="127" style="display:inline-block; margin:4px;width:16cm;height:3.371cm;" class="odt-zoomable" data-zoom-src="images/10000000000007E0000001A95E5A90E3.png" /></td></tr></table>
 
 <ul>
   <li>in [1]: the nature of the project has been changed
@@ -2265,7 +2265,7 @@
 </ul>
 
 <p>The DLL [ImpotsV5-dao.dll] is then loaded into the framework <em>NUnit</em> and executed :</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000082C000001C62429FC1A.png" style="display:inline-block; margin:4px;width:16.611cm;height:3.6cm;" class="odt-zoomable" data-zoom-src="images/100000000000082C000001C62429FC1A.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000082C000001C62429FC1A.png" width="628" height="136" style="display:inline-block; margin:4px;width:16.611cm;height:3.6cm;" class="odt-zoomable" data-zoom-src="images/100000000000082C000001C62429FC1A.png" /></td></tr></table>
 
 <ul>
   <li>in [1]: tests passed. We now consider the [dao] layer operational. Its DLL contains all the project&#x27;s classes, including the test classes. These are no longer needed. We rebuild DLL to exclude the test classes.
@@ -2279,9 +2279,9 @@
 <p><a id="refheading10401051168783983"></a>
 <a id="impots-v5-metier"></a></p>
 <h3 id="644-the-layerjob">6.4.4. The [ layerjob]</h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006AA000001CD0522B461.png" style="display:inline-block; margin:4px;width:13.54cm;height:3.66cm;" class="odt-zoomable" data-zoom-src="images/10000000000006AA000001CD0522B461.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006AA000001CD0522B461.png" width="512" height="138" style="display:inline-block; margin:4px;width:13.54cm;height:3.66cm;" class="odt-zoomable" data-zoom-src="images/10000000000006AA000001CD0522B461.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006100000022CA914C583.png" style="display:inline-block; margin:4px;width:12.321cm;height:4.41cm;" class="odt-zoomable" data-zoom-src="images/10000000000006100000022CA914C583.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006100000022CA914C583.png" width="466" height="167" style="display:inline-block; margin:4px;width:12.321cm;height:4.41cm;" class="odt-zoomable" data-zoom-src="images/10000000000006100000022CA914C583.png" /></td></tr></table>
 
 <ul>
   <li>in [1], the [metier] project became the solution&#x27;s active project
@@ -2298,7 +2298,7 @@
 
 <p><u><strong>Project references (see [2] in the project)</strong></u></p>
 <p>As with the [dao] project, we add the [nunit.framework] reference required for [NUnit] tests. The [metier] layer needs the [dao] layer. It therefore needs a reference to the DLL of this layer. Proceed as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000077A000001A324F2BD2E.png" style="display:inline-block; margin:4px;width:15.191cm;height:3.32cm;" class="odt-zoomable" data-zoom-src="images/100000000000077A000001A324F2BD2E.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000077A000001A324F2BD2E.png" width="574" height="125" style="display:inline-block; margin:4px;width:15.191cm;height:3.32cm;" class="odt-zoomable" data-zoom-src="images/100000000000077A000001A324F2BD2E.png" /></td></tr></table>
 
 <ul>
   <li>in [1]: a new reference is added to the project references [metier]
@@ -2359,7 +2359,7 @@
 </ul>
 
 <p>The [metier] project is configured as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000472000001A1394014DA.png" style="display:inline-block; margin:4px;width:9.029cm;height:3.311cm;" class="odt-zoomable" data-zoom-src="images/1000000000000472000001A1394014DA.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000472000001A1394014DA.png" width="341" height="125" style="display:inline-block; margin:4px;width:9.029cm;height:3.311cm;" class="odt-zoomable" data-zoom-src="images/1000000000000472000001A1394014DA.png" /></td></tr></table>
 
 <ul>
   <li>[1]: the project is a console application
@@ -2419,7 +2419,7 @@
 </ul>
 
 <p>The [metier] project is now configured as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000429000001AC7D6D377B.png" style="display:inline-block; margin:4px;width:8.451cm;height:3.401cm;" class="odt-zoomable" data-zoom-src="images/1000000000000429000001AC7D6D377B.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000429000001AC7D6D377B.png" width="319" height="129" style="display:inline-block; margin:4px;width:8.451cm;height:3.401cm;" class="odt-zoomable" data-zoom-src="images/1000000000000429000001AC7D6D377B.png" /></td></tr></table>
 
 <ul>
   <li>[1]: the project is of the &quot;class library&quot; type
@@ -2429,10 +2429,10 @@
 </ul>
 
 <p>The project is generated (F6). Then the DLL [<a id="impotsv5-metier-dll"></a>ImpotsV5-metier.dllgenerated is loaded into <em>NUnit</em> and tested :</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000028C00000085FF4D6587.png" style="display:inline-block; margin:4px;width:12.06cm;height:2.461cm;" class="odt-zoomable" data-zoom-src="images/100000000000028C00000085FF4D6587.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000028C00000085FF4D6587.png" width="456" height="93" style="display:inline-block; margin:4px;width:12.06cm;height:2.461cm;" class="odt-zoomable" data-zoom-src="images/100000000000028C00000085FF4D6587.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p>The tests above were successful. We now consider the [metier] layer operational. Its DLL contains all the project classes, including the test classes. These are no longer needed. We rebuild DLL to exclude the test classes.</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003CB000001B2CEB0A607.png" style="display:inline-block; margin:4px;width:7.71cm;height:3.44cm;" class="odt-zoomable" data-zoom-src="images/10000000000003CB000001B2CEB0A607.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003CB000001B2CEB0A607.png" width="291" height="130" style="display:inline-block; margin:4px;width:7.71cm;height:3.44cm;" class="odt-zoomable" data-zoom-src="images/10000000000003CB000001B2CEB0A607.png" /></td></tr></table>
 
 <ul>
   <li>in [1]: the [tests] folder is excluded from the project
@@ -2443,9 +2443,9 @@
 
 <p><a id="refheading10401071168783983"></a></p>
 <h3 id="645-the-ui-layer">6.4.5. The [ui] layer</h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000697000001E0E6A9F6BE.png" style="display:inline-block; margin:4px;width:13.39cm;height:3.81cm;" class="odt-zoomable" data-zoom-src="images/1000000000000697000001E0E6A9F6BE.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000697000001E0E6A9F6BE.png" width="506" height="144" style="display:inline-block; margin:4px;width:13.39cm;height:3.81cm;" class="odt-zoomable" data-zoom-src="images/1000000000000697000001E0E6A9F6BE.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000606000001B91FDC5F1F.png" style="display:inline-block; margin:4px;width:12.24cm;height:3.5cm;" class="odt-zoomable" data-zoom-src="images/1000000000000606000001B91FDC5F1F.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000606000001B91FDC5F1F.png" width="463" height="132" style="display:inline-block; margin:4px;width:12.24cm;height:3.5cm;" class="odt-zoomable" data-zoom-src="images/1000000000000606000001B91FDC5F1F.png" /></td></tr></table>
 
 <ul>
   <li>in [1], the [ui] project became the active project for the solution
@@ -2464,7 +2464,7 @@
 <p>The [Dialogue.cs] class is the same as in the previous version.</p>
 <p><u><strong>Tests</strong></u></p>
 <p>The [ui] project is configured as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000475000001A89F7EBBA3.png" style="display:inline-block; margin:4px;width:9.059cm;height:3.371cm;" class="odt-zoomable" data-zoom-src="images/1000000000000475000001A89F7EBBA3.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000475000001A89F7EBBA3.png" width="342" height="127" style="display:inline-block; margin:4px;width:9.059cm;height:3.371cm;" class="odt-zoomable" data-zoom-src="images/1000000000000475000001A89F7EBBA3.png" /></td></tr></table>
 
 <ul>
   <li>[1]: the project is of the &quot;application console&quot; type
@@ -2490,7 +2490,7 @@
 <span class="odt-code-line">        <span style="color:#008000">// création couche [metier]</span></span>
 <span class="odt-code-line">                metier = <span style="color:#0000ff">new</span> <span style="color:#2b91af">ImpotMetier</span>(<span style="color:#0000ff">new</span> <span style="color:#2b91af">FileImpot</span>(<span style="color:#a31515">&quot;DataImpot.txt&quot;</span>));</span>
 <span class="odt-code-line">            } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">ImpotException</span> e) {</span>
-<span class="odt-code-line"><span style="color:#008000">// affichage erreur</span></span>
+<span class="odt-code-line">                <span style="color:#008000">// affichage erreur</span></span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">                <span style="color:#008000">// arrêt programme</span></span>
 <span class="odt-code-line">                <span style="color:#2b91af">Environment</span>.Exit(1);</span>
@@ -2503,7 +2503,7 @@
 </code></pre></div>
 
 <p>Apart from this change, nothing will change in the application, as each layer communicates with the next via an interface. As long as the interface remains unchanged, communication between layers remains unchanged. The framework <strong>Spring</strong> allows us to take layer independence a step further, by externalizing the names of the classes implementing the various layers to a configuration file. Changing the implementation of a layer is equivalent to changing a configuration file. There is no impact on the application code.</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006BF000001EEF645BF0E.png" style="display:inline-block; margin:4px;width:13.711cm;height:3.919cm;" class="odt-zoomable" data-zoom-src="images/10000000000006BF000001EEF645BF0E.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006BF000001EEF645BF0E.png" width="518" height="148" style="display:inline-block; margin:4px;width:13.711cm;height:3.919cm;" class="odt-zoomable" data-zoom-src="images/10000000000006BF000001EEF645BF0E.png" /></td></tr></table>
 
 <p>Above, the [ui] layer will ask [0] Spring to instantiate the [dao] [1] and [metier] [2] layers according to information contained in a configuration file. The [ui] layer will then ask Spring [3] for a reference to the [metier] layer:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
@@ -2527,7 +2527,7 @@
 </ul>
 
 <p>The Spring framework exists in two versions: Java and .NET. Version .NET is available at url (March 2008) [http://www.springframework.net/]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000081700000283F402F7EB.png" style="display:inline-block; margin:4px;width:16.439cm;height:5.099cm;" class="odt-zoomable" data-zoom-src="images/100000000000081700000283F402F7EB.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000081700000283F402F7EB.png" width="621" height="193" style="display:inline-block; margin:4px;width:16.439cm;height:5.099cm;" class="odt-zoomable" data-zoom-src="images/100000000000081700000283F402F7EB.png" /></td></tr></table>
 
 <ul>
   <li>in [1]: the [Spring.net] site
@@ -2536,14 +2536,14 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007AB000002D74B02C2D9.png" style="display:inline-block; margin:4px;width:12.98cm;height:4.81cm;" class="odt-zoomable" data-zoom-src="images/10000000000007AB000002D74B02C2D9.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007AB000002D74B02C2D9.png" width="491" height="182" style="display:inline-block; margin:4px;width:12.98cm;height:4.81cm;" class="odt-zoomable" data-zoom-src="images/10000000000007AB000002D74B02C2D9.png" /></td></tr></table>
 
 <ul>
   <li>in [3]: download Spring 1.1 (March 2008)
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000082F0000040D67EE309A.png" style="display:inline-block; margin:4px;width:16.63cm;height:8.23cm;" class="odt-zoomable" data-zoom-src="images/100000000000082F0000040D67EE309A.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000082F0000040D67EE309A.png" width="629" height="311" style="display:inline-block; margin:4px;width:16.63cm;height:8.23cm;" class="odt-zoomable" data-zoom-src="images/100000000000082F0000040D67EE309A.png" /></td></tr></table>
 
 <ul>
   <li>en [4]: download and install the .exe version
@@ -2557,7 +2557,7 @@
 </ul>
 
 <p>We store these three DLL in a [lib] folder in our project:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007DB0000027D371F3434.png" style="display:inline-block; margin:4px;width:15.96cm;height:5.061cm;" class="odt-zoomable" data-zoom-src="images/10000000000007DB0000027D371F3434.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007DB0000027D371F3434.png" width="603" height="191" style="display:inline-block; margin:4px;width:15.96cm;height:5.061cm;" class="odt-zoomable" data-zoom-src="images/10000000000007DB0000027D371F3434.png" /></td></tr></table>
 
 <ul>
   <li>[1]: the three DLL are placed in the [lib] folder with Windows Explorer
@@ -2572,7 +2572,7 @@
 
 <p>The [lib] folder creation operation is by no means essential. The references could be created directly on the three DLL in the [bin/net/2.0/release] folder of [Spring.net]. However, by creating the [lib] folder, the application can be developed on a workstation without [Spring.net], making it less dependent on the available development environment.</p>
 <p>We are adding references to the three new DLL to the [ui] project:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E8000002E7FF4AD111.png" style="display:inline-block; margin:4px;width:9.97cm;height:5.9cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E8000002E7FF4AD111.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E8000002E7FF4AD111.png" width="377" height="223" style="display:inline-block; margin:4px;width:9.97cm;height:5.9cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E8000002E7FF4AD111.png" /></td></tr></table>
 
 <ul>
   <li>[1]: create references to the three DLL in the [lib] folder [2]
@@ -2582,7 +2582,7 @@
 </ul>
 
 <p>Let&#x27;s return to an overview of the application architecture:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006C70000021EA354603D.png" style="display:inline-block; margin:4px;width:13.771cm;height:4.3cm;" class="odt-zoomable" data-zoom-src="images/10000000000006C70000021EA354603D.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006C70000021EA354603D.png" width="520" height="163" style="display:inline-block; margin:4px;width:13.771cm;height:4.3cm;" class="odt-zoomable" data-zoom-src="images/10000000000006C70000021EA354603D.png" /></td></tr></table>
 
 <p>Above, the [ui] layer will ask [0] Spring to instantiate the [dao] [1] and [metier] [2] layers according to information contained in a configuration file. The [ui] layer will then ask Spring [3] for a reference to the [metier] layer. This will result in the following code in the [ui] layer:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
@@ -2607,7 +2607,7 @@
 
 <p>Line [5] above uses the [App.config] configuration file in the Visual Studio project. In a C# project, this file is used to configure the application. [App.config] is therefore not a Spring notion, but a Visual Studio notion that Spring exploits. Spring knows how to use configuration files other than [App.config]. The solution presented ici is therefore not the only one available.</p>
 <p>Let&#x27;s create the file [App.config] with the Visual Studio wizard:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000081A0000029BD827EDB2.png" style="display:inline-block; margin:4px;width:16.461cm;height:5.29cm;" class="odt-zoomable" data-zoom-src="images/100000000000081A0000029BD827EDB2.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000081A0000029BD827EDB2.png" width="622" height="200" style="display:inline-block; margin:4px;width:16.461cm;height:5.29cm;" class="odt-zoomable" data-zoom-src="images/100000000000081A0000029BD827EDB2.png" /></td></tr></table>
 
 <ul>
   <li>in [1]: add a new element to the project
@@ -2770,7 +2770,7 @@
 </ul>
 
 <p>All that remains is to use this Spring configuration file in the [ui] layer. To do this, we duplicate the [Dialogue.cs] class in [Dialogue2.cs] and make the latter the main class of the [ui] project:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007F700000203556582B5.png" style="display:inline-block; margin:4px;width:16.18cm;height:4.09cm;" class="odt-zoomable" data-zoom-src="images/10000000000007F700000203556582B5.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007F700000203556582B5.png" width="612" height="155" style="display:inline-block; margin:4px;width:16.18cm;height:4.09cm;" class="odt-zoomable" data-zoom-src="images/10000000000007F700000203556582B5.png" /></td></tr></table>
 
 <ul>
   <li>in [1]: copy of [Dialogue.cs]
@@ -2783,7 +2783,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000047900000190711ACB85.png" style="display:inline-block; margin:4px;width:9.089cm;height:3.18cm;" class="odt-zoomable" data-zoom-src="images/100000000000047900000190711ACB85.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000047900000190711ACB85.png" width="344" height="120" style="display:inline-block; margin:4px;width:9.089cm;height:3.18cm;" class="odt-zoomable" data-zoom-src="images/100000000000047900000190711ACB85.png" /></td></tr></table>
 
 <ul>
   <li>in [6]: we make [Dialogue2.cs] the main class of the [ui] project.
@@ -2927,7 +2927,7 @@
 
 <p>From all this, we&#x27;ll remember that it&#x27;s the deepest exception, ici that of line 17, which is often the most significant. Note, however, that Spring has kept the error message from line 17, and passed it on to the highest-level exception on line 3, in order to have the original cause of the error at the highest level.</p>
 <p>Spring alone deserves a book. We have only touched on ici. It can be explored in greater depth with the document [spring-net-reference.pdf] found in the Spring installation folder:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000BC0000005316B6DB0D.png" style="display:inline-block; margin:4px;width:3.48cm;height:1.54cm;" class="odt-zoomable" data-zoom-src="images/10000000000000BC0000005316B6DB0D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000BC0000005316B6DB0D.png" width="132" height="58" style="display:inline-block; margin:4px;width:3.48cm;height:1.54cm;" class="odt-zoomable" data-zoom-src="images/10000000000000BC0000005316B6DB0D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p>See also [http://tahe.developpez.com/dotnet/springioc], a Spring tutorial presented in a VB.NET context.</p>
 
@@ -2965,8 +2965,8 @@
     <div class="md-footer-meta__inner">
 
       <div>
-        <a href="https://tahe.developpez.com" target="_blank">
-          https://tahe.developpez.com
+        <a href="https://stahe.github.io/" target="_blank">
+          https://stahe.github.io/
         </a>
         <br>
         This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the

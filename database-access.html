@@ -1139,7 +1139,7 @@
 <p><a id="refheading10401691168783983"></a></p>
 <h2 id="91-connector-adonet">9.1. Connector ADO.NET</h2>
 <p>Let&#x27;s take another look at the layered architecture used on various occasions </p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006BC000001858C87E1E8.png" style="display:inline-block; margin:4px;width:13.681cm;height:3.09cm;" class="odt-zoomable" data-zoom-src="images/10000000000006BC000001858C87E1E8.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006BC000001858C87E1E8.png" width="517" height="117" style="display:inline-block; margin:4px;width:13.681cm;height:3.09cm;" class="odt-zoomable" data-zoom-src="images/10000000000006BC000001858C87E1E8.png" /></td></tr></table>
 
 <p>In the examples studied, the [dao] layer has so far exploited two types of data source:</p>
 <ul>
@@ -1150,7 +1150,7 @@
 </ul>
 
 <p>In this chapter, we study the case where the data comes from a database. The 3-layer architecture then evolves into a multi-layer architecture. There are various types of multi-layer architecture. We will study the basic concepts with the following :</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007C200000186560F4615.png" style="display:inline-block; margin:4px;width:15.76cm;height:3.099cm;" class="odt-zoomable" data-zoom-src="images/10000000000007C200000186560F4615.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007C200000186560F4615.png" width="596" height="117" style="display:inline-block; margin:4px;width:15.76cm;height:3.099cm;" class="odt-zoomable" data-zoom-src="images/10000000000007C200000186560F4615.png" /></td></tr></table>
 
 <p>In the diagram above, the [dao] layer [1] dialogues with the SGBD [3] through a class library specific to the SGBD used and delivered with it. This layer implements standard functions known as ADO (Active X Data Objects). Such a layer is called a <strong>provider</strong> (database access provider ici) or even <strong>connector</strong>. Most SGBD now feature a ADO.NET connector, which was not the case in the early days of the .NET platform.  The .NET connectors do not offer a standard interface to the [dao] layer, so the latter has the connector class names in its code. If you change the SGBD, you change the connector and the classes, and you have to change the [dao] layer. It&#x27;s both a <strong>efficient</strong> because the .NET connector, having been written for a particular SGBD, knows how best to use it, and <strong>rigid</strong> because changing the SGBD means changing the [dao] layer. This second argument should be put into perspective: companies don&#x27;t change their SGBD very often. We&#x27;ll see later that, since version 2.0 of .NET, there&#x27;s been a generic connector that brings flexibility without sacrificing performance.</p>
 <p><a id="refheading10401711168783983"></a></p>
@@ -1192,14 +1192,14 @@
 <h2 id="93-basic-concepts-of-database-operation">9.3. Basic concepts of database operation</h2>
 <p>We&#x27;re going to demonstrate the main concepts of database use with a SQL Server Compact 3.5 database. This SGBD is delivered with Visual Studio Express. It&#x27;s a lightweight SGBD that can only manage one user at a time. It is, however, sufficient to introduce database programming. At a later date, we&#x27;ll be presenting other SGBD.</p>
 <p>The architecture used will be as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006880000011E7C514492.png" style="display:inline-block; margin:4px;width:13.27cm;height:2.27cm;" class="odt-zoomable" data-zoom-src="images/10000000000006880000011E7C514492.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006880000011E7C514492.png" width="502" height="86" style="display:inline-block; margin:4px;width:13.27cm;height:2.27cm;" class="odt-zoomable" data-zoom-src="images/10000000000006880000011E7C514492.png" /></td></tr></table>
 
 <p>A console application [1] will operate a SqlServer Compact database [3,4] via the Ado.Net connector of this SGBD [2].</p>
 <p><a id="refheading10401751168783983"></a>
 <a id="sqlce-dbarticles"></a></p>
 <h3 id="931-visit-sample-database">9.3.1. Visit sample database</h3>
 <p>We&#x27;re going to build the database directly in Visual Studio Express. To do this, we create a new console-type project.</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000082C0000024F683DD123.png" style="display:inline-block; margin:4px;width:16.611cm;height:4.69cm;" class="odt-zoomable" data-zoom-src="images/100000000000082C0000024F683DD123.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000082C0000024F683DD123.png" width="628" height="177" style="display:inline-block; margin:4px;width:16.611cm;height:4.69cm;" class="odt-zoomable" data-zoom-src="images/100000000000082C0000024F683DD123.png" /></td></tr></table>
 
 <ul>
   <li>[1]: the project
@@ -1210,7 +1210,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000733000004C2CE5905AB.png" style="display:inline-block; margin:4px;width:14.63cm;height:9.67cm;" class="odt-zoomable" data-zoom-src="images/1000000000000733000004C2CE5905AB.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000733000004C2CE5905AB.png" width="553" height="365" style="display:inline-block; margin:4px;width:14.63cm;height:9.67cm;" class="odt-zoomable" data-zoom-src="images/1000000000000733000004C2CE5905AB.png" /></td></tr></table>
 
 <ul>
   <li>[4]: Selects the type of SGBD
@@ -1231,7 +1231,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006EB000003D9F2653DB1.png" style="display:inline-block; margin:4px;width:14.06cm;height:7.819cm;" class="odt-zoomable" data-zoom-src="images/10000000000006EB000003D9F2653DB1.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006EB000003D9F2653DB1.png" width="531" height="296" style="display:inline-block; margin:4px;width:14.06cm;height:7.819cm;" class="odt-zoomable" data-zoom-src="images/10000000000006EB000003D9F2653DB1.png" /></td></tr></table>
 
 <ul>
   <li>[14]: the name of the database just created
@@ -1262,7 +1262,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000738000000EE0CECDDA0.png" style="display:inline-block; margin:4px;width:14.67cm;height:1.891cm;" class="odt-zoomable" data-zoom-src="images/1000000000000738000000EE0CECDDA0.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000738000000EE0CECDDA0.png" width="554" height="71" style="display:inline-block; margin:4px;width:14.67cm;height:1.891cm;" class="odt-zoomable" data-zoom-src="images/1000000000000738000000EE0CECDDA0.png" /></td></tr></table>
 
 <ul>
   <li>[21]: the [id] field is of integer type and is the table&#x27;s primary key [22].
@@ -1271,7 +1271,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006FD00000217A571D54E.png" style="display:inline-block; margin:4px;width:14.199cm;height:4.249cm;" class="odt-zoomable" data-zoom-src="images/10000000000006FD00000217A571D54E.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006FD00000217A571D54E.png" width="537" height="161" style="display:inline-block; margin:4px;width:14.199cm;height:4.249cm;" class="odt-zoomable" data-zoom-src="images/10000000000006FD00000217A571D54E.png" /></td></tr></table>
 
 <ul>
   <li>[24]: the other fields are created. Note that the [name] field has a <a id="sqlce-dbarticles-nom-unique"></a>uniqueness constraint [25].
@@ -1282,7 +1282,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000076B000002258C76CAA8.png" style="display:inline-block; margin:4px;width:15.071cm;height:4.36cm;" class="odt-zoomable" data-zoom-src="images/100000000000076B000002258C76CAA8.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000076B000002258C76CAA8.png" width="570" height="165" style="display:inline-block; margin:4px;width:15.071cm;height:4.36cm;" class="odt-zoomable" data-zoom-src="images/100000000000076B000002258C76CAA8.png" /></td></tr></table>
 
 <ul>
   <li>[28]: request to see table contents
@@ -1294,7 +1294,7 @@
 </ul>
 
 <p>We now need to configure the project so that this database, currently at the root of the project, is automatically copied to the project execution folder:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005570000015FFB5295D5.png" style="display:inline-block; margin:4px;width:10.85cm;height:2.79cm;" class="odt-zoomable" data-zoom-src="images/10000000000005570000015FFB5295D5.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005570000015FFB5295D5.png" width="410" height="105" style="display:inline-block; margin:4px;width:10.85cm;height:2.79cm;" class="odt-zoomable" data-zoom-src="images/10000000000005570000015FFB5295D5.png" /></td></tr></table>
 
 <ul>
   <li>[1]: request to view all files
@@ -1305,7 +1305,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007CA00000325C4D47E79.png" style="display:inline-block; margin:4px;width:15.829cm;height:6.391cm;" class="odt-zoomable" data-zoom-src="images/10000000000007CA00000325C4D47E79.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007CA00000325C4D47E79.png" width="598" height="242" style="display:inline-block; margin:4px;width:15.829cm;height:6.391cm;" class="odt-zoomable" data-zoom-src="images/10000000000007CA00000325C4D47E79.png" /></td></tr></table>
 
 <ul>
   <li>[4]: the operation of adding a data source to a project launches a wizard that we don&#x27;t need ici [5].
@@ -1491,7 +1491,7 @@
 <p><a id="refheading10401791168783983"></a></p>
 <h3 id="933-basic-adonet-interfaces-for-connected-mode">9.3.3. Basic ADO.NET interfaces for connected mode</h3>
 <p>Let&#x27;s return to the diagram of an application using a database through a ADO.NET connector:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007650000011A50B5371B.png" style="display:inline-block; margin:4px;width:15.02cm;height:2.24cm;" class="odt-zoomable" data-zoom-src="images/10000000000007650000011A50B5371B.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007650000011A50B5371B.png" width="568" height="85" style="display:inline-block; margin:4px;width:15.02cm;height:2.24cm;" class="odt-zoomable" data-zoom-src="images/10000000000007650000011A50B5371B.png" /></td></tr></table>
 
 <p>In <strong>connected</strong>, the :</p>
 <ol>
@@ -1674,7 +1674,7 @@
 <p><a id="refheading10401811168783983"></a></p>
 <h3 id="934-error-management">9.3.4. Error management</h3>
 <p>Let&#x27;s review the architecture of a database application:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000075E00000120C7A17B43.png" style="display:inline-block; margin:4px;width:14.97cm;height:2.29cm;" class="odt-zoomable" data-zoom-src="images/100000000000075E00000120C7A17B43.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000075E00000120C7A17B43.png" width="566" height="87" style="display:inline-block; margin:4px;width:14.97cm;height:2.29cm;" class="odt-zoomable" data-zoom-src="images/100000000000075E00000120C7A17B43.png" /></td></tr></table>
 
 <p>The [dao] layer may encounter numerous errors during database operation. These will be raised as exceptions by the ADO.NET connector. The [dao] layer code must handle them. Any operation with the database must be carried out in a try / catch / finally mode, in order to intercept and handle any exception and free the resources that need to be freed. For example, the code seen above to exploit the result of an order <em>Select</em> becomes the following:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1"> 1</a></span>
@@ -1790,7 +1790,7 @@
 <p><a id="refheading10401831168783983"></a></p>
 <h3 id="935-example-project-configuration">9.3.5. Example project configuration</h3>
 <p>The final project will be as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000077000000324F1455C23.png" style="display:inline-block; margin:4px;width:15.109cm;height:6.38cm;" class="odt-zoomable" data-zoom-src="images/100000000000077000000324F1455C23.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000077000000324F1455C23.png" width="571" height="241" style="display:inline-block; margin:4px;width:15.109cm;height:6.38cm;" class="odt-zoomable" data-zoom-src="images/100000000000077000000324F1455C23.png" /></td></tr></table>
 
 <ul>
   <li>[1]: the project will have a configuration file [App.config]
@@ -2105,11 +2105,11 @@
 <a id="sqlserver2005-connecteur-adonet"></a></p>
 <h3 id="941-connector-sql-server-2005">9.4.1. Connector SQL Server 2005</h3>
 <p>The architecture used will be as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000063B00000102F01B0F3E.png" style="display:inline-block; margin:4px;width:12.659cm;height:2.05cm;" class="odt-zoomable" data-zoom-src="images/100000000000063B00000102F01B0F3E.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000063B00000102F01B0F3E.png" width="478" height="77" style="display:inline-block; margin:4px;width:12.659cm;height:2.05cm;" class="odt-zoomable" data-zoom-src="images/100000000000063B00000102F01B0F3E.png" /></td></tr></table>
 
 <p>Installation of SQL Server 2005 is described in the appendices in paragraph <a href="appendices.html#sqlserver2005">1.1</a>.</p>
 <p>We create a second project in the same solution as before, then create the SQL server 2005 database. The  SGBD SQL Server 2005 must be started before the following operations:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006F70000018EEBC02A28.png" style="display:inline-block; margin:4px;width:14.15cm;height:3.161cm;" class="odt-zoomable" data-zoom-src="images/10000000000006F70000018EEBC02A28.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006F70000018EEBC02A28.png" width="535" height="119" style="display:inline-block; margin:4px;width:14.15cm;height:3.161cm;" class="odt-zoomable" data-zoom-src="images/10000000000006F70000018EEBC02A28.png" /></td></tr></table>
 
 <ul>
   <li>[1]: create a new project in the current solution and make it the current project.
@@ -2120,7 +2120,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000078D00000370DF05DB00.png" style="display:inline-block; margin:4px;width:15.341cm;height:6.99cm;" class="odt-zoomable" data-zoom-src="images/100000000000078D00000370DF05DB00.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000078D00000370DF05DB00.png" width="580" height="264" style="display:inline-block; margin:4px;width:15.341cm;height:6.99cm;" class="odt-zoomable" data-zoom-src="images/100000000000078D00000370DF05DB00.png" /></td></tr></table>
 
 <ul>
   <li>[4]: select SGBD SQL Server
@@ -2137,7 +2137,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000076E0000027E6B7981CA.png" style="display:inline-block; margin:4px;width:15.101cm;height:5.061cm;" class="odt-zoomable" data-zoom-src="images/100000000000076E0000027E6B7981CA.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000076E0000027E6B7981CA.png" width="571" height="191" style="display:inline-block; margin:4px;width:15.101cm;height:5.061cm;" class="odt-zoomable" data-zoom-src="images/100000000000076E0000027E6B7981CA.png" /></td></tr></table>
 
 <ul>
   <li>[11]: SQL Server database
@@ -2152,7 +2152,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000050000000190FF9E17D9.png" style="display:inline-block; margin:4px;width:10.16cm;height:3.18cm;" class="odt-zoomable" data-zoom-src="images/100000000000050000000190FF9E17D9.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000050000000190FF9E17D9.png" width="384" height="120" style="display:inline-block; margin:4px;width:10.16cm;height:3.18cm;" class="odt-zoomable" data-zoom-src="images/100000000000050000000190FF9E17D9.png" /></td></tr></table>
 
 <ul>
   <li>[17]: other table fields
@@ -2162,13 +2162,13 @@
 </ul>
 
 <p>We still need to put data in the :</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F600000098214790EF.png" style="display:inline-block; margin:4px;width:4.56cm;height:2.82cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F600000098214790EF.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000191000000AC89FF5946.png" style="display:inline-block; margin:4px;width:7.43cm;height:3.191cm;" class="odt-zoomable" data-zoom-src="images/1000000000000191000000AC89FF5946.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F600000098214790EF.png" width="172" height="107" style="display:inline-block; margin:4px;width:4.56cm;height:2.82cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F600000098214790EF.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000191000000AC89FF5946.png" width="281" height="121" style="display:inline-block; margin:4px;width:7.43cm;height:3.191cm;" class="odt-zoomable" data-zoom-src="images/1000000000000191000000AC89FF5946.png" /></td></tr></table>
 
 <p>We include the database in the :</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006CF000001CAF5B15CEC.png" style="display:inline-block; margin:4px;width:13.831cm;height:3.641cm;" class="odt-zoomable" data-zoom-src="images/10000000000006CF000001CAF5B15CEC.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006CF000001CAF5B15CEC.png" width="523" height="138" style="display:inline-block; margin:4px;width:13.831cm;height:3.641cm;" class="odt-zoomable" data-zoom-src="images/10000000000006CF000001CAF5B15CEC.png" /></td></tr></table>
 
 <p>The project references are as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002060000018E5079993B.png" style="display:inline-block; margin:4px;width:4.11cm;height:3.161cm;" class="odt-zoomable" data-zoom-src="images/10000000000002060000018E5079993B.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002060000018E5079993B.png" width="155" height="119" style="display:inline-block; margin:4px;width:4.11cm;height:3.161cm;" class="odt-zoomable" data-zoom-src="images/10000000000002060000018E5079993B.png" /></td></tr></table>
 
 <p>The configuration file [App.config] is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
@@ -2205,7 +2205,7 @@
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line">...</span>
-<span class="odt-code-line"><span style="color:#008000">// read-execute SQL commands typed on the keyboard</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// read-execute SQL commands typed on the keyboard</span></span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
@@ -2237,7 +2237,7 @@
 <span class="odt-code-line">                     <span style="color:#008000">// executes sqlCommand with select query</span></span>
 <span class="odt-code-line">                    <span style="color:#2b91af">SqlCommand</span> sqlCommand = <span style="color:#0000ff">new</span> <span style="color:#2b91af">SqlCommand</span>(requête, connexion);</span>
 <span class="odt-code-line">                    <span style="color:#2b91af">SqlDataReader</span> reader = sqlCommand.ExecuteReader();</span>
-<span class="odt-code-line"><span style="color:#008000">// exploitation of results</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">// exploitation of results</span></span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">                }</span>
 <span class="odt-code-line">            } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">Exception</span> ex) {</span>
@@ -2264,11 +2264,11 @@
 <a id="mysql5-connecteur-adonet"></a></p>
 <h3 id="942-connector-mysql5">9.4.2. Connector MySQL5</h3>
 <p>The architecture used will be as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000062C00000116C1F40819.png" style="display:inline-block; margin:4px;width:12.539cm;height:2.21cm;" class="odt-zoomable" data-zoom-src="images/100000000000062C00000116C1F40819.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000062C00000116C1F40819.png" width="474" height="84" style="display:inline-block; margin:4px;width:12.539cm;height:2.21cm;" class="odt-zoomable" data-zoom-src="images/100000000000062C00000116C1F40819.png" /></td></tr></table>
 
 <p>The installation of MySQL5 is described in the appendices in paragraph <a href="appendices.html#mysql5">1.2</a> connector and the Ado.Net connector on the paragraph <a href="appendices.html#mysql5-adonet">1.2.5</a>.</p>
 <p>We create a third project in the same solution as before and add the references it needs:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000075E000001AB49040587.png" style="display:inline-block; margin:4px;width:14.97cm;height:3.39cm;" class="odt-zoomable" data-zoom-src="images/100000000000075E000001AB49040587.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000075E000001AB49040587.png" width="566" height="128" style="display:inline-block; margin:4px;width:14.97cm;height:3.39cm;" class="odt-zoomable" data-zoom-src="images/100000000000075E000001AB49040587.png" /></td></tr></table>
 
 <ul>
   <li>[1]: the new project
@@ -2280,7 +2280,7 @@
 </ul>
 
 <p>We now create the database [dbarticles] and its table [articles]. The SGBD MySQL5 must be launched. In addition, we launch the [Query Browser] client (see paragraph <a href="appendices.html#mysql5-clients-gui">1.2.3</a>).</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000077A000001C9D4749933.png" style="display:inline-block; margin:4px;width:15.191cm;height:3.63cm;" class="odt-zoomable" data-zoom-src="images/100000000000077A000001C9D4749933.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000077A000001C9D4749933.png" width="574" height="137" style="display:inline-block; margin:4px;width:15.191cm;height:3.63cm;" class="odt-zoomable" data-zoom-src="images/100000000000077A000001C9D4749933.png" /></td></tr></table>
 
 <ul>
   <li>[1]: in [Query Browser], right-click in the [Schemata] zone [2] to create [3] a new schema, the term used to describe a database.
@@ -2343,14 +2343,14 @@
 </ul>
 
 <p>This script is executed in [MySQL Query Browser] :</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007D10000033CE414F5A1.png" style="display:inline-block; margin:4px;width:15.88cm;height:6.57cm;" class="odt-zoomable" data-zoom-src="images/10000000000007D10000033CE414F5A1.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007D10000033CE414F5A1.png" width="600" height="248" style="display:inline-block; margin:4px;width:15.88cm;height:6.57cm;" class="odt-zoomable" data-zoom-src="images/10000000000007D10000033CE414F5A1.png" /></td></tr></table>
 
 <ul>
   <li>in [MySQL Query Browser] [6], we load the script [7]. You can see it in [8]. In [9], it is executed.
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000079F00000242EF4C59C3.png" style="display:inline-block; margin:4px;width:15.49cm;height:4.59cm;" class="odt-zoomable" data-zoom-src="images/100000000000079F00000242EF4C59C3.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000079F00000242EF4C59C3.png" width="585" height="173" style="display:inline-block; margin:4px;width:15.49cm;height:4.59cm;" class="odt-zoomable" data-zoom-src="images/100000000000079F00000242EF4C59C3.png" /></td></tr></table>
 
 <ul>
   <li>in [10], table [articles] has been created. Double-click on it. This brings up window [11] with query [12] inside, ready to be executed by [13]. In [14], the result of the execution. We have the three expected lines. Note that the values in field [ID] were generated automatically (field attribute AUTO_INCREMENT).
@@ -2358,7 +2358,7 @@
 </ul>
 
 <p>Now that the database is ready, we can get back to developing the application in Visual Studio.</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001EB0000019A6A963D9B.png" style="display:inline-block; margin:4px;width:3.9cm;height:3.251cm;" class="odt-zoomable" data-zoom-src="images/10000000000001EB0000019A6A963D9B.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001EB0000019A6A963D9B.png" width="147" height="123" style="display:inline-block; margin:4px;width:3.9cm;height:3.251cm;" class="odt-zoomable" data-zoom-src="images/10000000000001EB0000019A6A963D9B.png" /></td></tr></table>
 
 <p>In [1], the program [Program.cs] and the configuration file [App.config]. The latter is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
@@ -2423,7 +2423,7 @@
 <p><a id="refheading10401971168783983"></a></p>
 <h3 id="943-connector-odbc">9.4.3. Connector ODBC</h3>
 <p>The architecture used will be as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000062D000001145EBED070.png" style="display:inline-block; margin:4px;width:12.55cm;height:2.191cm;" class="odt-zoomable" data-zoom-src="images/100000000000062D000001145EBED070.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000062D000001145EBED070.png" width="474" height="83" style="display:inline-block; margin:4px;width:12.55cm;height:2.191cm;" class="odt-zoomable" data-zoom-src="images/100000000000062D000001145EBED070.png" /></td></tr></table>
 
 <p>The advantage of ODBC connectors is that they present a standard interface to the applications that use them. Thus, with a single code, the new application will be able to communicate with any SGBD with a ODBC, c.a.d or SGBD connector. The performance of ODBC connectors is not as good as that of &quot;proprietary&quot; connectors, which are able to exploit all the features of a particular SGBD. On the other hand, you get great application flexibility: you can change SGBD without changing the code.</p>
 <p>We&#x27;ll look at an example where the application uses a MySQL5 database or a SQL server Express database, depending on the connection string you give it. In the following, we assume that :</p>
@@ -2437,7 +2437,7 @@
 </ul>
 
 <p>The new Visual studio project is as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001AF0000015FF7977D37.png" style="display:inline-block; margin:4px;width:3.42cm;height:2.79cm;" class="odt-zoomable" data-zoom-src="images/10000000000001AF0000015FF7977D37.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001AF0000015FF7977D37.png" width="129" height="105" style="display:inline-block; margin:4px;width:3.42cm;height:2.79cm;" class="odt-zoomable" data-zoom-src="images/10000000000001AF0000015FF7977D37.png" /></td></tr></table>
 
 <p>Above, the SQL Server [dbarticles.mdf] database created in paragraph <a href="#sqlserver2005-connecteur-adonet">9.4.1</a> has been copied into the project file.</p>
 <p>The configuration file [App.config] is as follows:</p>
@@ -2529,12 +2529,12 @@
 <p><a id="refheading10401991168783983"></a></p>
 <h3 id="944-connector-ole-db">9.4.4. Connector OLE DB</h3>
 <p>The architecture used will be as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006220000011D0704AB46.png" style="display:inline-block; margin:4px;width:12.46cm;height:2.26cm;" class="odt-zoomable" data-zoom-src="images/10000000000006220000011D0704AB46.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006220000011D0704AB46.png" width="471" height="85" style="display:inline-block; margin:4px;width:12.46cm;height:2.26cm;" class="odt-zoomable" data-zoom-src="images/10000000000006220000011D0704AB46.png" /></td></tr></table>
 
 <p>As with ODBC connectors, OLE DB connectors are also available (Object Linking and Embedding DataBase) drivers provide a standard interface to the applications that use them. ODBC drivers enable access to databases. Data sources drivers for OLE DB are more varied: databases, messaging systems, directories, etc. Any data source can be the subject of a Ole DB driver, if an editor so decides. This provides standard access to a wide variety of data.</p>
 <p>We&#x27;ll look at an example where the application uses either a ACCESS or a SQL Server Express database, depending on the connection string you give it. In what follows, we assume that the SGBD SQL Server Express has been launched and that the database used is that of the previous example.</p>
 <p>The new Visual studio project is as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004AA000001D0D69ECE30.png" style="display:inline-block; margin:4px;width:9.479cm;height:3.679cm;" class="odt-zoomable" data-zoom-src="images/10000000000004AA000001D0D69ECE30.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004AA000001D0D69ECE30.png" width="358" height="139" style="display:inline-block; margin:4px;width:9.479cm;height:3.679cm;" class="odt-zoomable" data-zoom-src="images/10000000000004AA000001D0D69ECE30.png" /></td></tr></table>
 
 <ul>
   <li>in [1]: the namespace required for OLE DB connectors is [System.Data.OleDb] present in reference [System.Data] above. The SQL Server [dbarticles.mdf] database has been copied from the previous project. Base [dbarticles.mdb] was created with Access.
@@ -2544,7 +2544,7 @@
 </ul>
 
 <p>The ACCESS [dbarticles.mdb] database is as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006E8000001D97627E735.png" style="display:inline-block; margin:4px;width:14.03cm;height:3.75cm;" class="odt-zoomable" data-zoom-src="images/10000000000006E8000001D97627E735.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006E8000001D97627E735.png" width="530" height="142" style="display:inline-block; margin:4px;width:14.03cm;height:3.75cm;" class="odt-zoomable" data-zoom-src="images/10000000000006E8000001D97627E735.png" /></td></tr></table>
 
 <p>In [1], the structure of table [articles] and in [2] its contents.</p>
 <p>The configuration file [App.config] is as follows:</p>
@@ -2619,7 +2619,7 @@
 <a id="connecteur-generique"></a></p>
 <h3 id="945-generic-connector">9.4.5. Generic connector</h3>
 <p>The architecture used will be as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000075C0000011FB0E76D4C.png" style="display:inline-block; margin:4px;width:14.951cm;height:2.281cm;" class="odt-zoomable" data-zoom-src="images/100000000000075C0000011FB0E76D4C.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000075C0000011FB0E76D4C.png" width="565" height="86" style="display:inline-block; margin:4px;width:14.951cm;height:2.281cm;" class="odt-zoomable" data-zoom-src="images/100000000000075C0000011FB0E76D4C.png" /></td></tr></table>
 
 <p>Like the ODBC and OLE DB connectors, the generic connector presents a standard interface to the applications that use it, but improves performance without sacrificing flexibility. The generic connector is based on the proprietary SGBD connectors. The application uses classes from the generic connector. These classes act as intermediaries between the application and the proprietary connector.</p>
 <p>In the example above, when the application requests a connection to the generic connector, the latter returns a <strong>IDbConnection</strong>, the connection interface described byragraphe <a href="#idbconnection">9.3.3</a>, implemented by a <strong>MySQLConnection</strong> or <strong>SQLConnection</strong> according to the nature of the request made to it. The generic connector is said to have classes of type <strong>factory</strong> : we use a <strong>factory</strong> to ask it to create objects and give references to them (pointers). Hence its name (<strong>factory</strong>=factory, object production plant). </p>
@@ -2732,7 +2732,7 @@
 </ul>
 
 <p>The new Visual studio project is as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001CF000001AABBF4E241.png" style="display:inline-block; margin:4px;width:3.671cm;height:3.38cm;" class="odt-zoomable" data-zoom-src="images/10000000000001CF000001AABBF4E241.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001CF000001AABBF4E241.png" width="139" height="128" style="display:inline-block; margin:4px;width:3.671cm;height:3.38cm;" class="odt-zoomable" data-zoom-src="images/10000000000001CF000001AABBF4E241.png" /></td></tr></table>
 
 <ul>
   <li>in [1]: the namespace required for generic connectors is [System.Data.common], present in reference [System.Data].
@@ -2855,7 +2855,7 @@
 <span class="odt-code-line">                    sqlCommand.Connection = connexion;</span>
 <span class="odt-code-line">                     <span style="color:#008000">// request execution</span></span>
 <span class="odt-code-line">                    <span style="color:#2b91af">DbDataReader</span> reader = sqlCommand.ExecuteReader();</span>
-<span class="odt-code-line"><span style="color:#008000">// display of results</span></span>
+<span class="odt-code-line">                     <span style="color:#008000">// display of results</span></span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">                }</span>
 <span class="odt-code-line">            } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">Exception</span> ex) {</span>
@@ -2896,7 +2896,7 @@
 
 <p>Here are a few examples.</p>
 <p>With base MySQL5 :</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003E60000019463E0D5CE.png" style="display:inline-block; margin:4px;width:7.92cm;height:3.21cm;" class="odt-zoomable" data-zoom-src="images/10000000000003E60000019463E0D5CE.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003E60000019463E0D5CE.png" width="299" height="121" style="display:inline-block; margin:4px;width:7.92cm;height:3.21cm;" class="odt-zoomable" data-zoom-src="images/10000000000003E60000019463E0D5CE.png" /></td></tr></table>
 
 <p>Open the project properties page [1] and select the [Debug] tab [2]. In [3], the connector key for line 14 of [App.config]. In [4], the key of the connection string on line 6 of [App.config]. The results are as follows:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-57-1"> 1</a></span>
@@ -2924,7 +2924,7 @@
 <a id="__codelineno-57-12" name="__codelineno-57-12"></a><span class="mi">3</span><span class="w"> </span><span class="n">article3</span><span class="w"> </span><span class="mi">300</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="mi">3</span>
 </code></pre></div></td></tr></table></div>
 <p>With SQL Server Compact :</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004520000018863A12D07.png" style="display:inline-block; margin:4px;width:8.781cm;height:3.11cm;" class="odt-zoomable" data-zoom-src="images/10000000000004520000018863A12D07.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004520000018863A12D07.png" width="332" height="118" style="display:inline-block; margin:4px;width:8.781cm;height:3.11cm;" class="odt-zoomable" data-zoom-src="images/10000000000004520000018863A12D07.png" /></td></tr></table>
 
 <p>In [1], the connector key for line 13 of [App.config]. In [2], the key of the connection string on line 4 of [App.config]. The results are as follows:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-58-1"> 1</a></span>
@@ -2961,7 +2961,7 @@
 <p><a id="refheading10402031168783983"></a></p>
 <h3 id="946-which-connector-to-choose">9.4.6. Which connector to choose?</h3>
 <p>Let&#x27;s return to the architecture of a database application:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000075F0000011FAEC46B60.png" style="display:inline-block; margin:4px;width:14.981cm;height:2.281cm;" class="odt-zoomable" data-zoom-src="images/100000000000075F0000011FAEC46B60.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000075F0000011FAEC46B60.png" width="566" height="86" style="display:inline-block; margin:4px;width:14.981cm;height:2.281cm;" class="odt-zoomable" data-zoom-src="images/100000000000075F0000011FAEC46B60.png" /></td></tr></table>
 
 <p>We have seen various types of ADO.NET connectors:</p>
 <ul>
@@ -3006,7 +3006,7 @@
 </code></pre></div>
 <p>because the parameters are not named. The order in which the parameters are added to the [IDbCommand.Parameters] collection is then taken into account. In this example, the 4 parameters should be inserted in the following order <em>name</em>, <em>price</em>, <em>stockactuel</em>, <em>stockminimum</em>. In a query with named parameters, the order in which the parameters are added is irrelevant. In the end, the developer can&#x27;t totally ignore the SGBD he uses when initializing the parameters of a parameterized query. This is one of the current limitations of the generic connector.</p>
 <p>There are <em>frameworks</em> which overcome these limitations and add new functionalities to the [dao] layer:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000074F0000011B491736C7.png" style="display:inline-block; margin:4px;width:14.85cm;height:2.251cm;" class="odt-zoomable" data-zoom-src="images/100000000000074F0000011B491736C7.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000074F0000011B491736C7.png" width="561" height="85" style="display:inline-block; margin:4px;width:14.85cm;height:2.251cm;" class="odt-zoomable" data-zoom-src="images/100000000000074F0000011B491736C7.png" /></td></tr></table>
 
 <p>A framework is a set of class libraries designed to facilitate a particular way of architecting an application. There are a number of such frameworks, allowing you to write layers [dao] that are both high-performance and insensitive to changes in SGBD :</p>
 <ul>
@@ -3032,7 +3032,7 @@
 <p><a id="refheading10402051168783983"></a></p>
 <h2 id="95-parametric-queries">9.5. Parametric queries</h2>
 <p>In the previous paragraph, we discussed parameterized queries. We present them ici with an example for the SGBD SQL Server Compact. The project is as follows</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000073600000180ADFE79A7.png" style="display:inline-block; margin:4px;width:14.651cm;height:3.05cm;" class="odt-zoomable" data-zoom-src="images/100000000000073600000180ADFE79A7.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000073600000180ADFE79A7.png" width="554" height="115" style="display:inline-block; margin:4px;width:14.651cm;height:3.05cm;" class="odt-zoomable" data-zoom-src="images/100000000000073600000180ADFE79A7.png" /></td></tr></table>
 
 <ul>
   <li>in [1], the project. Only [App.config], [Article.cs] and [Parametres.cs] are used. Note also the SQL Server Ce [dbarticles.sdf] base.
@@ -3437,7 +3437,7 @@
 <p><a id="refheading10402131168783983"></a></p>
 <h3 id="963-the-sample-program">9.6.3. The sample program</h3>
 <p>Let&#x27;s go back to the previous project and take a look at the program [Transactions.cs] :</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004C400000193828A8B95.png" style="display:inline-block; margin:4px;width:9.68cm;height:3.2cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C400000193828A8B95.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004C400000193828A8B95.png" width="366" height="121" style="display:inline-block; margin:4px;width:9.68cm;height:3.2cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C400000193828A8B95.png" /></td></tr></table>
 
 <ul>
   <li>in [1], the project.
@@ -3667,7 +3667,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000072C00000243F1B19707.png" style="display:inline-block; margin:4px;width:14.57cm;height:4.59cm;" class="odt-zoomable" data-zoom-src="images/100000000000072C00000243F1B19707.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000072C00000243F1B19707.png" width="551" height="173" style="display:inline-block; margin:4px;width:14.57cm;height:4.59cm;" class="odt-zoomable" data-zoom-src="images/100000000000072C00000243F1B19707.png" /></td></tr></table>
 
 <ul>
   <li>in [1] in Visual Studio&#x27;s [Database Explorer] view, we&#x27;ve created a connection [2] to the [dbarticles.sdf] database. This has an index  <i>UQ__ARTICLES__0000000000000010</i>. Right-click on the index to access its properties
@@ -3697,7 +3697,7 @@
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">M</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">to execute a SQL order <i>Select</i> returns a single result as in : <i>select count(*) from articles</i>.</div></td></tr></table>
 
 <p>We show ici an example of how to use this method. Back to the :</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E1000001D679DE5DB6.png" style="display:inline-block; margin:4px;width:9.91cm;height:3.731cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E1000001D679DE5DB6.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E1000001D679DE5DB6.png" width="375" height="141" style="display:inline-block; margin:4px;width:9.91cm;height:3.731cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E1000001D679DE5DB6.png" /></td></tr></table>
 
 <ul>
   <li>in [1], the project.
@@ -3833,7 +3833,7 @@
 <a id="impots-v7"></a></p>
 <h2 id="98-sample-application-version-7">9.8. Sample application - version 7</h2>
 <p>We take the example application IMPOTS. The latest version was studied in paragraph <a href="graphical-interfaces-with-c-and-vsnet.html#impots-v6">7.6</a>. It was the following three-coat application:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000065E000001DA0CCAD1CC.png" style="display:inline-block; margin:4px;width:12.94cm;height:3.761cm;" class="odt-zoomable" data-zoom-src="images/100000000000065E000001DA0CCAD1CC.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000065E000001DA0CCAD1CC.png" width="489" height="142" style="display:inline-block; margin:4px;width:12.94cm;height:3.761cm;" class="odt-zoomable" data-zoom-src="images/100000000000065E000001DA0CCAD1CC.png" /></td></tr></table>
 
 <ul>
   <li>the [ui] layer was a graphical interface [A] and the [dao] layer was a text file [B].
@@ -3842,14 +3842,14 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000066100000243B19E5688.png" style="display:inline-block; margin:4px;width:12.959cm;height:4.59cm;" class="odt-zoomable" data-zoom-src="images/100000000000066100000243B19E5688.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000066100000243B19E5688.png" width="490" height="173" style="display:inline-block; margin:4px;width:12.959cm;height:4.59cm;" class="odt-zoomable" data-zoom-src="images/100000000000066100000243B19E5688.png" /></td></tr></table>
 
 <p>We modify the [dao] layer so that it fetches its data from a database.</p>
 <p><a id="refheading10402211168783983"></a>
 <a id="impotsv7-bd-mysql5"></a></p>
 <h3 id="981-visit-database">9.8.1. Visit database</h3>
 <p>The contents of the previous text file [B] are put into a MySQL5 database. We&#x27;ll show you how to do this:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007AE000001B322732668.png" style="display:inline-block; margin:4px;width:15.61cm;height:3.45cm;" class="odt-zoomable" data-zoom-src="images/10000000000007AE000001B322732668.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007AE000001B322732668.png" width="590" height="130" style="display:inline-block; margin:4px;width:15.61cm;height:3.45cm;" class="odt-zoomable" data-zoom-src="images/10000000000007AE000001B322732668.png" /></td></tr></table>
 
 <ul>
   <li>[1] :MySQL Administrator has been launched
@@ -3862,7 +3862,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007A7000001C51E42D166.png" style="display:inline-block; margin:4px;width:15.55cm;height:3.59cm;" class="odt-zoomable" data-zoom-src="images/10000000000007A7000001C51E42D166.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007A7000001C51E42D166.png" width="588" height="136" style="display:inline-block; margin:4px;width:15.55cm;height:3.59cm;" class="odt-zoomable" data-zoom-src="images/10000000000007A7000001C51E42D166.png" /></td></tr></table>
 
 <ul>
   <li>[6,7]: right-click on the table and select option [Create New Table] to create a table
@@ -3877,7 +3877,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000681000002AA860B53A1.png" style="display:inline-block; margin:4px;width:13.22cm;height:5.41cm;" class="odt-zoomable" data-zoom-src="images/1000000000000681000002AA860B53A1.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000681000002AA860B53A1.png" width="500" height="204" style="display:inline-block; margin:4px;width:13.22cm;height:5.41cm;" class="odt-zoomable" data-zoom-src="images/1000000000000681000002AA860B53A1.png" /></td></tr></table>
 
 <ul>
   <li>[13,14]: to add data to the table
@@ -3888,7 +3888,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007CF000000E1CB915ADF.png" style="display:inline-block; margin:4px;width:15.87cm;height:1.79cm;" class="odt-zoomable" data-zoom-src="images/10000000000007CF000000E1CB915ADF.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007CF000000E1CB915ADF.png" width="600" height="68" style="display:inline-block; margin:4px;width:15.87cm;height:1.79cm;" class="odt-zoomable" data-zoom-src="images/10000000000007CF000000E1CB915ADF.png" /></td></tr></table>
 
 <ul>
   <li>still in [Query Browser] [18], we run [20] query [19]. This creates a user &#x27;<i>admimpots</i>&#x27; password &#x27;<i>mdpimpots</i>and gives it all the privileges (<i>grant all privileges</i>) on all objects in the database <i>bdimpots</i> (<i>on bdimpots.*</i>). This will allow us to work on the [bdimpots] database with the [admimpots] user rather than the [root] administrator.
@@ -3897,10 +3897,10 @@
 
 <p><a id="refheading10402231168783983"></a></p>
 <h3 id="982-the-visual-studio-solution">9.8.2. The Visual Studio solution</h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000066F000001B0C3D47A8B.png" style="display:inline-block; margin:4px;width:13.07cm;height:3.431cm;" class="odt-zoomable" data-zoom-src="images/100000000000066F000001B0C3D47A8B.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000066F000001B0C3D47A8B.png" width="494" height="130" style="display:inline-block; margin:4px;width:13.07cm;height:3.431cm;" class="odt-zoomable" data-zoom-src="images/100000000000066F000001B0C3D47A8B.png" /></td></tr></table>
 
 <p>We will follow the same approach as for version 5 of the example application (see paragraph <a href="3-layer-architectures.html#impots-v5">6.4</a>). We will gradually build the following Visual Studio solution:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000782000002CBE17DFBBB.png" style="display:inline-block; margin:4px;width:15.259cm;height:5.669cm;" class="odt-zoomable" data-zoom-src="images/1000000000000782000002CBE17DFBBB.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000782000002CBE17DFBBB.png" width="577" height="214" style="display:inline-block; margin:4px;width:15.259cm;height:5.669cm;" class="odt-zoomable" data-zoom-src="images/1000000000000782000002CBE17DFBBB.png" /></td></tr></table>
 
 <ul>
   <li>in [1]: the solution <i>ImpotsV7</i> is made up of three projects, one for each of the application&#x27;s three layers
@@ -3916,9 +3916,9 @@
 <p>We&#x27;re relying on what we&#x27;ve learned to retrieve two layers that have already been written, the [ui] and [metier] layers. This is made possible by the layered architecture we have chosen. However, we will need the source code for the [ui] and [metier] layers. It is not possible to be satisfied with the DLL of the layers. When, in version 5, the DLL of the [metier] layer was created, it had a dependency on the DLL of the [dao] layer. This dependency was hard-coded in the DLL of the [metier] layer (name of the DLL of the [dao] layer, version, identity token, etc.). For example, version 5&#x27;s DLL [ImpotsV5-metier.dll] will only work with the DLL [ImpotsV5-dao.dll] with which it was compiled. If the DLL of the [dao] layer is changed, the [metier] layer must be recompiled to create a new DLL. The same applies to the [ui] layer. The [ui] and [metier] layers will therefore not be modified, but will be recompiled to work with the DLL of the new [dao] layer.</p>
 <p><a id="refheading10402251168783983"></a></p>
 <h3 id="983-the-dao-layer">9.8.3. The [dao] layer</h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000066C000001BAB7565ABE.png" style="display:inline-block; margin:4px;width:13.049cm;height:3.51cm;" class="odt-zoomable" data-zoom-src="images/100000000000066C000001BAB7565ABE.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000066C000001BAB7565ABE.png" width="493" height="133" style="display:inline-block; margin:4px;width:13.049cm;height:3.51cm;" class="odt-zoomable" data-zoom-src="images/100000000000066C000001BAB7565ABE.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000223000002B87DC3A046.png" style="display:inline-block; margin:4px;width:4.339cm;height:5.519cm;" class="odt-zoomable" data-zoom-src="images/1000000000000223000002B87DC3A046.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000223000002B87DC3A046.png" width="164" height="209" style="display:inline-block; margin:4px;width:4.339cm;height:5.519cm;" class="odt-zoomable" data-zoom-src="images/1000000000000223000002B87DC3A046.png" /></td></tr></table>
 
 <p><u><strong>Project references (see [1] in the project)</strong></u></p>
 <ul>
@@ -4095,7 +4095,7 @@
 </ul>
 
 <p>The project is configured to run [Test1.cs] :</p>
-<p><img src="images/1000000000000292000000AF53C3305E.png" style="width:12.19cm;height:3.24cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000292000000AF53C3305E.png" /></p>
+<p><img src="images/1000000000000292000000AF53C3305E.png" width="461" height="122" style="width:12.19cm;height:3.24cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000292000000AF53C3305E.png" /></p>
 <p>Running the test gives the following results:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-91-1">1</a></span>
 <span class="normal"><a href="#__codelineno-91-2">2</a></span>
@@ -4151,7 +4151,7 @@
 </code></pre></div>
 
 <p>To run this unit test, the project must be of type [Class Library] :</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000076E000001773D913024.png" style="display:inline-block; margin:4px;width:15.101cm;height:2.979cm;" class="odt-zoomable" data-zoom-src="images/100000000000076E000001773D913024.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000076E000001773D913024.png" width="571" height="113" style="display:inline-block; margin:4px;width:15.101cm;height:2.979cm;" class="odt-zoomable" data-zoom-src="images/100000000000076E000001773D913024.png" /></td></tr></table>
 
 <ul>
   <li>in [1]: the nature of the project has been changed
@@ -4163,7 +4163,7 @@
 </ul>
 
 <p>The DLL [ImpotsV7-dao.dll] is then loaded into the framework <em>NUnit</em> and executed :</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007BF0000018C95FC42E1.png" style="display:inline-block; margin:4px;width:15.739cm;height:3.14cm;" class="odt-zoomable" data-zoom-src="images/10000000000007BF0000018C95FC42E1.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007BF0000018C95FC42E1.png" width="595" height="119" style="display:inline-block; margin:4px;width:15.739cm;height:3.14cm;" class="odt-zoomable" data-zoom-src="images/10000000000007BF0000018C95FC42E1.png" /></td></tr></table>
 
 <ul>
   <li>in [1]: tests passed. We now consider the [dao] layer operational. Its DLL contains all the project&#x27;s classes, including the test classes. These are no longer needed. We rebuild DLL to exclude the test classes.
@@ -4177,9 +4177,9 @@
 <p><a id="refheading10402271168783983"></a>
 <a id="impots-v5-metier1"></a></p>
 <h3 id="984-the-layerjob">9.8.4. The [ layerjob]</h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000064E000001C01B23331C.png" style="display:inline-block; margin:4px;width:12.809cm;height:3.56cm;" class="odt-zoomable" data-zoom-src="images/100000000000064E000001C01B23331C.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000064E000001C01B23331C.png" width="484" height="135" style="display:inline-block; margin:4px;width:12.809cm;height:3.56cm;" class="odt-zoomable" data-zoom-src="images/100000000000064E000001C01B23331C.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000046F0000016892BC20C5.png" style="display:inline-block; margin:4px;width:9.01cm;height:2.859cm;" class="odt-zoomable" data-zoom-src="images/100000000000046F0000016892BC20C5.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000046F0000016892BC20C5.png" width="341" height="108" style="display:inline-block; margin:4px;width:9.01cm;height:2.859cm;" class="odt-zoomable" data-zoom-src="images/100000000000046F0000016892BC20C5.png" /></td></tr></table>
 
 <ul>
   <li>in [1], the [metier] project became the solution&#x27;s active project
@@ -4191,7 +4191,7 @@
 </ul>
 
 <p>The [metier] project is configured to generate a DLL :</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007010000017D5303E8A4.png" style="display:inline-block; margin:4px;width:14.229cm;height:3.02cm;" class="odt-zoomable" data-zoom-src="images/10000000000007010000017D5303E8A4.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007010000017D5303E8A4.png" width="538" height="114" style="display:inline-block; margin:4px;width:14.229cm;height:3.02cm;" class="odt-zoomable" data-zoom-src="images/10000000000007010000017D5303E8A4.png" /></td></tr></table>
 
 <ul>
   <li>[1]: the project is of the &quot;class library&quot; type
@@ -4204,9 +4204,9 @@
 <p><a id="refheading10402291168783983"></a>
 <a id="impots-v7-ui"></a></p>
 <h3 id="985-the-ui-layer">9.8.5. The [ui] layer</h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000661000001C44A9F15D3.png" style="display:inline-block; margin:4px;width:12.959cm;height:3.59cm;" class="odt-zoomable" data-zoom-src="images/1000000000000661000001C44A9F15D3.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000661000001C44A9F15D3.png" width="490" height="136" style="display:inline-block; margin:4px;width:12.959cm;height:3.59cm;" class="odt-zoomable" data-zoom-src="images/1000000000000661000001C44A9F15D3.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003960000027F6838F611.png" style="display:inline-block; margin:4px;width:7.29cm;height:5.069cm;" class="odt-zoomable" data-zoom-src="images/10000000000003960000027F6838F611.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003960000027F6838F611.png" width="276" height="192" style="display:inline-block; margin:4px;width:7.29cm;height:5.069cm;" class="odt-zoomable" data-zoom-src="images/10000000000003960000027F6838F611.png" /></td></tr></table>
 
 <ul>
   <li>in [1], the [ui] project became the active project for the solution
@@ -4265,7 +4265,7 @@
 
 <p><u><strong>Tests</strong></u></p>
 <p>The [ui] project is configured as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000074F0000024136074EF7.png" style="display:inline-block; margin:4px;width:14.85cm;height:4.581cm;" class="odt-zoomable" data-zoom-src="images/100000000000074F0000024136074EF7.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000074F0000024136074EF7.png" width="561" height="173" style="display:inline-block; margin:4px;width:14.85cm;height:4.581cm;" class="odt-zoomable" data-zoom-src="images/100000000000074F0000024136074EF7.png" /></td></tr></table>
 
 <ul>
   <li>[1]: the project is of the &quot;Windows Application&quot; type
@@ -4277,11 +4277,11 @@
 <p>An example is given in [3].</p>
 <p><a id="refheading10402311168783983"></a></p>
 <h3 id="986-change-database">9.8.6. Change database</h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000065D000001C2E404BC95.png" style="display:inline-block; margin:4px;width:12.929cm;height:3.57cm;" class="odt-zoomable" data-zoom-src="images/100000000000065D000001C2E404BC95.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000065D000001C2E404BC95.png" width="489" height="135" style="display:inline-block; margin:4px;width:12.929cm;height:3.57cm;" class="odt-zoomable" data-zoom-src="images/100000000000065D000001C2E404BC95.png" /></td></tr></table>
 
 <p>The [dao] layer above was written with a generic connector and a MySQL5 database. We propose ici to switch to a SQL Server Compact base to show that only the configuration will change.</p>
 <p>The base <a id="impotsv7-bd-sqlserverce"></a>SQL Server Compact will be as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000748000002199D3BC638.png" style="display:inline-block; margin:4px;width:14.801cm;height:4.26cm;" class="odt-zoomable" data-zoom-src="images/1000000000000748000002199D3BC638.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000748000002199D3BC638.png" width="559" height="161" style="display:inline-block; margin:4px;width:14.801cm;height:4.26cm;" class="odt-zoomable" data-zoom-src="images/1000000000000748000002199D3BC638.png" /></td></tr></table>
 
 <ul>
   <li>[1]: the [dbimpots.sdf] database in Visual studio&#x27;s [DataBase Explorer] view [2]. It was created without a password.
@@ -4294,7 +4294,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004BB0000021A2C659376.png" style="display:inline-block; margin:4px;width:9.61cm;height:4.27cm;" class="odt-zoomable" data-zoom-src="images/10000000000004BB0000021A2C659376.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004BB0000021A2C659376.png" width="363" height="161" style="display:inline-block; margin:4px;width:9.61cm;height:4.27cm;" class="odt-zoomable" data-zoom-src="images/10000000000004BB0000021A2C659376.png" /></td></tr></table>
 
 <ul>
   <li>[6]: the [dbimpots.sdf] database has been placed in the [ui] project folder and integrated into this project.
@@ -4393,8 +4393,8 @@
     <div class="md-footer-meta__inner">
 
       <div>
-        <a href="https://tahe.developpez.com" target="_blank">
-          https://tahe.developpez.com
+        <a href="https://stahe.github.io/" target="_blank">
+          https://stahe.github.io/
         </a>
         <br>
         This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the

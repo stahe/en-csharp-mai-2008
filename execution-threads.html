@@ -1013,7 +1013,7 @@
 <h2 id="101-the-thread-class">10.1. The Thread class</h2>
 <p>When an application is launched, it runs in an execution flow called a <strong>thread</strong>. The .NET class models a <em>thread</em> is the <strong><em>System.Threading.Thread</em></strong> and has the following definition:</p>
 <p><u><strong>Manufacturers</strong></u></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007340000019C65426C4A.png" style="display:inline-block; margin:4px;width:14.64cm;height:3.27cm;" class="odt-zoomable" data-zoom-src="images/10000000000007340000019C65426C4A.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007340000019C65426C4A.png" width="553" height="124" style="display:inline-block; margin:4px;width:14.64cm;height:3.27cm;" class="odt-zoomable" data-zoom-src="images/10000000000007340000019C65426C4A.png" /></td></tr></table>
 
 <p>In the following examples, we will only use constructors [1,3]. Constructor [1] admits as parameter a method with signature [2], c.a.d. with a parameter of type <em>object</em> and returns no result. Constructor [3] accepts as parameter a method with signature [4], c.a.d. which has no parameter and returns no result.</p>
 <p><u><strong>Properties</strong></u></p>
@@ -1246,7 +1246,7 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line">             <span style="color:#008000">// end of hand</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Fin du thread &quot;</span> + main.Name);</span>
-<span class="odt-code-line"><span style="color:#008000">// stop all threads</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// stop all threads</span></span>
 <span class="odt-code-line"><span style="color:#2b91af">Environment</span>.Exit(0);</span>
 </code></pre></div>
 
@@ -1323,10 +1323,10 @@
 <p><a id="refheading10402411168783983"></a></p>
 <h2 id="103-the-benefits-of-threads">10.3. The benefits of threads</h2>
 <p>Now that we&#x27;ve highlighted the existence of a default thread, the one that executes the <em>Main</em>, and we know how to create new ones, let&#x27;s take a look at what threads mean to us and why we&#x27;re introducing them ici. There&#x27;s one type of application that lends itself well to the use of threads, and that&#x27;s the client-server applications of internet. We&#x27;ll introduce them in the following chapter. In a client-server application of the internet, a server on machine S1 responds to requests from clients on remote machines C1, C2, ..., Cn.</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003B000000129D6411AAD.png" style="display:inline-block; margin:4px;width:7.489cm;height:2.36cm;" class="odt-zoomable" data-zoom-src="images/10000000000003B000000129D6411AAD.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003B000000129D6411AAD.png" width="283" height="89" style="display:inline-block; margin:4px;width:7.489cm;height:2.36cm;" class="odt-zoomable" data-zoom-src="images/10000000000003B000000129D6411AAD.png" /></td></tr></table>
 
 <p>Every day, we use internet applications corresponding to this diagram: Web services, e-mail, forum consultation, file transfer... In the above diagram, the S1 server must serve the Ci clients simultaneously. If we take the example of a FTP (File Transfer Protocol) server delivering files to its clients, we know that a file transfer can sometimes take several minutes. Of course, it&#x27;s out of the question for a client to monopolize the server for this length of time. What is usually done is for the server to create as many execution threads as there are clients. Each thread is then responsible for dealing with a particular client. As the processor is shared cyclically between all the machine&#x27;s active threads, the server spends a little time with each client, ensuring simultaneous service.</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003D1000001E451775926.png" style="display:inline-block; margin:4px;width:7.751cm;height:3.84cm;" class="odt-zoomable" data-zoom-src="images/10000000000003D1000001E451775926.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003D1000001E451775926.png" width="293" height="145" style="display:inline-block; margin:4px;width:7.751cm;height:3.84cm;" class="odt-zoomable" data-zoom-src="images/10000000000003D1000001E451775926.png" /></td></tr></table>
 
 <p>In practice, the server uses a thread pool with a limited number of threads, 50 for example. The 51st client is then asked to wait.</p>
 <p><a id="refheading10402431168783983"></a></p>
@@ -1612,7 +1612,7 @@
 <span class="odt-code-line">            <span style="color:#0000ff">int</span> valeur = cptrThreads;</span>
 <span class="odt-code-line">            <span style="color:#008000">// attente</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Thread</span>.Sleep(1000);</span>
-<span class="odt-code-line"><span style="color:#008000">// incrémentation compteur</span></span>
+<span class="odt-code-line">            <span style="color:#008000">// incrémentation compteur</span></span>
 <span class="odt-code-line">cptrThreads = valeur + 1;</span>
 </code></pre></div>
 
@@ -1848,21 +1848,21 @@
 <span class="odt-code-line">             <span style="color:#008000">// we open the critical section barrier</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;A {0:hh:mm:ss}, le thread {1} ouvre la barrière de la section critique&quot;</span>, <span style="color:#2b91af">DateTime</span>.Now, <span style="color:#2b91af">Thread</span>.CurrentThread.Name);</span>
 <span class="odt-code-line">            synchro.Set();</span>
-<span class="odt-code-line"><span style="color:#008000">// waiting for threads to finish</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// waiting for threads to finish</span></span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">             <span style="color:#008000">// counter display</span></span>
 <span class="odt-code-line">            <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Nombre de threads générés : &quot;</span> + cptrThreads);</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line"> </span>
 <span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Incrémente() {</span>
-<span class="odt-code-line"><span style="color:#008000">// increases thread counter</span></span>
-<span class="odt-code-line"><span style="color:#008000">// exclusive access to the meter is required</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// increases thread counter</span></span>
+<span class="odt-code-line">             <span style="color:#008000">// exclusive access to the meter is required</span></span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">            synchro.WaitOne();</span>
 <span class="odt-code-line">            <span style="color:#0000ff">try</span> {</span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">            } <span style="color:#0000ff">finally</span> {</span>
-<span class="odt-code-line"><span style="color:#008000">// release the resource</span></span>
+<span class="odt-code-line">                 <span style="color:#008000">// release the resource</span></span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">                synchro.Set();</span>
 <span class="odt-code-line">            }</span>
@@ -1884,7 +1884,7 @@
 <p><a id="refheading10402551168783983"></a></p>
 <h3 id="1055-the-interlocked-class">10.5.5. The Interlocked class</h3>
 <p>The class <strong>Interlocked</strong> makes it possible to <strong>atomic</strong> an operation group. Within an operation group <em>atomic</em>, either all operations are executed by the thread running the group, or none at all. You don&#x27;t stay in a state where some have been executed and others haven&#x27;t. Synchronization objects <em>lock</em>, <em>Mutex</em>, <em>AutoResetEvent</em> are all designed to make <em>atomic</em> a group of operations. This is achieved by blocking threads. The <strong>Interlocked</strong> allows you to avoid thread blocking for simple but frequent operations. The <strong>Interlocked</strong> offers the following static methods:</p>
-<p><img src="images/10000000000003D7000000B3CD37BDC6.png" style="width:17.604cm;height:3.205cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003D7000000B3CD37BDC6.png" /></p>
+<p><img src="images/10000000000003D7000000B3CD37BDC6.png" width="665" height="121" style="width:17.604cm;height:3.205cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003D7000000B3CD37BDC6.png" /></p>
 <p>The method <em>Incrementally</em> has the following signature:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>public static int Increment(ref int location);
 </code></pre></div>
@@ -2195,7 +2195,7 @@
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">each thread checks to see if it&#x27;s the chosen one. If so, it passes the barrier. If not, it returns to standby.</div></td></tr></table>
 
 <p>The class <strong>Monitor</strong> is used to implement this scenario.</p>
-<p><img src="images/10000000000002A40000009E2C021AE4.png" style="width:12.52cm;height:2.93cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002A40000009E2C021AE4.png" /></p>
+<p><img src="images/10000000000002A40000009E2C021AE4.png" width="473" height="111" style="width:12.52cm;height:2.93cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002A40000009E2C021AE4.png" /></p>
 <p>We now describe a standard construction (<em>pattern</em>), proposed in the chapter <em>Threading</em> of the book <em>C# 3.0</em> referred to in the introduction to this document, capable of solving barrier problems with entry conditions.</p>
 <ul>
   <li>First of all, threads that share a resource (the counter, etc.) access it via an object that we&#x27;ll call a <b>token</b>. To open the gate leading to the counter, you need to have the token to open it, and there is only one token. Threads must therefore pass the token between themselves.
@@ -3201,7 +3201,7 @@
 <p><a id="refheading10402731168783983"></a></p>
 <h3 id="1091-the-principle">10.9.1. The principle</h3>
 <p>Consider a three-layer application:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006610000010A90DA1457.png" style="display:inline-block; margin:4px;width:12.959cm;height:2.11cm;" class="odt-zoomable" data-zoom-src="images/10000000000006610000010A90DA1457.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006610000010A90DA1457.png" width="490" height="80" style="display:inline-block; margin:4px;width:12.959cm;height:2.11cm;" class="odt-zoomable" data-zoom-src="images/10000000000006610000010A90DA1457.png" /></td></tr></table>
 
 <p>Let&#x27;s assume the application is multi-user, a web application for example. Each user is served by a dedicated thread. The life of the thread is as follows:</p>
 <ol>
@@ -3215,7 +3215,7 @@
 
 <p>In operation 2, it may be interesting for the thread to have its own data, c.a.d. not shared with other threads. This data could, for example, belong to the particular user the thread is serving. This data could then be used in the various layers [ui, metier, dao].</p>
 <p>The class <em>Thread</em> allows this scenario thanks to a kind of private dictionary where the keys would be of type <em>LocalDataStoreSlot</em> :</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001680000002E7BDE5E1E.png" style="display:inline-block; margin:4px;width:6.669cm;height:0.85cm;" class="odt-zoomable" data-zoom-src="images/10000000000001680000002E7BDE5E1E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">creates an entry in the thread&#x27;s private dictionary for the key <i>name</i>.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F00000003FDDE50098.png" style="display:inline-block; margin:4px;width:4.45cm;height:1.169cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F00000003FDDE50098.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">associates the value <i>data</i> to the key <i>name</i> from  thread&#x27;s private dictionary</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E700000031F1B1D2A6.png" style="display:inline-block; margin:4px;width:4.279cm;height:0.91cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E700000031F1B1D2A6.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">retrieves the value associated with the <i>name</i> from the thread&#x27;s private dictionary</div></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001680000002E7BDE5E1E.png" width="252" height="32" style="display:inline-block; margin:4px;width:6.669cm;height:0.85cm;" class="odt-zoomable" data-zoom-src="images/10000000000001680000002E7BDE5E1E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">creates an entry in the thread&#x27;s private dictionary for the key <i>name</i>.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F00000003FDDE50098.png" width="168" height="44" style="display:inline-block; margin:4px;width:4.45cm;height:1.169cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F00000003FDDE50098.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">associates the value <i>data</i> to the key <i>name</i> from  thread&#x27;s private dictionary</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E700000031F1B1D2A6.png" width="162" height="34" style="display:inline-block; margin:4px;width:4.279cm;height:0.91cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E700000031F1B1D2A6.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">retrieves the value associated with the <i>name</i> from the thread&#x27;s private dictionary</div></td></tr></table>
 
 <p>A usage model could be as follows:</p>
 <ul>
@@ -3235,7 +3235,7 @@
 <p><a id="refheading10402751168783983"></a></p>
 <h3 id="1092-application-of-the-principle">10.9.2. Application of the principle</h3>
 <p>Consider the following three-layer application:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000668000001133EA847C6.png" style="display:inline-block; margin:4px;width:13.019cm;height:2.18cm;" class="odt-zoomable" data-zoom-src="images/1000000000000668000001133EA847C6.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000668000001133EA847C6.png" width="492" height="82" style="display:inline-block; margin:4px;width:13.019cm;height:2.18cm;" class="odt-zoomable" data-zoom-src="images/1000000000000668000001133EA847C6.png" /></td></tr></table>
 
 <p>Let&#x27;s assume that the [dao] layer manages a articles database and that its interface is initially as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
@@ -3298,9 +3298,9 @@
 
 <p>To ensure that the methods of the [dao] layer are aware of the existence of any current transaction, we could add the transaction as a parameter to each method of the [dao] layer. This parameter will then appear in the signature of the interface&#x27;s methods, linking it to a specific data source: the database. The local data of the thread provide us with a more elegant solution: the [business] layer will put the transaction in the thread&#x27;s local data, and the [dao] layer will fetch it from there. The [dao] layer&#x27;s method signature need not be changed.</p>
 <p>We are implementing this solution with the following Visual Studio project:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000669000001080A72351A.png" style="display:inline-block; margin:4px;width:13.019cm;height:2.101cm;" class="odt-zoomable" data-zoom-src="images/1000000000000669000001080A72351A.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000669000001080A72351A.png" width="492" height="79" style="display:inline-block; margin:4px;width:13.019cm;height:2.101cm;" class="odt-zoomable" data-zoom-src="images/1000000000000669000001080A72351A.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004DA0000018D1AA31F03.png" style="display:inline-block; margin:4px;width:9.86cm;height:3.15cm;" class="odt-zoomable" data-zoom-src="images/10000000000004DA0000018D1AA31F03.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004DA0000018D1AA31F03.png" width="373" height="119" style="display:inline-block; margin:4px;width:9.86cm;height:3.15cm;" class="odt-zoomable" data-zoom-src="images/10000000000004DA0000018D1AA31F03.png" /></td></tr></table>
 
 <ul>
   <li>in [1]: the solution as a whole
@@ -3312,7 +3312,7 @@
 </ul>
 
 <p>The base [4] is  the SQL Server Compact database already used in the previous chapter, in particular in paragraph <a href="database-access.html#sqlce-dbarticles">9.3.1</a>.</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001FB000000AB44426734.png" style="display:inline-block; margin:4px;width:9.389cm;height:3.17cm;" class="odt-zoomable" data-zoom-src="images/10000000000001FB000000AB44426734.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001FB000000AB44426734.png" width="355" height="120" style="display:inline-block; margin:4px;width:9.389cm;height:3.17cm;" class="odt-zoomable" data-zoom-src="images/10000000000001FB000000AB44426734.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><u><strong>The Article class</strong></u></p>
 <p>A row from the previous table [articles] is encapsulated in an object of type <em>Article</em> :</p>
@@ -3802,8 +3802,8 @@
     <div class="md-footer-meta__inner">
 
       <div>
-        <a href="https://tahe.developpez.com" target="_blank">
-          https://tahe.developpez.com
+        <a href="https://stahe.github.io/" target="_blank">
+          https://stahe.github.io/
         </a>
         <br>
         This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the
