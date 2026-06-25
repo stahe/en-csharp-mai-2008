@@ -1943,39 +1943,24 @@
 <h3 id="1118-the-application-layer">11.1.8. <span style="color: #4f81bd">The Application Layer</span></h3>
 <p>Above the UDP and TCP protocols, there are various standard protocols:</p>
 <p><strong><mark style="background-color: #fff5ce">TELNET</mark></strong></p>
-<div class="highlight"><pre><span></span><code>This protocol allows a user on machine A on the network to connect to machine B (often called the host machine). TELNET emulates a so-called universal terminal on machine A. The user therefore behaves as if they had a terminal connected to machine B. Telnet is based on the TCP protocol.
-</code></pre></div>
+<p>This protocol allows a user on machine A on the network to connect to machine B (often called the host machine). TELNET emulates a so-called universal terminal on machine A. The user therefore behaves as if they had a terminal connected to machine B. Telnet is based on the TCP protocol.</p>
 <p><mark style="background-color: #fff5ce">FTP</mark><strong>: (File Transfer Protocol)</strong></p>
-<div class="highlight"><pre><span></span><code>This protocol enables file exchange between two remote machines as well as file operations such as creating directories, for example. It relies on the TCP protocol.
-</code></pre></div>
+<p>This protocol enables file exchange between two remote machines as well as file operations such as creating directories, for example. It relies on the TCP protocol.</p>
 <p><mark style="background-color: #fff5ce">TFTP</mark><strong>: (Trivial File Transfer Control)</strong></p>
-<div class="highlight"><pre><span></span><code>This protocol is a variant of FTP. It is based on the UDP protocol and is less sophisticated than FTP.
-</code></pre></div>
+<p>This protocol is a variant of FTP. It is based on the UDP protocol and is less sophisticated than FTP.</p>
 <p><mark style="background-color: #fff5ce">DNS</mark><strong>: (Domain Name System)</strong></p>
-<div class="highlight"><pre><span></span><code>When a user wishes to exchange files with a remote machine, using FTP for example, they must know the Internet address of that machine. For example, to perform FTP on the Lagaffe machine at the University of Angers, you would need to run FTP as follows: FTP 193.49.144.1
-
-This requires a directory mapping machines to IP addresses. In this directory, the machines would likely be designated by symbolic names such as:
-
-DPX2/320 machine at the University of Angers
-
-Sun machine at the University of Angers
-
-It is clear that it would be more convenient to refer to a machine by a name rather than by its address IP. This raises the issue of name uniqueness: there are millions of interconnected machines. One might imagine a centralized body assigning the names. That would undoubtedly be quite cumbersome. Control over names has in fact been distributed across **domains**. Each domain is managed by an organization that is generally very lean and has complete freedom in choosing machine names. Thus, machines in France belong to the **fr** domain, which is managed by Inria in Paris. To further simplify matters, control is distributed even further: domains are created within the **fr** domain. Thus, the University of Angers belongs to the **univ-Angers** domain. The department managing this domain has complete freedom to name the machines on the University of Angers network. For now, this domain has not been subdivided. But in a large university with many networked machines, it could be.
-
-The machine DPX2/320 at the University of Angers has been named *Lagaffe*, while a PC 486DX50 has been named *liny*. How do we refer to these machines from the outside? By specifying the hierarchy of domains to which they belong. Thus, the full name of the machine Lagaffe will be:
-
-    **Lagaffe.univ-Angers.fr**
-
-Within domains, relative names can be used. Thus, within the **fr** domain and outside the **univ-Angers** domain, the machine Lagaffe can be referenced as
-
-    **Lagaffe.univ-Angers**
-
-Finally, within the *univ-Angers* domain, it can be referenced simply as
-
-    **Lagaffe**
-
-An application can therefore refer to a machine by its name. Ultimately, however, you still need to obtain the machine’s Internet address. How is this done? Suppose that from machine A, you want to communicate with machine B.
-</code></pre></div>
+<p>When a user wishes to exchange files with a remote machine, using FTP for example, they must know the Internet address of that machine. For example, to perform FTP on the Lagaffe machine at the University of Angers, you would need to run FTP as follows: FTP 193.49.144.1</p>
+<p>This requires a directory mapping machines to IP addresses. In this directory, the machines would likely be designated by symbolic names such as:</p>
+<p>DPX2/320 machine at the University of Angers</p>
+<p>Sun machine at the University of Angers</p>
+<p>It is clear that it would be more convenient to refer to a machine by a name rather than by its address IP. This raises the issue of name uniqueness: there are millions of interconnected machines. One might imagine a centralized body assigning the names. That would undoubtedly be quite cumbersome. Control over names has in fact been distributed across <strong>domains</strong>. Each domain is managed by an organization that is generally very lean and has complete freedom in choosing machine names. Thus, machines in France belong to the <strong>fr</strong> domain, which is managed by Inria in Paris. To further simplify matters, control is distributed even further: domains are created within the <strong>fr</strong> domain. Thus, the University of Angers belongs to the <strong>univ-Angers</strong> domain. The department managing this domain has complete freedom to name the machines on the University of Angers network. For now, this domain has not been subdivided. But in a large university with many networked machines, it could be.</p>
+<p>The machine DPX2/320 at the University of Angers has been named <em>Lagaffe</em>, while a PC 486DX50 has been named <em>liny</em>. How do we refer to these machines from the outside? By specifying the hierarchy of domains to which they belong. Thus, the full name of the machine Lagaffe will be:</p>
+<p><strong>Lagaffe.univ-Angers.fr</strong></p>
+<p>Within domains, relative names can be used. Thus, within the <strong>fr</strong> domain and outside the <strong>univ-Angers</strong> domain, the machine Lagaffe can be referenced as</p>
+<p><strong>Lagaffe.univ-Angers</strong></p>
+<p>Finally, within the <em>univ-Angers</em> domain, it can be referenced simply as</p>
+<p><strong>Lagaffe</strong></p>
+<p>An application can therefore refer to a machine by its name. Ultimately, however, you still need to obtain the machine’s Internet address. How is this done? Suppose that from machine A, you want to communicate with machine B.</p>
 <ul>
   <li>If machine B belongs to the same domain as machine A, its address IP will likely be found in a file on machine A.
   </li>
@@ -1984,14 +1969,11 @@ An application can therefore refer to a machine by its name. Ultimately, however
 </ul>
 
 <p><mark style="background-color: #fff5ce">XDR</mark><strong>: (eXternal Data Representation)</strong></p>
-<div class="highlight"><pre><span></span><code>Created by sun MicroSystems, this protocol specifies a standard, machine-independent representation of data.
-</code></pre></div>
+<p>Created by sun MicroSystems, this protocol specifies a standard, machine-independent representation of data.</p>
 <p><mark style="background-color: #fff5ce">RPC</mark><strong>: (Remote Procedure Call)</strong></p>
-<div class="highlight"><pre><span></span><code>Also defined by Sun, this is a transport-layer-independent communication protocol for remote applications. This protocol is important: it relieves the programmer of the need to know the details of the transport layer and makes applications portable. This protocol is based on the XDR protocol
-</code></pre></div>
+<p>Also defined by Sun, this is a transport-layer-independent communication protocol for remote applications. This protocol is important: it relieves the programmer of the need to know the details of the transport layer and makes applications portable. This protocol is based on the XDR protocol</p>
 <p><mark style="background-color: #fff5ce">NFS</mark><strong>: Network File System</strong></p>
-<div class="highlight"><pre><span></span><code>Also defined by Sun, this protocol allows one machine to &amp;quot;see&amp;quot; the file system of another machine. It is based on the previous RPC protocol.
-</code></pre></div>
+<p>Also defined by Sun, this protocol allows one machine to &quot;see&quot; the file system of another machine. It is based on the previous RPC protocol.</p>
 <p><span id="refheading10403011168783983" name="refheading10403011168783983" class="odt-bookmark-anchor"></span></p>
 <h3 id="1119-conclusion">11.1.9. <span style="color: #4f81bd">Conclusion</span></h3>
 <p>In this introduction, we have presented some of the main features of Internet protocols. To explore this field further, readers may consult <strong>Douglas Comer</strong>’s excellent book:</p>
